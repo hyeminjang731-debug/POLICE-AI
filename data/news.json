@@ -1,29 +1,22 @@
 {
-  "generated_at": "2026-08-27T23:31:40.873369+00:00",
+  "generated_at": "2026-08-27T23:44:22.992328+00:00",
+  "filter_version": "strict-police-ai-v2",
   "items": [
+    {
+      "title": "해양경찰청, AI·친환경·K-조선·방산 기술로 차세대 함정 청사진 그린다",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWGw0bzl5c2RnOEZDdG0yYVRnWEUwSEhEWU5oSkcwTmMwNUc0UkpoX3cwMDBpaEVfemVFX2dhYlBkZ1I0SmNDR3lwZHExbmFPdW9WLVJ5dWppVHdjbmdtQ0pGcVJNVXNFVm0ybGtScVBqY3BHV05OblRVNGhOZXg3a2VxMHNsNzZ4OXZB?oc=5",
+      "source": "대한민국 정책브리핑",
+      "topic": "치안 AI",
+      "published": "2026-08-27",
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+    },
     {
       "title": "포티투마루, 경남경찰청서 ‘AI 네이티브 경찰’ 전환 전략 공유",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xdWtIaDNzYTNTQ1A5blcwWm90RlhGUHZyT1ZGSlNfTjZxemJ5dXBjZFNrYW53aEVZU0RPYmlxVlAzcWRsaDhsMmlTZjBHY2RzVDVzUG1vNTRvMDRibWxEVE45aTBDQ0tE?oc=5",
       "source": "테크월드",
-      "topic": "수사지원 AI",
+      "topic": "치안 AI",
       "published": "2026-08-25",
-      "summary": "테크월드"
-    },
-    {
-      "title": "[클라우드 월드] 더존 'AX 리더십 포럼'·코오롱 '델 포럼' 참가·고려대 'GPU 헛된 선점' 규명·포티투마루 'AI 혁신 특강'·가트너 '메모리 매출' 전망·델 'AI 비즈니스 성과 전환 포럼'",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE16cmFNUUVSRWZZcTNRV05nTWQ1T1pKYWNmcXhFZkExT2VPOEgzSW84ZWNqM0NwYldEaHJEMDM1NkV5U1R2RERuZGJZZ3oxSWxTUFBDYnV2Wk1VZ2lJR0VuWUVhU3Q0Uy1ZTlhoZDU3MVh4clHSAXNBVV95cUxNenJhTVFFUkVmWXEzUVdOZ01kNU9aSmFjZnF4RWZBMU9lTzhIM0lvOGVjajNDcGJXRGhyRDAzNTZFeVNUdkREbmRiWWd6MUlsU1BQQ2J1dlpNVWdpSUdFbllFYVN0NFMtWU5YaGQ1NzFYeHJR?oc=5",
-      "source": "뉴스웍스",
-      "topic": "KICS AI",
-      "published": "2026-08-25",
-      "summary": "뉴스웍스"
-    },
-    {
-      "title": "[AI 브리프] 한컴 ‘에이전틱 OS’, 남양유업 업무 환경서 검증",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE90Q0I2OG1uUXlCd0t5TlFqaUFzMks0Ymk2d3hfWFVxd0kwSk5jb1BPX0p3ODd2OVl0eG9CV0gyQjR4OEE0d1ctZENSNVlsMmtmTlNPcnB5aHU1SktEMzVrLWg3UVhuTWtj?oc=5",
-      "source": "아이티데일리",
-      "topic": "KICS AI",
-      "published": "2026-08-25",
-      "summary": "아이티데일리"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "포티투마루, 경남경찰청 명사 초청 특강서 AI 네이티브 경찰 혁신 전략 공유",
@@ -31,7 +24,7 @@
       "source": "헬로티",
       "topic": "치안 AI",
       "published": "2026-08-25",
-      "summary": "헬로티"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "김동환 포티투마루 대표, 경남경찰청서 에이전틱 AI 활용 제안",
@@ -39,7 +32,7 @@
       "source": "전자신문",
       "topic": "치안 AI",
       "published": "2026-08-25",
-      "summary": "전자신문"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "포티투마루, 경찰 행정 '에이전틱 AI' 접목 방안 제시",
@@ -47,71 +40,63 @@
       "source": "지디넷코리아",
       "topic": "치안 AI",
       "published": "2026-08-25",
-      "summary": "지디넷코리아"
-    },
-    {
-      "title": "[AI서머리] 엑시온, 인텔 ‘인지니어스’ 선정‧로앤컴퍼니, 법률서적 전문 전자책 구독 출시",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9aWUtXbkpvb0pJV1c1dmpzcmoySmNZNlZqcGdtb3paeDZUa01MV2JpVHRYQ1gya2QxTlRUX1ljWGJ1NHd0SzFORTNacDFGdTQ4dU9ZamptNA?oc=5",
-      "source": "스타트업레시피",
-      "topic": "차세대 112",
-      "published": "2026-08-24",
-      "summary": "스타트업레시피"
-    },
-    {
-      "title": "울산경찰청, 치안업무 AI 활용 우수사례 포상",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5SazlJYlAzQUJxNFB1ZlF2d0VxclRDbm5LWUJGd1lvX3NtZW5zNi1mdmpQczBlQUZmUTB6aGtsVUZaT2huYVFCZGwwLUxNX255T2xqdk5YRENGbjdSc1lSc0E0UF9iZUpHZll0LQ?oc=5",
-      "source": "경상일보",
-      "topic": "경찰 AI",
-      "published": "2026-08-18",
-      "summary": "경상일보"
-    },
-    {
-      "title": "울산경찰청, AI 활용 치안 우수 사례 포상",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5xSlBjNkQwME5YLWlscHhuRDYwRVN5dW10OFQ0WFZhcDlRdTF4NkVGTXZtVkFhc2JUNjRfaWtPUnY1VTVfclREOXVxMWlZa0phX203cHlGSVlfdFXSAWBBVV95cUxOVWFfWXJBQ0Jzb2x3akEtcERxSndZTFlKOW5INUk5WklnekN0VlBoUGozbGg4M2M5d3l0ZWRXVGUyY3ZlaE83MlVsZ3p1SUlzdG9wX0hVakpXUTRzS0pmZWc?oc=5",
-      "source": "연합뉴스",
-      "topic": "경찰 AI",
-      "published": "2026-08-18",
-      "summary": "연합뉴스"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "딥페이크 범죄, 경찰 인공지능(AI) 3중 대응으로 끝까지 쫓는다",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ZNjBPb0xoWWJGSEtOSld5LTF0ZWtEOWFub3pHOUZ2SlJBX2dSUjZhSS1uTzZYenpZN2JzMWJocU5KU1JXaWpXQ0JmNVZZeFRROFBnWExDNS1BZ3NYbjloSzhnRjY0cUVh?oc=5",
       "source": "DWBNEWS",
-      "topic": "경찰 AI",
+      "topic": "수사지원 AI",
       "published": "2026-08-18",
-      "summary": "DWBNEWS"
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+    },
+    {
+      "title": "울산경찰청, AI 활용 치안 우수 사례 포상",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1MNFB2X2ZTUXA3TjVnbmdwY1VSdmhOLWFXS3UwaGlzQ3YzVzBMWDg3ZTNzZ2xpZXpfSVVIZTRrcERTbXlnNDVRaHJkSQ?oc=5",
+      "source": "v.daum.net",
+      "topic": "치안 AI",
+      "published": "2026-08-18",
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "허위영상물(딥페이크) 범죄, 경찰 인공지능(AI) 3중 대응으로 끝까지 추적",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NNzhaTlpGYko4eHVuaDRfVE8zOGVJZXRzR1pjUVdXX1N2aE1lZFVqMTY1UWYzbUw3RkpzR1ZqRTUyeHF0Q3dUc3JjTzFfM3dkak5nZHR1cGR2ak95OEhQOHRTc21DU3BXRFFV?oc=5",
       "source": "뉴스데일리",
-      "topic": "경찰 AI",
+      "topic": "수사지원 AI",
       "published": "2026-08-16",
-      "summary": "뉴스데일리"
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
-      "title": "수사환경 변화 대응 나선 부산경찰…현장 수사인력 78명 늘린다",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB2aVlDNUdsVVBOcHFtVjZnOWJ4b1liTVJFNy1UNnlSSXU3eld4MGlVcXI3MkJyOHl3TGxMWDJrLS1JNE50bUZsLVNiZXlaZFR3YTZLV2pyUmpaM1k0RmZkSVdn?oc=5",
-      "source": "매일신문",
+      "title": "딥페이크 잡고 제작 과정도 추적한다…경찰 AI 활용 수사로 419명 검거",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qdnB4NmtpbDVQLWd4NzdDcktLWEgyY25XaGFnQVZwQlR5NUVLS3hvS0xPT2ZndFU4VjBxQTlyaDdlU0M4TjNyZjMzSnpTVmM?oc=5",
+      "source": "v.daum.net",
       "topic": "수사지원 AI",
       "published": "2026-08-13",
-      "summary": "매일신문"
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
-      "title": "경찰, 딥페이크 범죄 피의자 419명 검거…“AI 기술 대응 확대”",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5vSlM3ckFkQU1pc0tDZjlPaTZ4M3NmOXg3Mm5FWEZUZDhPWFgxdXMzUVlhdnB1ZFVfV1ZTZ2hJSlh6STM0VElBd0w3NVZjeGw5S2JzNThzM1Z2Z9IBX0FVX3lxTE1zNFdKZ0hPZ1BKamlJazU0WHp0ZTBPTVkzdTVsSVYtQjRmcmlPczhZTVNJcEJhUHFvNTExWDF5Q0p1dG8tdEhyOVUzQ2ljZmFJTlRCTElWSXFnSDNPRXhj?oc=5",
-      "source": "경향신문",
-      "topic": "경찰 AI",
+      "title": "경찰, AI로 딥페이크 범죄 ‘3중 추적’…올해 피의자 419명 검거",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBVaDVrYUJXVjk3ZXl4RHZRTWswZ3Q2Tk9KeGFWVE1OUmQ3OWFieXlNZFQ5ZHczdFdoMlJtNzBROWFlQkFGZ1lBWC1kakJzVTE0UVhQSzdubF9mdlY1enBKQzJzSC00LUt5bnExbS0zY203QQ?oc=5",
+      "source": "한겨레",
+      "topic": "수사지원 AI",
       "published": "2026-08-13",
-      "summary": "경향신문"
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
-      "title": "공공 AX 확산 속…엑셈, SK텔레콤과 해경 'AI 디지털 함정' 사업 53억원 수주",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5FajRsaFRyVk8tQjl2RFg5X3didGNYTmNUaWlnblVVUGZUSWxkY1FVQloxOTh3c2F3R1dnRktmaTRiMklKeE4yY3dZWnJwWkJXNDFwU2VaR1gtdFdoZ2N6QVNSY1lPZllj?oc=5",
-      "source": "녹색경제신문",
-      "topic": "KICS AI",
+      "title": "스토킹 위험, AI가 먼저 판단한다…경찰청, 범죄피해자보호과 신설 - 머니투데이",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9iLVl6UGpwd21CNzc0dWFrdlR6bHNzb1VxRjZCS2U0X0VoVUJYd1p3c3JkMXN0am9vYzh5MVdWNFBsV1ZvdFdfYmEwckhsZGxKdTU1MGVUZlNtVWJpa2dHb0Y3NmNkdHp4X1Vj0gFwQVVfeXFMUHByYlhkREdORy1SOVdiTC1abUZEQlNCMWtKZ3VEUUE2Z29kOEVZT2tiOWFNNVdJSXJGNzNvazkwSC0wN1Z5ZTRPaC1TV2VJQ3pXNlJXVllEblFmNGhBUGU0dmhSN0NISjRmQ1dodWc4Zg?oc=5",
+      "source": "머니투데이",
+      "topic": "치안 AI",
+      "published": "2026-07-28",
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+    },
+    {
+      "title": "엑셈, 해양경찰청 ‘AI 기반 디지털 함정 체계 구축’ 사업 수주",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1vT0RxTXRjdzB3R2dYbWlkOW1WcjFEVHJSaHZlcE5mTmJjcmtKVktsNUpKMndYT0VHWW5PWE1OMjhHekZ2d19QNXVUTDI2U1h4VDc4a2NyNTc1VmFySjhj?oc=5",
+      "source": "뉴스와이어",
+      "topic": "치안 AI",
       "published": "2026-07-21",
-      "summary": "녹색경제신문"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "경찰청, 치안 AI 신뢰성 기준 만든다…씽크포비엘과 협력",
@@ -119,7 +104,23 @@
       "source": "스트레이트뉴스",
       "topic": "치안 AI",
       "published": "2026-07-10",
-      "summary": "스트레이트뉴스"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+    },
+    {
+      "title": "해양경찰청 첫 AI 경진대회 성료…불법어업 예측 시스템 '최우수상'",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9TTk1zRlRRUXV3X0tXOG9yYWJ3czgtZXlyUHRseS01UTNwbW44bnlsM0FiMGk2MjRGNG9hZmNZLVRwNmVMZ3hQRi05WWwzOXpwZXQzRlFfWmxHRGlBYU82WUtxZGV2MmtZQi1j?oc=5",
+      "source": "해사신문",
+      "topic": "치안 AI",
+      "published": "2026-07-10",
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+    },
+    {
+      "title": "씽크포비엘-경찰청, AI 영향평가·위험관리 체계 공동 구축 나서",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE14V2ZXS2NLeFZVVXgwYWZ5M0Y0SmtWNWF2VE5XLUlDeHJJWG03dnhkRXRnN0tMVkJ5SnFZcG5IYmRtX1hsdlZEQkRvdk5BdXFFdmNMWElQd3RGLXhSdGNB?oc=5",
+      "source": "헬로티",
+      "topic": "치안 AI",
+      "published": "2026-07-09",
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "경찰청-씽크포비엘, 치안 분야 ‘AI 신뢰성’ 기준 수립 협력",
@@ -127,7 +128,39 @@
       "source": "AI타임스",
       "topic": "치안 AI",
       "published": "2026-07-09",
-      "summary": "AI타임스"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+    },
+    {
+      "title": "경찰수사도 AI시대…2천여개 성착취영상 분석 320시간→3시간",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1iQ0NuT005dVVfMV9EX2t4V1Q4WG1aRG1EX0E4SmRlbTdRcnkxNE1YZEJNVm5CT1RPdlZJeVlGNTFWaW5yamR4Y3RXWGNDQTNRek9BVUprNy1GRzTSAWBBVV95cUxPLVZRaWRRN1FDR0t4T2FucGdPd0JROTRTcTgzMkhRWkVNT2w1VDdpLVlhMHBnWFhLbW9DRUczTWE2NlBOanVpeERRMWY0bXoyY3Zsd01UODlBNEZZZUVSSzI?oc=5",
+      "source": "연합뉴스",
+      "topic": "수사지원 AI",
+      "published": "2026-07-09",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+    },
+    {
+      "title": "경찰, AI 탐지 프로그램으로 성착취물 대응···수사 속도 ‘320→3시간’ 획기적 단축",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9zRGdHd1o3eVI4dEJOM1FqSUJUT204NHkyNFFfNFJhNUJ0UEw2c1htZXJtN1BKbDZpZDVGMmxjUkZBck4tQWQ2ZVZfekF4VktFYmRla1dVRmN1d9IBX0FVX3lxTE1nNUJkYndIMEhMLWdENE8tMWVwSGpVeU5TN25NcHdYUXkxRVpwajB5cXppbERicHByeXBfVTJxQWZ2U1BuVHBxN08xTDNCU1J2NVhJcmx4OVJVWDNqRVFF?oc=5",
+      "source": "경향신문",
+      "topic": "수사지원 AI",
+      "published": "2026-07-09",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+    },
+    {
+      "title": "320시간 걸리던 성착취물 분석 딱 3시간!…AI 수사 지원 본격화",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1vbHNIRFg5Z1hNR0s2UzNmNjNlSmh4QTVqMXBzeXA5dmdZd0tkeVl3aHIzdFZWNlZxMU5ySGhhV2xhTVFGQWUyYU1ycDZYUkU3Wkk2Z01rT21jdUNfWE9aSWhwelRoNzczeTZaSw?oc=5",
+      "source": "대한민국 정책브리핑",
+      "topic": "수사지원 AI",
+      "published": "2026-07-09",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+    },
+    {
+      "title": "AI안경으로 데이트 상대 여성 무단 촬영…경찰, 수사",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kNEhEZzNTZVd1TDAydElWV1dRekVzWkRHU3Eza0dFeENWU25tM2RnYlYycUZEMGFNeHJMaDJSTF9EaVRDMUJyNDlfdnkxUzdWNUI4V2hKMk9SMVdNd2VXQzA1UU43QVU?oc=5",
+      "source": "연합뉴스TV",
+      "topic": "수사지원 AI",
+      "published": "2026-07-08",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
       "title": "국민대-경찰청, ‘2026 치안 AI·데이터 분석 전문가 양성 과정’ 입과식 개최",
@@ -135,7 +168,7 @@
       "source": "중앙일보",
       "topic": "치안 AI",
       "published": "2026-07-06",
-      "summary": "중앙일보"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
       "title": "'치안 AI 전문가' 키운다…국민대·경찰청, 양성 과정 입과식 개최",
@@ -143,7 +176,23 @@
       "source": "교수신문",
       "topic": "치안 AI",
       "published": "2026-07-06",
-      "summary": "교수신문"
+      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+    },
+    {
+      "title": "[AI픽] 경찰 수사 돕고 K팝 아이돌 만든다…진화하는 K-AI",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Lb2oxclBVVGNQdTVvYVpMZHdPSnN6eHpRdkY0LW1VcHA5MkFaVkdKTTkzS3Q4WEM3YXJrMlBLUGNBSUtoTjRzWUZJalM5MUZRQ0dSOTZid3dtWVnSAWBBVV95cUxPMVI4TFdtNVZCSFVZQXRSTWx4T0gxNjJCX3pUeHJWSi11OXNkOGlnY2JoTG43ZjRoZElUbk9IalE3aFRmemwxWG1rOTRYQ3VFMEFOY0w2cll3d2pWQkRrM1A?oc=5",
+      "source": "연합뉴스",
+      "topic": "수사지원 AI",
+      "published": "2026-07-06",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+    },
+    {
+      "title": "경찰 수사부터 아이돌 제작·제조 AX까지…종횡무진 'K-AI'",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OeTFQT2pweVA3N1luU2JuWW9CNVd2VmZyd016V2tiZFR3SjNBbGMxaHpRSUlkQ0c0ZHR4amdqVjV0MlRRU2ktRm5WSTJrY2RVOFdZWjd1Wk0yZmJXSHNJSA?oc=5",
+      "source": "아시아경제",
+      "topic": "수사지원 AI",
+      "published": "2026-07-06",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     }
   ]
 }
