@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T23:44:22.992328+00:00",
+  "generated_at": "2026-08-27T23:44:40.780497+00:00",
   "filter_version": "strict-police-ai-v2",
   "items": [
     {
@@ -14,9 +14,9 @@
       "title": "포티투마루, 경남경찰청서 ‘AI 네이티브 경찰’ 전환 전략 공유",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xdWtIaDNzYTNTQ1A5blcwWm90RlhGUHZyT1ZGSlNfTjZxemJ5dXBjZFNrYW53aEVZU0RPYmlxVlAzcWRsaDhsMmlTZjBHY2RzVDVzUG1vNTRvMDRibWxEVE45aTBDQ0tE?oc=5",
       "source": "테크월드",
-      "topic": "치안 AI",
+      "topic": "수사지원 AI",
       "published": "2026-08-25",
-      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
       "title": "포티투마루, 경남경찰청 명사 초청 특강서 AI 네이티브 경찰 혁신 전략 공유",
@@ -83,14 +83,6 @@
       "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
-      "title": "스토킹 위험, AI가 먼저 판단한다…경찰청, 범죄피해자보호과 신설 - 머니투데이",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9iLVl6UGpwd21CNzc0dWFrdlR6bHNzb1VxRjZCS2U0X0VoVUJYd1p3c3JkMXN0am9vYzh5MVdWNFBsV1ZvdFdfYmEwckhsZGxKdTU1MGVUZlNtVWJpa2dHb0Y3NmNkdHp4X1Vj0gFwQVVfeXFMUHByYlhkREdORy1SOVdiTC1abUZEQlNCMWtKZ3VEUUE2Z29kOEVZT2tiOWFNNVdJSXJGNzNvazkwSC0wN1Z5ZTRPaC1TV2VJQ3pXNlJXVllEblFmNGhBUGU0dmhSN0NISjRmQ1dodWc4Zg?oc=5",
-      "source": "머니투데이",
-      "topic": "치안 AI",
-      "published": "2026-07-28",
-      "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
-    },
-    {
       "title": "엑셈, 해양경찰청 ‘AI 기반 디지털 함정 체계 구축’ 사업 수주",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1vT0RxTXRjdzB3R2dYbWlkOW1WcjFEVHJSaHZlcE5mTmJjcmtKVktsNUpKMndYT0VHWW5PWE1OMjhHekZ2d19QNXVUTDI2U1h4VDc4a2NyNTc1VmFySjhj?oc=5",
       "source": "뉴스와이어",
@@ -115,11 +107,11 @@
       "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
-      "title": "씽크포비엘-경찰청, AI 영향평가·위험관리 체계 공동 구축 나서",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE14V2ZXS2NLeFZVVXgwYWZ5M0Y0SmtWNWF2VE5XLUlDeHJJWG03dnhkRXRnN0tMVkJ5SnFZcG5IYmRtX1hsdlZEQkRvdk5BdXFFdmNMWElQd3RGLXhSdGNB?oc=5",
-      "source": "헬로티",
+      "title": "해양경찰청, 첫 ‘AI 경진대회’개최",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBHTkNpTVUteTAyV2Z1WHJfLXJjTzBCbmxGdHFnd0l5MkZ5OTJTakx3cENndzU4MUNNNXlSa0FnYTBlOGJXenpsVENRTzJoNmtSdEN6bWNSWEJ6T1h4N3V6Z09XMkoxLTRTWWRPcTA0aFhBQms?oc=5",
+      "source": "대한경제",
       "topic": "치안 AI",
-      "published": "2026-07-09",
+      "published": "2026-07-10",
       "summary": "경찰청의 치안 AI 정책·서비스 추진과 관련된 최신 보도입니다."
     },
     {
@@ -190,6 +182,14 @@
       "title": "경찰 수사부터 아이돌 제작·제조 AX까지…종횡무진 'K-AI'",
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OeTFQT2pweVA3N1luU2JuWW9CNVd2VmZyd016V2tiZFR3SjNBbGMxaHpRSUlkQ0c0ZHR4amdqVjV0MlRRU2ktRm5WSTJrY2RVOFdZWjd1Wk0yZmJXSHNJSA?oc=5",
       "source": "아시아경제",
+      "topic": "수사지원 AI",
+      "published": "2026-07-06",
+      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+    },
+    {
+      "title": "경찰 수사부터 조선·해양까지…국산 AI 모델 확산 속도",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1PR1Q5ZFhnN1BtVWVEU0VlRmZFM3dLY0N4Y2doRGdNd1luSzM0dF9LM3RXSG1CalpXV1N0Y1AyZkdBZnFWekdvUHJWQnJXdW5VU3J0cVln?oc=5",
+      "source": "지디넷코리아",
       "topic": "수사지원 AI",
       "published": "2026-07-06",
       "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
