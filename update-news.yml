@@ -1,0 +1,47 @@
+name: Update AI news
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/update_news.py"
+      - ".github/workflows/update-news.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-ai-news
+  cancel-in-progress: true
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect latest news
+        run: python scripts/update_news.py
+
+      - name: Commit changed news data
+        run: |
+          if git diff --quiet -- data/news.json; then
+            echo "No news changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.json
+          git commit -m "chore: update AI news"
+          git push
