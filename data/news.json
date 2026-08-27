@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T23:54:19.484955+00:00",
+  "generated_at": "2026-08-27T23:54:32.447022+00:00",
   "filter_version": "strict-police-ai-v3-diverse",
   "selection_policy": {
     "exclude_maritime_police": true,
@@ -98,11 +98,11 @@
       "summary": "경찰민원 AI 에이전트 「모두의 경찰관」 추진과 관련된 최신 보도입니다."
     },
     {
-      "title": "경찰, ‘AI 수사보조관’ 투입한다…조서 질문서 등 자동화",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE80VGtqY1F0VVBCVl9oeW9vN00tcDMzejhJbXgwVFdRRk5IYl9nT0Vqb0lFVlRVRDIyRVY5a3lSQWIxc21TQW50NnBqdVl1VEJjdVRWT2lodUEtZjFYQm5xY3N6dXE?oc=5",
-      "source": "서울경제TV",
+      "title": "경찰 수사 AI 시대? 그 기대와 한계 사이",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5UNFdUM2g3VlFka0RJazRUenc1S0R5TGZFM1NQNTBDcndRcE5haF9SQ0J5ZllYM2VyV0N3R1lfYzh5V3J1RTlnRg?oc=5",
+      "source": "주간현대",
       "topic": "수사지원 AI",
-      "published": "2026-04-12",
+      "published": "2026-03-27",
       "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
@@ -128,14 +128,6 @@
       "topic": "모두의 경찰관",
       "published": "2026-06-18",
       "summary": "경찰민원 AI 에이전트 「모두의 경찰관」 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "경찰 수사 AI 시대? 그 기대와 한계 사이",
-      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5UNFdUM2g3VlFka0RJazRUenc1S0R5TGZFM1NQNTBDcndRcE5haF9SQ0J5ZllYM2VyV0N3R1lfYzh5V3J1RTlnRg?oc=5",
-      "source": "주간현대",
-      "topic": "수사지원 AI",
-      "published": "2026-03-27",
-      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
     },
     {
       "title": "경찰청 AI·데이터 민간위원에 포티투마루 대표 등 7명 위촉",
