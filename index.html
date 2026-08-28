@@ -127,10 +127,12 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 
 .section{margin-top:30px;scroll-margin-top:96px}
 .service-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.service{position:relative;padding:18px;border:1px solid var(--line-strong);border-radius:20px;background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);box-shadow:0 8px 18px rgba(16,36,62,.05)}
+.service{position:relative;padding:18px;border:2px solid var(--service-accent,var(--line-strong));border-radius:18px;background:#fff;box-shadow:0 6px 16px rgba(16,36,62,.045)}
 .service .label,.service-badge{display:inline-flex;align-items:center;min-height:30px;padding:5px 10px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
 .service h3{margin:0;font-size:19px;line-height:1.4;color:var(--text-strong)}
 .service p{margin:8px 0 0;font-size:15px;color:var(--text);line-height:1.7}
+.service{transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+.service:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(16,36,62,.08);filter:saturate(1.04)}
 
 
 
@@ -150,8 +152,9 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 .footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--text-muted);line-height:1.6}
 
 .bottom-nav{position:fixed;left:50%;bottom:0;z-index:250;width:min(100%,1080px);transform:translateX(-50%);display:none;grid-template-columns:repeat(4,1fr);padding:7px 10px calc(7px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.98);box-shadow:0 -6px 20px rgba(16,36,62,.07);backdrop-filter:blur(10px)}
-.bottom-nav a{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center}
-.bottom-nav a.active{color:var(--navy);background:var(--navy-soft)}
+.bottom-nav a,.bottom-nav .home-nav-button{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .14s ease,color .14s ease,transform .10s ease}
+.bottom-nav a.active,.bottom-nav .home-nav-button.active{color:var(--navy);background:var(--navy-soft)}
+.bottom-nav a:active,.bottom-nav .home-nav-button:active{color:var(--navy);background:#e1ebf6;transform:scale(.96)}
 .bottom-icon{font-size:18px}
 
 .back-to-top{position:fixed;right:18px;bottom:22px;z-index:260;width:46px;height:46px;border:1px solid var(--line-strong);border-radius:50%;background:#fff;color:var(--navy);box-shadow:var(--shadow);font-size:20px;font-weight:800;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s ease}
@@ -180,6 +183,73 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 .domain-sheet-body .detail-card h4{margin-top:5px;font-size:16px;line-height:1.45}
 .domain-sheet-body .detail-card p{margin:7px 0 0}
 .domain-sheet-bottom-close{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:14px;border:1px solid var(--line-strong);border-radius:12px;background:var(--soft);color:var(--navy);font-size:15px;font-weight:800;cursor:pointer}
+
+
+
+/* 홈 소개 팝업: CSS checkbox 기반 — 인앱 브라우저에서도 JS 없이 열림 */
+.home-intro-toggle{
+  position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-9999px;
+}
+#home-intro-toggle:checked ~ .intro-backdrop{
+  opacity:1;visibility:visible;transition:opacity .18s ease,visibility 0s;
+}
+#home-intro-toggle:checked ~ .intro-dialog{
+  opacity:1;visibility:visible;transform:translate(-50%,-50%);
+  transition:opacity .18s ease,transform .18s ease,visibility 0s;
+}
+#home-intro-toggle:checked ~ .bottom-nav .home-nav-button{
+  color:var(--navy);background:var(--navy-soft);
+}
+
+/* 홈 버튼: 페이지 소개 팝업 */
+.intro-backdrop{
+  position:fixed;inset:0;z-index:10020;background:rgba(15,23,42,.54);
+  opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s step-end;
+}
+.intro-dialog{
+  position:fixed;left:50%;top:50%;z-index:10021;width:min(620px,calc(100% - 40px));
+  max-height:82vh;display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid var(--line);border-radius:22px;background:#fff;
+  box-shadow:var(--shadow-sheet);opacity:0;visibility:hidden;
+  transform:translate(-50%,calc(-50% + 16px));
+  transition:opacity .18s ease,transform .18s ease,visibility .18s step-end;
+}
+
+.intro-dialog-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:18px 18px 15px;border-bottom:1px solid var(--line);
+}
+.intro-eyebrow{font-size:13px;font-weight:800;color:var(--navy)}
+.intro-dialog-head h2{margin:4px 0 0;font-size:22px;line-height:1.35;color:var(--text-strong)}
+.intro-close-icon{
+  width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;
+  border:1px solid var(--line-strong);border-radius:50%;background:var(--soft);
+  color:var(--text-strong);font-size:24px;font-weight:700;cursor:pointer;
+}
+.intro-dialog-body{
+  min-height:0;overflow:auto;padding:18px;-webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
+}
+.intro-dialog-body p{margin:0 0 14px;font-size:15px;line-height:1.75;color:var(--text)}
+.intro-dialog-body strong{color:var(--text-strong);font-weight:800}
+.intro-contents{
+  margin:18px 0;padding:16px;border:1px solid var(--line);
+  border-radius:16px;background:var(--soft);
+}
+.intro-contents h3{margin:0 0 10px;font-size:17px;line-height:1.4;color:var(--text-strong)}
+.intro-contents ul{
+  margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px 20px;
+}
+.intro-contents li{font-size:15px;line-height:1.55;color:var(--text)}
+.intro-guide{
+  margin-top:4px!important;padding:12px 14px;border-radius:12px;
+  background:var(--navy-soft);color:var(--navy)!important;
+}
+.intro-confirm{
+  width:100%;min-height:50px;margin-top:4px;border:0;border-radius:13px;
+  background:var(--navy);color:#fff;font-size:16px;font-weight:800;cursor:pointer;
+}
 
 @media(max-width:760px){
   .topbar-inner{min-height:72px;padding:10px 14px}
@@ -218,7 +288,7 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
   .news-outlet,.news-topic,.news-date,.news-status,.news-status .pill{font-size:12px}
   .footer{font-size:12px}
   .bottom-nav{display:grid}
-  .bottom-nav a{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center}
+  .bottom-nav a,.bottom-nav .home-nav-button{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .14s ease,color .14s ease,transform .10s ease}
   .back-to-top{right:14px;bottom:76px}
   .domain-sheet{left:0;right:0;top:auto;bottom:0;width:100%;max-height:86vh;border-radius:22px 22px 0 0;transform:translateY(105%);opacity:1}
   #domain-toggle-1:checked ~ #domain-sheet-1,#domain-toggle-2:checked ~ #domain-sheet-2,#domain-toggle-3:checked ~ #domain-sheet-3,#domain-toggle-4:checked ~ #domain-sheet-4,#domain-toggle-5:checked ~ #domain-sheet-5,#domain-toggle-6:checked ~ #domain-sheet-6{transform:translateY(0)}
@@ -230,23 +300,37 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
   .domain-sheet-body .panel-summary h3,.domain-sheet-body .panel-status h3{font-size:17px}
   .domain-sheet-body .panel-summary p,.domain-sheet-body .status-list li,.domain-sheet-body .detail-card p,.domain-sheet-body .detail-card li{font-size:15px}
   .domain-sheet-body .detail-card h4{font-size:16px}
+
+  .service{padding:17px 16px 17px 18px}
+  .intro-dialog{
+    left:0;right:0;top:auto;bottom:0;width:100%;max-height:88vh;
+    border-radius:22px 22px 0 0;transform:translateY(105%);opacity:1;
+  }
+  .intro-dialog-head{padding:16px 14px 14px}
+  .intro-dialog-head h2{font-size:20px}
+  .intro-dialog-body{padding:16px 14px calc(18px + env(safe-area-inset-bottom))}
+  .intro-dialog-body p{font-size:15px;line-height:1.75}
+  .intro-contents{padding:14px}
+  .intro-contents ul{grid-template-columns:1fr;gap:7px}
+  .intro-confirm{min-height:52px;font-size:16px}
+
+  #home-intro-toggle:checked ~ .intro-dialog{transform:translateY(0)}
+  .bottom-nav a,.bottom-nav .home-nav-button{min-width:0}
+  .bottom-label{white-space:nowrap}
 }
 
 .domain-affordance{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:16px;color:var(--navy);font-size:13px;font-weight:800}
-.service::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:20px 0 0 20px;background:var(--navy)}
 .service-body{margin-top:12px}
-.service-1::before{background:#315A8C}
-.service-2::before{background:#4F46E5}
-.service-3::before{background:#0F766E}
-.service-4::before{background:#B45309}
-.perspective-figure{margin:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(16,36,62,.04)}
-.perspective-figure img{display:block;width:100%;height:auto}
+.service-1{--service-accent:#315A8C}
+.service-2{--service-accent:#4F46E5}
+.service-3{--service-accent:#0F766E}
+.service-4{--service-accent:#B45309}
+
 .bottom-label{white-space:nowrap;line-height:1.2}
-@media(max-width:760px){
-  .service{padding:17px 16px 17px 18px}
-  .overview-shortcuts{grid-template-columns:1fr}
-  .perspective-figure{border-radius:18px}
-}
+
+
+/* 위원회 관점 섹션 삭제 후 바로가기 단일 카드 정리 */
+.overview-shortcuts{grid-template-columns:1fr}
 </style>
 </head>
 <body>
@@ -265,15 +349,13 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 <input aria-hidden="true" class="domain-toggle" data-domain="tab4" id="domain-toggle-4" type="checkbox"/>
 <input aria-hidden="true" class="domain-toggle" data-domain="tab5" id="domain-toggle-5" type="checkbox"/>
 <input aria-hidden="true" class="domain-toggle" data-domain="tab6" id="domain-toggle-6" type="checkbox"/>
-<main class="main" id="home">
+<input aria-hidden="true" class="home-intro-toggle" id="home-intro-toggle" type="checkbox"/><main class="main" id="home">
 <section aria-labelledby="overviewTitle" class="overview-home">
 <div class="overview-head">
 <div>
 <div class="overview-eyebrow">한눈에 보는 치안 AI</div>
 <h1 id="overviewTitle">치안 AI 업무 추진현황</h1>
-
 </div>
-
 </div>
 <section aria-labelledby="domainsTitle" class="domain-section" id="domains">
 <div class="section-heading-row">
@@ -291,7 +373,6 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <h3>AI 정책·거버넌스</h3>
 <p class="domain-description">정책 총괄, 위원회, 국가 AI 연계, 담당관 운영</p>
-
 <span class="domain-affordance">상세 보기 ›</span>
 </label>
 <label aria-controls="domain-sheet-2" aria-expanded="false" class="domain-card domain-2" for="domain-toggle-2" role="button" style="--domain-accent:#2B6F84" tabindex="0">
@@ -302,7 +383,6 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <h3>AI 사업·예산 관리</h3>
 <p class="domain-description">사업관리, 예산 검토, 공통기반·서비스 추진</p>
-
 <span class="domain-affordance">상세 보기 ›</span>
 </label>
 <label aria-controls="domain-sheet-3" aria-expanded="false" class="domain-card domain-3" for="domain-toggle-3" role="button" style="--domain-accent:#5E5B9A" tabindex="0">
@@ -313,7 +393,6 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <h3>AI 윤리·투명성·신뢰성</h3>
 <p class="domain-description">윤리준칙, 보안·윤리교육, 신뢰성 확보기준</p>
-
 <span class="domain-affordance">상세 보기 ›</span>
 </label>
 <label aria-controls="domain-sheet-4" aria-expanded="false" class="domain-card domain-4" for="domain-toggle-4" role="button" style="--domain-accent:#8A5A74" tabindex="0">
@@ -324,7 +403,6 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <h3>고영향 AI 관리</h3>
 <p class="domain-description">고영향 AI 식별, 조치, 관리체계 마련</p>
-
 <span class="domain-affordance">상세 보기 ›</span>
 </label>
 <label aria-controls="domain-sheet-5" aria-expanded="false" class="domain-card domain-5" for="domain-toggle-5" role="button" style="--domain-accent:#7A6738" tabindex="0">
@@ -335,7 +413,6 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <h3>AI 영향평가</h3>
 <p class="domain-description">공공분야 영향평가, 결과 검토·공표 준비</p>
-
 <span class="domain-affordance">상세 보기 ›</span>
 </label>
 <label aria-controls="domain-sheet-6" aria-expanded="false" class="domain-card domain-6" for="domain-toggle-6" role="button" style="--domain-accent:#3F7562" tabindex="0">
@@ -346,7 +423,6 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <h3>AI 역량 강화</h3>
 <p class="domain-description">교육, 리터러시, 지역확산, 성과확산</p>
-
 <span class="domain-affordance">상세 보기 ›</span>
 </label>
 </div>
@@ -358,7 +434,7 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 <a href="#services">수사지원 AI</a>
 <a href="#services">교육·지역확산</a></div>
 </div>
-<div class="overview-shortcuts"><a href="#perspectives"><span>관점</span><strong>위원회에서 볼 관점</strong><b aria-hidden="true">›</b></a>
+<div class="overview-shortcuts">
 <a href="#news"><span>보도</span><strong>관련 언론보도</strong><b aria-hidden="true">›</b></a></div>
 </section>
 <section class="section" id="services">
@@ -367,26 +443,17 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 </div>
 <div class="service-list"><div class="service service-1">
 <div class="label service-badge">대국민 AI 서비스</div>
-
-
 <div class="service-body"><h3>「모두의 경찰관」</h3><p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감하는 대표 치안 AI 사업입니다.</p></div></div>
 <div class="service service-2">
 <div class="label service-badge">공통기반</div>
-
-
 <div class="service-body"><h3>AI 통합 플랫폼 · ON AI</h3><p>조직 전반의 AI 활용을 위한 공통기반 구축과 행정지원 AI 도입을 함께 추진합니다.</p></div></div>
 <div class="service service-3">
 <div class="label service-badge">수사 지원</div>
-
-
 <div class="service-body"><h3>KICS AI · 수사지원 AI</h3><p>OCR, 음성인식, 조서 작성 보조, 분석지원 등 수사업무 고도화를 위한 기능을 추진합니다.</p></div></div>
 <div class="service service-4">
 <div class="label service-badge">조직 확산</div>
-
-
 <div class="service-body"><h3>교육 · 담당관 · 지역거점</h3><p>AI 담당관 운영, 지역거점 구축, 교육과 리터러시 확산으로 조직의 체질 전환을 지원합니다.</p></div></div></div>
 </section>
-<section class="section" id="perspectives"><div class="section-heading-row"><div><h2 class="section-title">위원회에서 볼 관점</h2><div class="section-sub">치안 AI 추진현황을 볼 때 함께 살펴볼 핵심 관점입니다.</div></div></div><figure class="perspective-figure"><img alt="위원회에서 볼 관점 인포그래픽: 국민·현장 체감성, 안전성·신뢰성, 전주기 관리·확산의 세 가지 핵심 관점을 삼각형 구도로 정리한 이미지" src="POLICE-AI_위원회관점_인포그래픽.png"/></figure></section>
 <section class="section" id="news">
 <div class="section-heading-row">
 <div>
@@ -741,8 +808,36 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 <label class="domain-sheet-bottom-close" for="domain-toggle-6" role="button" tabindex="0">닫기</label>
 </div>
 </section>
+<label aria-label="페이지 소개 닫기" class="intro-backdrop" for="home-intro-toggle" id="homeIntroBackdrop"></label>
+<section aria-hidden="true" aria-labelledby="homeIntroTitle" aria-modal="true" class="intro-dialog" id="homeIntroDialog" role="dialog">
+<div class="intro-dialog-head">
+<div>
+<div class="intro-eyebrow">페이지 소개</div>
+<h2 id="homeIntroTitle">치안 AI 추진현황 브리핑</h2>
+</div>
+<label aria-label="페이지 소개 닫기" class="intro-close-icon" for="home-intro-toggle" id="homeIntroCloseIcon" role="button" tabindex="0">×</label>
+</div>
+<div class="intro-dialog-body">
+<p>본 페이지는 경찰청의 주요 인공지능 정책과 사업 추진현황을 경찰청 인공지능 및 데이터 기반 행정 위원회 위원들과 공유하기 위한 브리핑 페이지입니다.</p>
+<p>경찰청이 추진 중인 치안 AI 업무를 <strong>6대 영역</strong>으로 구분하여 주요 내용을 한눈에 확인할 수 있도록 정리하였으며, 각 영역을 선택하면 세부 추진내용을 확인할 수 있습니다.</p>
+<p>아울러 <strong>주요 치안 AI 사업과 관련 언론보도</strong>를 함께 제공하여 경찰청의 AI 정책 추진 흐름과 주요 현황을 종합적으로 살펴볼 수 있도록 구성했습니다.</p>
+<div class="intro-contents">
+<h3>주요 구성</h3>
+<ul>
+<li>AI 정책·거버넌스</li>
+<li>AI 사업·예산 관리</li>
+<li>AI 윤리·투명성·신뢰성</li>
+<li>고영향 AI 관리</li>
+<li>AI 영향평가</li>
+<li>AI 역량 강화</li>
+</ul>
+</div>
+<p class="intro-guide">각 항목의 <strong>‘상세 보기’</strong>를 누르면 세부 추진현황을 확인할 수 있습니다.</p>
+<label class="intro-confirm" for="home-intro-toggle" id="homeIntroConfirm" role="button" tabindex="0">확인</label>
+</div>
+</section>
 <nav aria-label="주요 메뉴" class="bottom-nav">
-<a class="active" data-nav="home" href="#home"><span class="bottom-icon">⌂</span><span class="bottom-label">홈</span></a>
+<label aria-controls="homeIntroDialog" aria-expanded="false" aria-label="페이지 소개 열기" class="home-nav-button" data-nav="intro" for="home-intro-toggle" id="homeIntroButton" role="button" tabindex="0"><span class="bottom-icon">ⓘ</span><span class="bottom-label">소개</span></label>
 <a data-nav="domains" href="#domains"><span class="bottom-icon">▦</span><span class="bottom-label">6대 영역</span></a>
 <a data-nav="services" href="#services"><span class="bottom-icon">◇</span><span class="bottom-label">주요 사업</span></a>
 <a data-nav="news" href="#news"><span class="bottom-icon">≡</span><span class="bottom-label">언론보도</span></a>
@@ -777,7 +872,15 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
   });
 
   document.addEventListener('keydown', event => {
-    if(event.key === 'Escape' && toggles.some(t => t.checked)){
+    if(event.key !== 'Escape') return;
+
+    if(homeIntroToggle && homeIntroToggle.checked){
+      homeIntroToggle.checked = false;
+      syncHomeIntroState();
+      return;
+    }
+
+    if(toggles.some(t => t.checked)){
       toggles.forEach(t => { t.checked = false; });
       syncSheetState();
     }
@@ -800,10 +903,48 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
     toggleBackToTop();
   }
 
-  const navLinks = Array.from(document.querySelectorAll('.bottom-nav a'));
-  const navSections = ['home','domains','services','news'].map(id => document.getElementById(id)).filter(Boolean);
+
+  const homeIntroToggle = document.getElementById('home-intro-toggle');
+  const homeIntroButton = document.getElementById('homeIntroButton');
+  const homeIntroDialog = document.getElementById('homeIntroDialog');
+
+  function syncHomeIntroState(){
+    const open = !!homeIntroToggle.checked;
+    document.body.classList.toggle('intro-open', open);
+    homeIntroDialog.setAttribute('aria-hidden', open ? 'false' : 'true');
+    homeIntroButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+    homeIntroButton.setAttribute('aria-label', open ? '페이지 소개 닫기' : '페이지 소개 열기');
+  }
+
+  homeIntroToggle.addEventListener('change', () => {
+    if(homeIntroToggle.checked){
+      toggles.forEach(t => { t.checked = false; });
+      syncSheetState();
+    }
+    syncHomeIntroState();
+  });
+
+  document.querySelectorAll('#homeIntroButton,#homeIntroCloseIcon,#homeIntroConfirm').forEach(control => {
+    control.addEventListener('keydown', event => {
+      if(event.key === 'Enter' || event.key === ' '){
+        event.preventDefault();
+        control.click();
+      }
+    });
+  });
+
+  const navLinks = Array.from(document.querySelectorAll('.bottom-nav a,.bottom-nav .home-nav-button'));
+  const navClickFeedback = Array.from(document.querySelectorAll('.bottom-nav a'));
+  navClickFeedback.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(item => item.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  const navSections = ['domains','services','news'].map(id => document.getElementById(id)).filter(Boolean);
   function updateBottomNav(){
-    let current='home';
+    let current='domains';
     const y=window.scrollY+150;
     navSections.forEach(section => { if(section.offsetTop <= y) current=section.id; });
     navLinks.forEach(link => link.classList.toggle('active', link.dataset.nav === current));
@@ -811,6 +952,7 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
   window.addEventListener('scroll', updateBottomNav, {passive:true});
   updateBottomNav();
   syncSheetState();
+  syncHomeIntroState();
 })();
 </script>
 </body>
