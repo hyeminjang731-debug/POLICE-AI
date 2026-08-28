@@ -845,6 +845,29 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
 <button aria-label="페이지 맨 위로 이동" class="back-to-top" id="backToTop" type="button">↑</button>
 <script>
 (function(){
+  // 외부 링크(카카오톡 등)로 처음 진입할 때 이전 스크롤 위치나 해시를 복원하지 않고
+  // 항상 메인 화면 맨 위에서 시작하도록 설정합니다.
+  if('scrollRestoration' in history){
+    history.scrollRestoration = 'manual';
+  }
+
+  function resetInitialView(){
+    if(location.hash){
+      history.replaceState(null, document.title, location.pathname + location.search);
+    }
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+
+  resetInitialView();
+  window.addEventListener('load', () => {
+    window.requestAnimationFrame(resetInitialView);
+  }, {once:true});
+  window.addEventListener('pageshow', () => {
+    window.requestAnimationFrame(resetInitialView);
+  }, {once:true});
+
   const toggles = Array.from(document.querySelectorAll('.domain-toggle'));
   const domainCards = Array.from(document.querySelectorAll('.domain-card'));
   const sheets = Array.from(document.querySelectorAll('.domain-sheet'));
