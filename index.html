@@ -850,6 +850,16 @@ button,input{font:inherit}
   }
 }
 
+
+/* 직접 등록형 언론보도 */
+#news .news-section-status{
+  gap:8px;
+  flex-wrap:wrap;
+}
+#news .news-auto-note strong{
+  color:var(--navy);
+}
+
 </style>
 </head>
 <body>
@@ -1242,39 +1252,18 @@ button,input{font:inherit}
     <div class="section-head">
       <div>
         <div class="section-title">언론 보도 · 관련 뉴스</div>
-        <div class="section-sub">치안 AI 관련 최신 기사를 자동 수집해 보여줍니다.</div>
+        <div class="section-sub">치안 AI 관련 주요 언론 보도를 한눈에 확인할 수 있습니다.</div>
         <div class="news-section-status">
-          <span class="live-dot" aria-hidden="true"></span>
-          <span>자동 업데이트 · 30분 간격</span>
-          <span id="newsUpdated">최근 수집 시각 확인 중</span>
+          <span class="news-topic">언론 보도</span>
+          <span id="newsUpdated">등록 자료 불러오는 중</span>
         </div>
       </div>
-      <button class="news-refresh" id="newsRefresh" type="button">새로고침</button>
     </div>
     <div class="news-grid" id="newsGrid" aria-live="polite">
-
-      <article class="news">
-        <div class="news-top"><span class="news-outlet">연합뉴스</span><span class="news-topic">모두의 경찰관</span><span class="news-date">2026. 6. 18.</span></div>
-        <h3>한해 경찰 민원 3억7천만건…AI챗봇 ‘모두의경찰관’ 개발 착수</h3>
-        <p>자동 뉴스 데이터가 로드되기 전 표시되는 기본 기사입니다.</p>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.yna.co.kr/view/AKR20260618030900004">기사 보기 ↗</a>
-      </article>
-      <article class="news">
-        <div class="news-top"><span class="news-outlet">뉴스1</span><span class="news-topic">치안 AI</span><span class="news-date">2026. 5. 2.</span></div>
-        <h3>AI가 신종 마약 잡고 조서 작성까지 돕는다…경찰, AI로 치안 혁신</h3>
-        <p>자동 뉴스 데이터가 로드되기 전 표시되는 기본 기사입니다.</p>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.news1.kr/society/general-society/6154382">기사 보기 ↗</a>
-      </article>
-      <article class="news">
-        <div class="news-top"><span class="news-outlet">연합뉴스</span><span class="news-topic">수사지원 AI</span><span class="news-date">2026. 6. 8.</span></div>
-        <h3>경찰, 자체 AI시스템 업그레이드에 전문가 7명 자문단 위촉</h3>
-        <p>자동 뉴스 데이터가 로드되기 전 표시되는 기본 기사입니다.</p>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.yna.co.kr/view/AKR20260607041900004">기사 보기 ↗</a>
-      </article>
-
+      <div class="news-empty">등록된 언론 보도를 불러오는 중입니다.</div>
     </div>
     <div class="news-auto-note">
-      GitHub Pages 배포 후 GitHub Actions가 Google 뉴스 RSS에서 ‘치안 AI’, ‘모두의 경찰관’, ‘수사지원 AI’, ‘KICS AI’, ‘차세대 112 AI’ 관련 기사를 주기적으로 수집합니다. 같은 기사나 유사 제목은 자동으로 중복 제거합니다.
+      치안 AI 관련 언론 보도 자료를 모아 제공합니다.
     </div>
   </section>
 
@@ -1329,7 +1318,6 @@ button,input{font:inherit}
 
   const newsGrid = document.getElementById('newsGrid');
   const newsUpdated = document.getElementById('newsUpdated');
-  const newsRefresh = document.getElementById('newsRefresh');
 
   function formatDate(value){
     if(!value) return '';
@@ -1363,7 +1351,7 @@ button,input{font:inherit}
     title.textContent = item.title || '제목 없음';
 
     const summary = document.createElement('p');
-    summary.textContent = item.summary || '치안 AI 관련 최신 기사입니다.';
+    summary.textContent = item.summary || '';
 
     const link = document.createElement('a');
     link.target = '_blank';
@@ -1371,51 +1359,46 @@ button,input{font:inherit}
     link.href = item.link || '#';
     link.textContent = '기사 보기 ↗';
 
-    article.append(top, title, summary, link);
+    article.append(top, title);
+    if(item.summary) article.append(summary);
+    article.append(link);
     return article;
   }
 
   async function loadNews(){
     if(!newsGrid) return;
-    if(newsRefresh){
-      newsRefresh.disabled = true;
-      newsRefresh.textContent = '불러오는 중';
-    }
 
     try{
       const response = await fetch(`data/news.json?t=${Date.now()}`, {cache:'no-store'});
       if(!response.ok) throw new Error(`HTTP ${response.status}`);
+
       const data = await response.json();
       const items = Array.isArray(data.items) ? data.items : [];
 
       if(items.length){
-        newsGrid.replaceChildren(...items.slice(0, 12).map(makeNewsCard));
+        newsGrid.replaceChildren(...items.map(makeNewsCard));
+      }else{
+        const empty = document.createElement('div');
+        empty.className = 'news-empty';
+        empty.textContent = '등록된 언론 보도가 없습니다.';
+        newsGrid.replaceChildren(empty);
       }
 
-      if(newsUpdated && data.generated_at){
-        const dt = new Date(data.generated_at);
-        newsUpdated.textContent = Number.isNaN(dt.getTime())
-          ? '최근 수집 완료'
-          : `최근 수집 ${dt.toLocaleString('ko-KR')}`;
-      }else if(newsUpdated){
-        newsUpdated.textContent = '최근 수집 완료';
+      if(newsUpdated){
+        newsUpdated.textContent = data.updated_at
+          ? `최근 등록·수정 ${formatDate(data.updated_at)}`
+          : `등록 기사 ${items.length}건`;
       }
     }catch(err){
-      if(newsUpdated){
-        newsUpdated.textContent = '기본 기사 표시 중';
-      }
-      console.warn('자동 뉴스 데이터를 불러오지 못했습니다.', err);
-    }finally{
-      if(newsRefresh){
-        newsRefresh.disabled = false;
-        newsRefresh.textContent = '새로고침';
-      }
+      if(newsUpdated) newsUpdated.textContent = '등록 자료 확인 필요';
+      const empty = document.createElement('div');
+      empty.className = 'news-empty';
+      empty.textContent = '언론 보도 자료를 불러오지 못했습니다.';
+      newsGrid.replaceChildren(empty);
+      console.warn('직접 등록 뉴스 데이터를 불러오지 못했습니다.', err);
     }
   }
 
-  if(newsRefresh){
-    newsRefresh.addEventListener('click', loadNews);
-  }
   loadNews();
 
   const backToTop = document.getElementById('backToTop');
