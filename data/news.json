@@ -1,149 +1,53 @@
 {
-  "generated_at": "2026-08-27T23:54:32.447022+00:00",
-  "filter_version": "strict-police-ai-v3-diverse",
-  "selection_policy": {
-    "exclude_maritime_police": true,
-    "event_deduplication": true,
-    "max_per_source": 3,
-    "max_per_topic": 4,
-    "max_total": 18
-  },
+  "updated_at": "2026-08-28",
   "items": [
     {
-      "title": "경찰 민원 처리를 AI로…'모두의 경찰관' 자문단 출범 - 머니투데이",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ybXZJRXA2al9GMVE0VWZia2QxX0xycTlRaERiemd3c0pmcURoTy12S2dOMWJnYnBJMmpwYmhrQWVXWGVPNFVOV2t4eDR4bUZKaHJJWHUzdXJERVBubzIwMmQzOUJUdGlEVkVj0gFwQVVfeXFMTXJKTHRqQkh4MnJhWmxSMWltbGVJTm11MVotZVNqSWxXcUMzNXNvYVV1MlN2QWFydUF2aUViT3c2cEJmTkRxa29yaEV3Smp2dGppdHhUVUM4Qkp6YzdpYTdvZllCb0loUGlrNDZYX1ZDRQ?oc=5",
-      "source": "머니투데이",
-      "topic": "모두의 경찰관",
-      "published": "2026-06-18",
-      "summary": "경찰민원 AI 에이전트 「모두의 경찰관」 추진과 관련된 최신 보도입니다."
+      "source": "ZDNet Korea",
+      "topic": "교육·확산",
+      "published": "2026-08-25",
+      "title": "포티투마루, 경찰 행정 '에이전틱 AI' 접목 방안 제시",
+      "summary": "경남경찰청 직원 대상 특강에서 에이전틱 AI를 활용한 경찰 행정 혁신과 'AI 네이티브 경찰청' 전환 방향을 제시한 보도입니다.",
+      "link": "https://zdnet.co.kr/view/?no=20260825142846"
     },
     {
-      "title": "AI가 신종 마약 잡고 조서 작성까지 돕는다…경찰, AI로 치안 혁신",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1UdmY4VjBTdWw0RjNnclVuSE5nQjhBa216cGVkTG4yTGxqRnlzSDlaVDF3RktVV1Y2NWdDZnRIS2tLZWtIT2Fxd2tzZ01zVDZ2VHdSWVBJODNsOTB3d1JydXVkMnTSAWpBVV95cUxQN3dXVF9ROVBqOVVtMW0xbDhDQUxlSTdKTnhzSTZaSWpFTlBBVXlzd184MnN5ZXI0TkZYdUJPNE9yaXdldmVpZ1BmakJIdDZ6ZHlyZkhXNXloZHZLWmczZTBSaDZGbkJtc2Z3?oc=5",
-      "source": "뉴스1",
-      "topic": "수사지원 AI",
-      "published": "2026-05-02",
-      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
-    },
-    {
-      "title": "경찰청, 치안 AI 신뢰성 기준 만든다…씽크포비엘과 협력",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBCdUR4SUJZTG1PaXF1LUdzYUQwM2dmYi1zeXJTNkpzVndjQk85Z1NqMGw0YTZJWDZ6RXJpTzRQT2V2NHRkbTJCdmZUa2ljRXpGMS0xVm9hREg0V01pQy1BYVBOZmRFUnMtelBqaW4xZVdIeWPSAXdBVV95cUxQMlFudFhiOHJDSmowLU1haUk0Z2JqTF8wWEczYklKaU15SGhUNjdudEVjMDZGTDhQN1RuTjNEcDl2NlRyQjFTZndMT09VUFpteVJ4N3J4ZXh2aUh3MTd0QzR3SkthNzdxbzduemlfTEk5U2o3ZGVTYw?oc=5",
       "source": "스트레이트뉴스",
       "topic": "고영향·위험관리",
-      "published": "2026-07-10",
-      "summary": "치안 AI의 고영향 판단, 영향평가, 위험관리·신뢰성 확보와 관련된 최신 보도입니다."
+      "published": "2026-07-09",
+      "title": "경찰청-씽크포비엘, 치안 AI 신뢰성 기준 수립 공동 협력",
+      "summary": "경찰청의 AI 영향평가 및 위험관리방안 수립 정책연구와 치안 분야 AI 신뢰성 확보를 위한 협력 착수를 다룬 보도입니다.",
+      "link": "https://www.straightnews.co.kr/news/articleView.html?idxno=306846"
     },
     {
-      "title": "국민대-경찰청, ‘2026 치안 AI·데이터 분석 전문가 양성 과정’ 입과식 개최",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE52M3dmY2daMGJvS1E0WnByYWxCcnR0b3B0RmN0OWR3R2hnbHdfVmQtdmw0bmtCNzcxWk8wZXdFbTF0VkFJcEtXR05BZmMzZFU3S1psWTZR?oc=5",
-      "source": "중앙일보",
-      "topic": "AI 정책·거버넌스",
-      "published": "2026-07-06",
-      "summary": "경찰청의 치안 AI 정책·거버넌스 및 주요 사업 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "울주선바위도서관, AI·디지털 리터러시 랩 ‘선바위-싹’ 운영:경찰연합신문",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1XQlNsTWZCQ1pzbWRrVV9BUno1RFpOUUFZdlZJTEZNRlhabjhLRlNRM1puRjE1cUhMTFY4cnVDUk01QzZJLS1IdFZNenNNY1nSAWxBVV95cUxPeUlkbTF3V2Q1NThFQnZmUXlPaHNueTFFcDR0NU5NeHo4ekRFUFJvOTRfNjhSS2xzdmpsSktVT0sxRWQ0bWJUb2lJQ0NGdzJLTkhVTTZMbGdkUVFsNjVkSzZ5ZG1Bb1l0VGhtcHM?oc=5",
-      "source": "경찰연합신문",
-      "topic": "교육·확산",
-      "published": "2026-08-26",
-      "summary": "경찰 조직의 AI 교육·리터러시·지역확산과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "충북보과대, 충주경찰서와 ‘AI 신종범죄’ 대응력 높인다",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9lcUFpWlltb0ZlazFaWDRwbHJCbFJGY1A5cmZmdl9KRnVPcmRxUkFSVmJfQ2FpaEJpWTVyWlBzQmhmdW4zTzBYWWV4RDhCa0U4UUJLN0ViY2MwYUcyLWpHTlVNSXBmVzVsYTdPY1I3ZHBsQdIBckFVX3lxTE9lcUFpWlltb0ZlazFaWDRwbHJCbFJGY1A5cmZmdl9KRnVPcmRxUkFSVmJfQ2FpaEJpWTVyWlBzQmhmdW4zTzBYWWV4RDhCa0U4UUJLN0ViY2MwYUcyLWpHTlVNSXBmVzVsYTdPY1I3ZHBsQQ?oc=5",
-      "source": "충청리뷰",
-      "topic": "기타 치안 AI",
-      "published": "2026-08-27",
-      "summary": "경찰청 치안 AI와 직접 관련된 최신 보도입니다."
-    },
-    {
-      "title": "3.7억건 경찰 민원, AI가 돕는다…'모두의 경찰관' 자문단 발대식",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBCZGQ5MmJaQno0cXdSSE82SXpZMXNueFVQdW9JaDVlSEdHNGFjXzZWSEQwdmF3VnhCR2p4R1BuQV9TV3FJTEs5QTF6dWZUcDdzeEVTd3oxd1VQcFpkVjVyRGZsZ2bSAWpBVV95cUxQYU9EamNUdkphbWtRMjhDaHRPTEkxeXZoS3dyNUE3MkEwTzVKU3U2R0x6cjk0WjdBZnc3akhEWTNDaGp1S2ZaWW9rVFBnVnNDNlVSUzh3WlFjREw0bHpsYTJsMVdYSFpKaGh3?oc=5",
       "source": "뉴스1",
-      "topic": "모두의 경찰관",
-      "published": "2026-06-18",
-      "summary": "경찰민원 AI 에이전트 「모두의 경찰관」 추진과 관련된 최신 보도입니다."
+      "topic": "AI 정책·거버넌스",
+      "published": "2026-05-02",
+      "title": "AI가 신종 마약 잡고 조서 작성까지 돕는다…경찰, AI로 치안 혁신",
+      "summary": "치안 AI 혁신 종합계획을 중심으로 수사지원 AI, 신종 마약 탐지, AI 통합 플랫폼 등 경찰청의 주요 AI 추진사업을 종합적으로 소개한 보도입니다.",
+      "link": "https://www.news1.kr/society/incident-accident/6154382"
     },
     {
-      "title": "한 해 300만건 이상 사건 몰리는 경찰···46억 투입해 수사지원 AI 고도화",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1YNU02blJab0tKT3JGdS0wZGFQSkN1N0Y2bHI5ellNSVdFektBLUFQWmJlUFdLazVXTm9ZMU0xN3lIamphd0NkZkppT0VHRjBjajJyY0JxbWcwZ9IBX0FVX3lxTE5nZzBSNmpfMXNwdzNQZGo4clh3ZWdDUmQ2dVdPeGxscWtNQkVfWkFTMFhVTDhVZGpBSGNqMVpjb1EzeGJKYW5iOW1fZ0NKWjJmLXNnVHBSVDU2QTR2dVNB?oc=5",
+      "source": "뉴스프리존",
+      "topic": "교육·확산",
+      "published": "2026-07-07",
+      "title": "국민대-경찰청, ‘치안 AI·데이터 분석 전문가 양성 과정’ 입과식",
+      "summary": "경찰청과 국민대가 공동 운영하는 치안 AI·데이터 분석 전문가 양성 과정의 운영 내용과 현장 문제 해결형 교육 방향을 소개한 보도입니다.",
+      "link": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=698147"
+    },
+    {
       "source": "경향신문",
       "topic": "수사지원 AI",
       "published": "2026-04-12",
-      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
+      "title": "한 해 300만건 이상 사건 몰리는 경찰···46억 투입해 수사지원 AI 고도화",
+      "summary": "KICS 연계 수사지원 AI에 수사결과통지서 초안, 조사 질문 추천, 비정형 자료 인식·요약, 신종 범죄 탐지 등을 추가하는 고도화 사업을 다룬 보도입니다.",
+      "link": "https://www.khan.co.kr/article/202604121135001"
     },
     {
-      "title": "산재한 경찰 AI사업 한곳서 관리한다…첫 운영훈령 시행",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5GNWU4YThWeWNRSWNhRFV1ZWwzMm5sMmJkQ0JkejdrTl81VnpBdU9fS2toRjdXaGs1MnZVQlY4b09qakI3TFRzdnUxdkNHMDNMZ3o3eFJ1M0IzYmppR1FabdIBeEFVX3lxTFB2QThvZ1JWVjg5NEZuVUlXU2VHb2s1ZXpsTUFGbzVsa0N2OENpUTFwY3h2WlN4bUlJTmotLTRUaEJRNlQyd2dTMWFoTk9BZXhFRm1QWGg3Y0ZsVkk3SUp5Sk5TTkF6aHhDWGQ1Ny1XWDlWdzRtSU1BUA?oc=5",
       "source": "뉴시스",
       "topic": "AI 정책·거버넌스",
       "published": "2026-07-05",
-      "summary": "경찰청의 치안 AI 정책·거버넌스 및 주요 사업 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "포티투마루, 경남경찰청서 ‘AI 네이티브 경찰’ 전환 전략 공유",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xdWtIaDNzYTNTQ1A5blcwWm90RlhGUHZyT1ZGSlNfTjZxemJ5dXBjZFNrYW53aEVZU0RPYmlxVlAzcWRsaDhsMmlTZjBHY2RzVDVzUG1vNTRvMDRibWxEVE45aTBDQ0tE?oc=5",
-      "source": "테크월드",
-      "topic": "기타 치안 AI",
-      "published": "2026-08-25",
-      "summary": "경찰청 치안 AI와 직접 관련된 최신 보도입니다."
-    },
-    {
-      "title": "경찰 민원도 AI가 처리한다…‘모두의 경찰관’ 개발 본격화",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1FVFAycE9JQUhPTXJiRGdlcTRjc3lWVkhlX0RaNWhwQXFpYXgxZUxpaFJOWDNnUXJzU0hsUnZydFFMY0c4dmZxYXNZd29GLVZU?oc=5",
-      "source": "문화일보",
-      "topic": "모두의 경찰관",
-      "published": "2026-06-18",
-      "summary": "경찰민원 AI 에이전트 「모두의 경찰관」 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "경찰 수사 AI 시대? 그 기대와 한계 사이",
-      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5UNFdUM2g3VlFka0RJazRUenc1S0R5TGZFM1NQNTBDcndRcE5haF9SQ0J5ZllYM2VyV0N3R1lfYzh5V3J1RTlnRg?oc=5",
-      "source": "주간현대",
-      "topic": "수사지원 AI",
-      "published": "2026-03-27",
-      "summary": "경찰 수사업무를 지원하는 AI 기능·시스템 고도화와 관련된 최신 보도입니다."
-    },
-    {
-      "title": "제주자치경찰위원회, 현장 치안 AI 순찰체계 점검",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1hR1plQWdrUVlhTlJHcWlFSmdDMTc5NGlqUmJJZENpWUZ4d2Ffd09hX1Q2Zk9nQklGLUFlVEJYcHVtSEg5OGhCbnRCR1g3c1c1R0N5MG5RWXRBQ1h0T2hBaVgwT2d6UXppbExtYg?oc=5",
-      "source": "뉴스N제주",
-      "topic": "AI 정책·거버넌스",
-      "published": "2026-06-20",
-      "summary": "경찰청의 치안 AI 정책·거버넌스 및 주요 사업 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "행정안전부, 국민이 주인 되는 정부, AI로 만든다 'AI 민주정부' 실현 본격 추진:경찰연합신문",
-      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qNWtsNlJ4Y2JDdG1tS2t5azBDMVZCTGZhYU96TjF6ZlJqc0g3b3hpekFxXzFpMDZIN2tRX0RpOGVpQzlOTWZGYlFlUC1FZDEwckx4Q0xQSjZiVUZT0gFsQVVfeXFMUGxhbDgzWlJOY0haUVZIUENVd0RqMWtLN1Z4Wk10ZmFfU0VacXctbjBZdmxGc3cxb3R1QTV1eHc0QkJya19lcWRsY2hzZG5GcDNOSVZsT2h4eW5oS0U1ekxaZEFCXzR2Qm5IX0h4?oc=5",
-      "source": "경찰연합신문",
-      "topic": "기타 치안 AI",
-      "published": "2026-08-25",
-      "summary": "경찰청 치안 AI와 직접 관련된 최신 보도입니다."
-    },
-    {
-      "title": "한해 경찰 민원 3억7천만건…AI챗봇 '모두의경찰관' 개발 착수",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE51RUFoYzRBMGJ1TXBjQ1lvbDNDcl9taW5fZTVOc2p4bEllYW4wRnFyR3hGeHZUT2hzdklIekNDVk9xUWlhYmZrUGtyYUUwc1FfdmVpU0pZajNnYzTSAWBBVV95cUxQOG1HTlBEWFd4ZV9YcEhyZGhjdkVJR0FZaE1pTVIwZWxxaGlGVlpZOUFmbzRzOHpPVnBHQjlJUWd1Y0Y3VTZucmtBOVhORVJvbThXWG1fMkpMaGxRVHdLelc?oc=5",
-      "source": "연합뉴스",
-      "topic": "모두의 경찰관",
-      "published": "2026-06-18",
-      "summary": "경찰민원 AI 에이전트 「모두의 경찰관」 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "경찰청 AI·데이터 민간위원에 포티투마루 대표 등 7명 위촉",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5KZmhJYmozWjE1Nm1GNjVvSzBRbzc3QUlndHFUMU9yUVhGcWxCaDZ4RFR4cWhOajNaS0ZHR2dTNmVucXlVRGtQX0ZscjA3dw?oc=5",
-      "source": "전자신문",
-      "topic": "AI 정책·거버넌스",
-      "published": "2026-04-21",
-      "summary": "경찰청의 치안 AI 정책·거버넌스 및 주요 사업 추진과 관련된 최신 보도입니다."
-    },
-    {
-      "title": "김동환 포티투마루 대표, 경남경찰청서 에이전틱 AI 활용 제안",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5MMFZON3VCODJhanFZZmpnVmxLY2Zta1FzZXRUQmNOaGlsb1FEMER0QXVMTWR1VllNajlUamdseElOOGlJa0Zjc1VVU0lJQQ?oc=5",
-      "source": "전자신문",
-      "topic": "기타 치안 AI",
-      "published": "2026-08-25",
-      "summary": "경찰청 치안 AI와 직접 관련된 최신 보도입니다."
+      "title": "산재한 경찰 AI사업 한곳서 관리한다…첫 운영훈령 시행",
+      "summary": "「경찰청 인공지능의 개발 및 활용에 관한 규칙」 시행을 계기로 AI 사업의 기획·예산·개발·운영·사후관리와 영향평가·위험관리 체계를 통합 관리하는 내용을 다룬 보도입니다.",
+      "link": "https://www.newsis.com/view/NISX20260703_0003695216"
     }
   ]
 }
