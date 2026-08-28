@@ -580,6 +580,276 @@ button,input{font:inherit}
   }
 }
 
+
+/* 모바일 큰 글씨 모드 - 위원회 카카오톡 공유용 */
+@media(max-width:760px){
+  html{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+
+  body{
+    font-size:18px !important;
+    line-height:1.72 !important;
+  }
+
+  .header-in{
+    min-height:76px !important;
+    padding:12px 14px !important;
+  }
+  .logo{
+    width:44px !important;
+    height:44px !important;
+    flex:0 0 44px !important;
+    font-size:12px !important;
+  }
+  .brand-name{
+    font-size:19px !important;
+    line-height:1.3 !important;
+  }
+  .brand-sub{
+    font-size:14.5px !important;
+    line-height:1.45 !important;
+  }
+
+  .main{
+    padding:16px 12px 54px !important;
+  }
+  .hero{
+    padding:12px !important;
+  }
+  .hero-main{
+    padding:22px 18px !important;
+  }
+  .eyebrow{
+    font-size:14px !important;
+    padding:7px 11px !important;
+  }
+  .hero h1{
+    font-size:32px !important;
+    line-height:1.3 !important;
+    letter-spacing:-0.03em !important;
+    margin:15px 0 13px !important;
+  }
+  .hero p{
+    font-size:17.5px !important;
+    line-height:1.72 !important;
+  }
+
+  .highlight{
+    grid-template-columns:38px 1fr !important;
+    gap:12px !important;
+    padding:14px !important;
+  }
+  .highlight .num{
+    width:38px !important;
+    height:38px !important;
+    font-size:13px !important;
+  }
+  .highlight strong{
+    font-size:17px !important;
+    line-height:1.48 !important;
+  }
+  .highlight span{
+    font-size:15.5px !important;
+    line-height:1.58 !important;
+  }
+
+  .quick-card{
+    padding:20px !important;
+  }
+  .quick-card .meta{
+    font-size:13.5px !important;
+  }
+  .quick-card strong{
+    font-size:19px !important;
+    line-height:1.45 !important;
+  }
+  .quick-card p{
+    font-size:16.5px !important;
+    line-height:1.68 !important;
+  }
+  .quick-link{
+    font-size:15.5px !important;
+    min-height:42px !important;
+  }
+
+  .jump-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
+  .jump-grid a{
+    padding:15px 10px !important;
+    font-size:14.5px !important;
+    line-height:1.48 !important;
+  }
+  .jump-grid a strong{
+    font-size:16.5px !important;
+  }
+
+  .section{
+    margin-top:34px !important;
+    scroll-margin-top:96px !important;
+  }
+  .section-title{
+    font-size:26px !important;
+    line-height:1.36 !important;
+    letter-spacing:-0.02em !important;
+  }
+  .section-sub{
+    font-size:16px !important;
+    line-height:1.62 !important;
+  }
+
+  .kpi,
+  .overview-card,
+  .section-card,
+  .service,
+  .news,
+  .panel-summary,
+  .panel-status,
+  .detail-card{
+    padding:19px !important;
+  }
+  .kpi-label{
+    font-size:14.5px !important;
+  }
+  .kpi-num{
+    font-size:36px !important;
+  }
+  .kpi-note{
+    font-size:14.5px !important;
+  }
+
+  .overview-card strong{
+    font-size:18px !important;
+    line-height:1.48 !important;
+  }
+  .overview-card p{
+    font-size:16.5px !important;
+    line-height:1.68 !important;
+  }
+
+  .tabs-wrap{
+    padding:12px !important;
+  }
+  .tab-btn{
+    min-height:126px !important;
+    padding:20px 18px !important;
+  }
+  .tab-btn .kicker{
+    font-size:13.5px !important;
+  }
+  .tab-btn strong{
+    font-size:20px !important;
+    line-height:1.42 !important;
+    margin-top:6px !important;
+  }
+  .tab-btn span{
+    font-size:16px !important;
+    line-height:1.62 !important;
+    margin-top:7px !important;
+  }
+
+  .tab-panel{
+    scroll-margin-top:98px !important;
+  }
+  .panel-summary h3,
+  .panel-status h3{
+    font-size:21px !important;
+    line-height:1.45 !important;
+  }
+  .panel-summary p{
+    font-size:16.5px !important;
+    line-height:1.72 !important;
+  }
+  .status-pill{
+    font-size:13.5px !important;
+    padding:7px 11px !important;
+  }
+  .status-list{
+    padding-left:21px !important;
+  }
+  .status-list li{
+    font-size:16.5px !important;
+    line-height:1.7 !important;
+    margin:8px 0 !important;
+  }
+
+  .detail-card .label{
+    font-size:13.5px !important;
+  }
+  .detail-card h4{
+    font-size:19px !important;
+    line-height:1.48 !important;
+  }
+  .detail-card p,
+  .detail-card li{
+    font-size:16.5px !important;
+    line-height:1.7 !important;
+  }
+  .detail-card ul{
+    padding-left:21px !important;
+  }
+
+  .service .label{
+    font-size:13.5px !important;
+  }
+  .service h3{
+    font-size:20px !important;
+    line-height:1.48 !important;
+  }
+  .service p{
+    font-size:16.5px !important;
+    line-height:1.7 !important;
+  }
+
+  .news-section-status{
+    font-size:14.5px !important;
+    line-height:1.55 !important;
+  }
+  .news-refresh{
+    min-height:44px !important;
+    padding:0 15px !important;
+    font-size:14px !important;
+  }
+  .news-auto-note,
+  .news-empty{
+    font-size:15px !important;
+    line-height:1.65 !important;
+  }
+  .news-outlet,
+  .news-topic,
+  .news-date{
+    font-size:13.5px !important;
+  }
+  .news h3{
+    font-size:19px !important;
+    line-height:1.52 !important;
+    margin:12px 0 9px !important;
+  }
+  .news p{
+    font-size:16.5px !important;
+    line-height:1.7 !important;
+    margin-bottom:17px !important;
+  }
+  .news a{
+    min-height:48px !important;
+    font-size:15px !important;
+  }
+
+  .footer{
+    font-size:14px !important;
+    line-height:1.65 !important;
+  }
+
+  .back-to-top{
+    width:52px !important;
+    height:52px !important;
+    font-size:23px !important;
+  }
+}
+
 </style>
 </head>
 <body>
