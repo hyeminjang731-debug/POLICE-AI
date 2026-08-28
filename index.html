@@ -143,6 +143,7 @@ button,input{font:inherit}
 .tab-panels{margin-top:16px}
 .tab-panel{
   display:none; border-top:1px solid var(--line); padding-top:18px;
+  scroll-margin-top:88px;
 }
 .tab-panel.active{display:block}
 .panel-top{
@@ -255,6 +256,48 @@ button,input{font:inherit}
   .kpis,.domain-overview,.tab-buttons,.detail-grid,.service-grid,.news-grid{grid-template-columns:1fr}
   .section-title{font-size:19px}
 }
+
+.back-to-top{
+  position:fixed;
+  right:20px;
+  bottom:22px;
+  z-index:120;
+  width:46px;
+  height:46px;
+  border:1px solid #d6dee8;
+  border-radius:50%;
+  background:#fff;
+  color:var(--navy);
+  box-shadow:0 8px 20px rgba(12,34,58,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  font-weight:950;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .18s ease, transform .18s ease, visibility .18s ease, background .18s ease;
+}
+.back-to-top:hover{
+  background:#eef3f8;
+}
+.back-to-top.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+@media(max-width:760px){
+  .back-to-top{
+    right:14px;
+    bottom:16px;
+    width:42px;
+    height:42px;
+    font-size:18px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -694,14 +737,37 @@ button,input{font:inherit}
   const buttons = Array.from(document.querySelectorAll('.tab-btn'));
   const panels = Array.from(document.querySelectorAll('.tab-panel'));
 
-  function activateTab(id){
+  function activateTab(id, shouldScroll = true){
+    const targetPanel = panels.find(panel => panel.id === id);
+
     buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === id));
     panels.forEach(panel => panel.classList.toggle('active', panel.id === id));
+
+    if(targetPanel && shouldScroll){
+      // 패널이 표시된 다음 실제 위치를 계산해 부드럽게 이동
+      requestAnimationFrame(() => {
+        targetPanel.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+        // 선택한 영역을 URL에도 남겨 새로고침/공유 시 상태 유지
+        if(history.replaceState){
+          history.replaceState(null, '', `#${id}`);
+        }
+      });
+    }
   }
 
   buttons.forEach(btn => {
-    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab, true));
   });
+
+  // URL에 #tab1 ~ #tab6이 있으면 해당 영역을 처음부터 열어줌
+  const initialTab = location.hash.replace('#', '');
+  if(panels.some(panel => panel.id === initialTab)){
+    activateTab(initialTab, false);
+  }
 
   const newsGrid = document.getElementById('newsGrid');
   const newsUpdated = document.getElementById('newsUpdated');
@@ -793,7 +859,35 @@ button,input{font:inherit}
     newsRefresh.addEventListener('click', loadNews);
   }
   loadNews();
+
+  const backToTop = document.getElementById('backToTop');
+
+  function toggleBackToTop(){
+    if(!backToTop) return;
+    backToTop.classList.toggle('show', window.scrollY > 420);
+  }
+
+  if(backToTop){
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      if(history.replaceState){
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    });
+
+    window.addEventListener('scroll', toggleBackToTop, {passive:true});
+    toggleBackToTop();
+  }
 })();
 </script>
+
+<button id="backToTop" class="back-to-top" type="button" aria-label="페이지 맨 위로 이동" title="맨 위로">
+  ↑
+</button>
+
 </body>
 </html>
