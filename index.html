@@ -298,6 +298,288 @@ button,input{font:inherit}
   }
 }
 
+
+/* 모바일 가독성 강화 */
+@media(max-width:760px){
+  body{
+    font-size:16px;
+    line-height:1.68;
+  }
+
+  .header-in{
+    height:auto;
+    min-height:68px;
+    padding:9px 14px;
+  }
+  .brand{
+    min-width:0;
+    width:100%;
+  }
+  .logo{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+    font-size:11px;
+  }
+  .brand-name{
+    font-size:16px;
+    line-height:1.3;
+  }
+  .brand-sub{
+    font-size:12.5px;
+    line-height:1.4;
+    margin-top:2px;
+  }
+
+  .main{
+    padding:16px 14px 46px;
+  }
+  .hero{
+    padding:14px;
+    border-radius:18px;
+  }
+  .hero-main{
+    padding:20px 17px;
+  }
+  .eyebrow{
+    font-size:12px;
+    padding:6px 10px;
+  }
+  .hero h1{
+    font-size:27px;
+    line-height:1.3;
+    margin:13px 0 11px;
+  }
+  .hero p{
+    font-size:15px;
+    line-height:1.68;
+  }
+
+  .highlight{
+    grid-template-columns:32px 1fr;
+    gap:10px;
+    padding:12px;
+  }
+  .highlight .num{
+    width:32px;
+    height:32px;
+    font-size:12px;
+  }
+  .highlight strong{
+    font-size:14.5px;
+    line-height:1.5;
+  }
+  .highlight span{
+    font-size:12.5px;
+    line-height:1.5;
+    margin-top:3px;
+  }
+
+  .quick-card{
+    padding:17px;
+  }
+  .quick-card .meta{
+    font-size:11.5px;
+  }
+  .quick-card strong{
+    font-size:16px;
+    line-height:1.5;
+  }
+  .quick-card p{
+    font-size:14px;
+    line-height:1.62;
+  }
+  .quick-link{
+    font-size:13px;
+    min-height:36px;
+    align-items:center;
+  }
+
+  .jump-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+  }
+  .jump-grid a{
+    padding:13px 9px;
+    font-size:12px;
+    line-height:1.45;
+  }
+  .jump-grid a strong{
+    font-size:14px;
+  }
+
+  .section{
+    margin-top:30px;
+    scroll-margin-top:88px;
+  }
+  .section-head{
+    align-items:flex-start;
+  }
+  .section-title{
+    font-size:22px;
+    line-height:1.35;
+  }
+  .section-sub{
+    font-size:14px;
+    line-height:1.55;
+    margin-top:4px;
+  }
+
+  .kpi,
+  .overview-card,
+  .section-card,
+  .service,
+  .news,
+  .panel-summary,
+  .panel-status,
+  .detail-card{
+    padding:17px;
+  }
+  .kpi-label{
+    font-size:13px;
+  }
+  .kpi-num{
+    font-size:32px;
+  }
+  .kpi-note{
+    font-size:13px;
+  }
+
+  .overview-card strong{
+    font-size:15.5px;
+    line-height:1.45;
+  }
+  .overview-card p{
+    font-size:14px;
+    line-height:1.62;
+  }
+
+  .tabs-wrap{
+    padding:14px;
+  }
+  .tab-btn{
+    padding:17px 16px;
+    min-height:108px;
+  }
+  .tab-btn .kicker{
+    font-size:11.5px;
+  }
+  .tab-btn strong{
+    font-size:17px;
+    line-height:1.4;
+    margin-top:5px;
+  }
+  .tab-btn span{
+    font-size:13.5px;
+    line-height:1.55;
+    margin-top:5px;
+  }
+
+  .tab-panel{
+    scroll-margin-top:92px;
+  }
+  .panel-summary h3,
+  .panel-status h3{
+    font-size:18px;
+    line-height:1.45;
+  }
+  .panel-summary p{
+    font-size:14px;
+    line-height:1.68;
+  }
+  .status-pill{
+    font-size:12px;
+    padding:6px 10px;
+  }
+  .status-list{
+    padding-left:19px;
+  }
+  .status-list li{
+    font-size:14px;
+    line-height:1.65;
+    margin:7px 0;
+  }
+
+  .detail-card .label{
+    font-size:11.5px;
+  }
+  .detail-card h4{
+    font-size:16px;
+    line-height:1.5;
+    margin:6px 0 8px;
+  }
+  .detail-card p,
+  .detail-card li{
+    font-size:14px;
+    line-height:1.65;
+  }
+  .detail-card ul{
+    padding-left:19px;
+  }
+
+  .service .label{
+    font-size:11.5px;
+  }
+  .service h3{
+    font-size:17px;
+    line-height:1.45;
+  }
+  .service p{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .news-section-status{
+    font-size:12.5px;
+    line-height:1.5;
+  }
+  .news-refresh{
+    min-height:40px;
+    padding:0 13px;
+    font-size:12.5px;
+  }
+  .news-auto-note,
+  .news-empty{
+    font-size:13px;
+    line-height:1.6;
+  }
+  .news{
+    min-height:0;
+  }
+  .news-outlet,
+  .news-topic,
+  .news-date{
+    font-size:11.5px;
+  }
+  .news h3{
+    font-size:16.5px;
+    line-height:1.52;
+    margin:11px 0 8px;
+  }
+  .news p{
+    font-size:14px;
+    line-height:1.65;
+    margin-bottom:16px;
+  }
+  .news a{
+    min-height:44px;
+    font-size:13.5px;
+  }
+
+  .footer{
+    font-size:12px;
+    line-height:1.6;
+  }
+
+  .back-to-top{
+    right:14px;
+    bottom:16px;
+    width:48px;
+    height:48px;
+    font-size:21px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -732,6 +1014,12 @@ button,input{font:inherit}
   </footer>
 </main>
 
+
+<button id="backToTop" class="back-to-top" type="button"
+        aria-label="페이지 맨 위로 이동" title="맨 위로">
+  ↑
+</button>
+
 <script>
 (function(){
   const buttons = Array.from(document.querySelectorAll('.tab-btn'));
@@ -864,7 +1152,7 @@ button,input{font:inherit}
 
   function toggleBackToTop(){
     if(!backToTop) return;
-    backToTop.classList.toggle('show', window.scrollY > 420);
+    backToTop.classList.toggle('show', window.scrollY > 250);
   }
 
   if(backToTop){
@@ -884,10 +1172,5 @@ button,input{font:inherit}
   }
 })();
 </script>
-
-<button id="backToTop" class="back-to-top" type="button" aria-label="페이지 맨 위로 이동" title="맨 위로">
-  ↑
-</button>
-
 </body>
 </html>
