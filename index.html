@@ -1,1451 +1,816 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- 기본 페이지 정보 -->
-  <title>치안 AI 업무 추진현황 브리핑</title>
-  <meta name="description" content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다.">
-  <link rel="canonical" href="https://hyeminjang731-debug.github.io/POLICE-AI/">
-
-  <!-- 카카오톡·네이버·페이스북 등 링크 미리보기 -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널">
-  <meta property="og:title" content="치안 AI 업무 추진현황 브리핑">
-  <meta property="og:description" content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다.">
-  <meta property="og:url" content="https://hyeminjang731-debug.github.io/POLICE-AI/">
-  <meta property="og:image" content="https://hyeminjang731-debug.github.io/POLICE-AI/preview.png">
-  <meta property="og:image:secure_url" content="https://hyeminjang731-debug.github.io/POLICE-AI/preview.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1731">
-  <meta property="og:image:height" content="908">
-  <meta property="og:image:alt" content="치안 AI 업무 추진현황 브리핑 대표 이미지">
-
-  <!-- 기타 SNS 미리보기 -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="치안 AI 업무 추진현황 브리핑">
-  <meta name="twitter:description" content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다.">
-  <meta name="twitter:image" content="https://hyeminjang731-debug.github.io/POLICE-AI/preview.png">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>치안 AI 업무 추진현황 브리핑</title>
+<meta content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다." name="description"/>
+<link href="https://hyeminjang731-debug.github.io/POLICE-AI/" rel="canonical"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet"/>
+<meta content="website" property="og:type"/>
+<meta content="경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널" property="og:site_name"/>
+<meta content="치안 AI 업무 추진현황 브리핑" property="og:title"/>
+<meta content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다." property="og:description"/>
+<meta content="https://hyeminjang731-debug.github.io/POLICE-AI/" property="og:url"/>
+<meta content="https://hyeminjang731-debug.github.io/POLICE-AI/preview-v2.png" property="og:image"/>
+<meta content="https://hyeminjang731-debug.github.io/POLICE-AI/preview-v2.png" property="og:image:secure_url"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="치안 AI 업무 추진현황 브리핑 대표 이미지" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="치안 AI 업무 추진현황 브리핑" name="twitter:title"/>
+<meta content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다." name="twitter:description"/>
+<meta content="https://hyeminjang731-debug.github.io/POLICE-AI/preview-v2.png" name="twitter:image"/>
 <style>
 :root{
-  --navy:#0b2948; --navy2:#143b63; --blue:#2b6cb0; --cyan:#2f7f92;
-  --green:#1f7a5c; --amber:#b77717; --ink:#1b2735; --muted:#6d7888;
-  --line:#e4e9f0; --bg:#f3f6f9; --panel:#ffffff; --soft:#f7f9fc; --soft2:#eef3f8;
-  --shadow:0 8px 26px rgba(12,34,58,.06);
+  --navy:#163b68;
+  --navy-dark:#112d4f;
+  --text-strong:#101828;
+  --text:#344054;
+  --text-muted:#475467;
+  --line:#dfe4ea;
+  --line-strong:#c8d0da;
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --soft:#f8fafc;
+  --navy-soft:#edf3f9;
+  --success:#176b4d;
+  --success-bg:#eaf6f0;
+  --shadow:0 8px 24px rgba(16,36,62,.07);
+  --shadow-sheet:0 24px 70px rgba(15,23,42,.22);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  line-height:1.56;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+  line-break:strict;
 }
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.header{
-  position:sticky; top:0; z-index:50; background:rgba(255,255,255,.96);
-  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
-}
-.header-in{
-  max-width:1460px; margin:auto; height:66px; padding:0 20px;
-  display:flex; align-items:center; gap:16px;
-}
-.brand{display:flex; align-items:center; gap:11px; min-width:max-content}
-.logo{
-  width:34px; height:34px; border-radius:11px; background:var(--navy);
-  display:grid; place-items:center; color:#fff; font-size:11px; font-weight:950;
-}
-.brand-name{font-size:15px; font-weight:950; letter-spacing:-.03em}
-.brand-sub{font-size:11px; color:var(--muted)}
-.nav{margin-left:auto; display:flex; gap:4px; flex-wrap:wrap}
-.nav a{
-  padding:9px 10px; border-radius:9px; font-size:12px; font-weight:850; color:#5d6878;
-}
-.nav a:hover{background:var(--soft2); color:var(--navy)}
+body.sheet-open{overflow:hidden;overscroll-behavior:none}
+a{color:inherit;text-decoration:none}
+button,label{font:inherit}
+a,button,label{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,label[tabindex]:focus-visible{outline:3px solid rgba(22,59,104,.2);outline-offset:3px}
+h1,h2,h3,h4{margin:0;color:var(--text-strong);font-weight:800;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:normal;line-break:strict;text-wrap:balance}
+p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:pretty}
 
-.main{max-width:1460px; margin:auto; padding:24px 20px 56px}
-.hero{
-  background:linear-gradient(135deg,var(--navy) 0%, var(--navy2) 62%, #2a5e8f 100%);
-  border-radius:24px; padding:24px; color:#fff; box-shadow:var(--shadow);
+.topbar{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.98);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(10px);
 }
-.hero-grid{display:grid; grid-template-columns:1.18fr .82fr; gap:16px; align-items:stretch}
-.hero-main{
-  position:relative; overflow:hidden; border-radius:18px; padding:24px;
-  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+.topbar-inner{
+  max-width:1080px;margin:0 auto;min-height:78px;padding:12px 20px;
+  display:flex;align-items:center;gap:14px;
 }
-.hero-main:after{
-  content:"AI"; position:absolute; right:18px; top:4px; font-size:78px; font-weight:1000;
-  color:rgba(255,255,255,.05); letter-spacing:-.06em; line-height:1;
+.brand-mark{
+  width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;
+  border-radius:14px;background:var(--navy);color:#fff;font-size:12px;font-weight:800;
 }
-.eyebrow{
-  display:inline-flex; align-items:center; gap:8px; padding:5px 10px;
-  border-radius:999px; background:rgba(255,255,255,.11);
-  border:1px solid rgba(255,255,255,.12); font-size:10px; font-weight:950;
-}
-.hero h1{
-  margin:12px 0 10px; font-size:31px; line-height:1.22; letter-spacing:-.045em;
-}
-.hero p{margin:0; max-width:820px; color:rgba(255,255,255,.82); font-size:13px}
-.top-highlights{display:grid; gap:8px; margin-top:18px}
-.highlight{
-  display:grid; grid-template-columns:28px 1fr; gap:9px; align-items:start;
-  border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06);
-  border-radius:12px; padding:10px 11px;
-}
-.highlight .num{
-  width:28px; height:28px; border-radius:8px; background:rgba(255,255,255,.12);
-  display:grid; place-items:center; font-size:10px; font-weight:950;
-}
-.highlight strong{display:block; font-size:12px; line-height:1.35}
-.highlight span{display:block; margin-top:2px; font-size:10px; color:rgba(255,255,255,.7)}
+.brand-copy{min-width:0}
+.brand-title{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--text-strong);line-height:1.3}
+.brand-sub{margin-top:3px;font-size:13px;color:var(--text-muted);line-height:1.4}
 
-.hero-side{display:grid; gap:10px}
-.quick-card{
-  background:#fff; color:var(--ink); border-radius:16px; padding:16px;
-  border:1px solid rgba(255,255,255,.08);
+.main{max-width:1080px;margin:0 auto;padding:22px 20px 72px}
+.overview-home{
+  padding:24px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:var(--shadow);
 }
-.quick-card .meta{font-size:10px; font-weight:950; color:var(--blue); letter-spacing:.06em}
-.quick-card strong{display:block; font-size:14px; line-height:1.38; color:var(--navy); margin-top:4px}
-.quick-card p{font-size:11px; color:#738092; margin:5px 0 0}
-.quick-link{
-  display:inline-flex; margin-top:9px; font-size:10px; font-weight:900; color:var(--navy);
-}
+.overview-head{display:block}
+.overview-eyebrow{font-size:13px;font-weight:800;color:var(--navy)}
+.overview-head h1{margin-top:5px;font-size:30px;line-height:1.28}
 
-.jump-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:14px}
-.jump-grid a{
-  background:#fff; border:1px solid var(--line); border-radius:12px; padding:11px 10px;
-  text-align:center; color:#556173; font-size:10px; font-weight:900;
-}
-.jump-grid a strong{display:block; font-size:12px; color:var(--navy); margin-bottom:2px}
 
-.section{margin-top:28px; scroll-margin-top:82px}
-.section-head{
-  display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin:0 2px 12px;
-}
-.section-title{font-size:22px; font-weight:950; letter-spacing:-.04em; color:var(--navy)}
-.section-sub{font-size:12px; color:var(--muted); margin-top:2px}
 
-.kpis{display:grid; grid-template-columns:repeat(6,1fr); gap:10px}
-.kpi{
-  background:#fff; border:1px solid var(--line); border-radius:16px; padding:17px 16px 14px;
-  box-shadow:0 4px 12px rgba(12,34,58,.03);
-}
-.kpi-label{font-size:11px; font-weight:850; color:var(--muted)}
-.kpi-num{font-size:30px; line-height:1; font-weight:1000; letter-spacing:-.06em; color:var(--navy); margin-top:5px}
-.kpi-note{font-size:11px; color:#8390a1; margin-top:5px}
 
-.domain-overview{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
-}
-.overview-card{
-  background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px;
-}
-.overview-card strong{display:block; font-size:13px; color:var(--navy); margin-bottom:4px}
-.overview-card p{margin:0; font-size:11px; color:#6f7b8b}
 
-.tabs-wrap{
-  background:#fff; border:1px solid var(--line); border-radius:20px; padding:18px; box-shadow:var(--shadow);
-}
-.tab-buttons{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
-}
-.tab-btn{
-  text-align:left; border:1px solid #d7dfe9; background:#fff; border-radius:14px;
-  padding:14px; cursor:pointer; transition:.15s ease;
-}
-.tab-btn:hover{border-color:#9bb6d3; background:#f9fbfd}
-.tab-btn.active{
-  border-color:var(--navy); background:#eef4f9; box-shadow:inset 0 0 0 1px rgba(11,41,72,.04);
-}
-.tab-btn .kicker{font-size:10px; font-weight:950; color:var(--blue); letter-spacing:.06em}
-.tab-btn strong{display:block; font-size:15px; color:var(--navy); margin-top:4px}
-.tab-btn span{display:block; font-size:11px; color:#6f7b8b; margin-top:4px}
 
-.tab-panels{margin-top:16px}
-.tab-panel{
-  display:none; border-top:1px solid var(--line); padding-top:18px;
-  scroll-margin-top:88px;
-}
-.tab-panel.active{display:block}
-.panel-top{
-  display:grid; grid-template-columns:1.08fr .92fr; gap:12px; align-items:stretch;
-}
-.panel-summary, .panel-status{
-  background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:16px;
-}
-.panel-summary h3, .panel-status h3{
-  margin:0 0 8px; font-size:17px; color:var(--navy); letter-spacing:-.02em;
-}
-.panel-summary p{margin:0; font-size:12px; color:#697586}
-.status-pill{
-  display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:5px 9px;
-  font-size:10px; font-weight:950; background:#eaf3fb; color:var(--navy); margin-bottom:10px;
-}
-.status-pill:before{
-  content:""; width:7px; height:7px; border-radius:50%; background:currentColor;
-}
-.status-list{margin:0; padding-left:16px}
-.status-list li{font-size:12px; color:#617081; margin:6px 0}
+.domain-section{margin-top:22px;scroll-margin-top:96px}
+.section-heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px}
+.section-title{font-size:22px;line-height:1.35;font-weight:800}
+.section-sub{margin-top:4px;font-size:13px;color:var(--text-muted);line-height:1.55}
+.domain-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.domain-card{position:relative;min-width:0;min-height:214px;padding:16px 16px 15px 19px;display:flex;flex-direction:column;border:1px solid var(--line);border-left:5px solid var(--domain-accent);border-radius:18px;background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(16,36,62,.04);transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease}
+.domain-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.domain-number{display:inline-flex;align-items:center;min-height:30px;padding:5px 9px;border-radius:9px;background:var(--soft);color:var(--domain-accent);font-size:12px;font-weight:800}
+.domain-state{display:inline-flex;align-items:center;min-height:28px;padding:4px 9px;border-radius:999px;background:var(--success-bg);color:var(--success);font-size:12px;font-weight:800}
+.domain-card h3{margin-top:12px;font-size:17px;line-height:1.4}
+.domain-description{margin:8px 0 0;font-size:13px;color:var(--text-muted);line-height:1.65}
+.domain-current{margin:13px 0 0;padding-top:11px;border-top:1px solid var(--line);font-size:13px;color:var(--text);line-height:1.55}
+.domain-current span{display:block;margin-bottom:3px;color:var(--text-muted);font-size:12px;font-weight:800}
+.domain-affordance{margin-top:auto;padding-top:13px;color:var(--navy);font-size:13px;font-weight:800}
+.domain-card:hover{border-color:var(--line-strong);border-left-color:var(--domain-accent);box-shadow:0 8px 20px rgba(16,36,62,.08);transform:translateY(-1px)}
+#domain-toggle-1:checked ~ .main label[for="domain-toggle-1"],
+#domain-toggle-2:checked ~ .main label[for="domain-toggle-2"],
+#domain-toggle-3:checked ~ .main label[for="domain-toggle-3"],
+#domain-toggle-4:checked ~ .main label[for="domain-toggle-4"],
+#domain-toggle-5:checked ~ .main label[for="domain-toggle-5"],
+#domain-toggle-6:checked ~ .main label[for="domain-toggle-6"]{box-shadow:0 0 0 3px rgba(22,59,104,.12),0 8px 20px rgba(16,36,62,.08)}
 
-.detail-grid{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px;
-}
-.detail-card{
-  background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px;
-}
-.detail-card .label{font-size:10px; font-weight:950; color:var(--blue); letter-spacing:.06em}
-.detail-card h4{margin:5px 0 6px; font-size:14px; line-height:1.4; color:#26364b}
-.detail-card p{margin:0; font-size:11px; color:#6e7b8a}
-.detail-card ul{margin:7px 0 0; padding-left:16px}
-.detail-card li{font-size:11px; color:#6a7787; margin:4px 0}
+.overview-projects{margin-top:20px}
+.overview-block-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
+.overview-block-head strong{font-size:16px;color:var(--text-strong);font-weight:800}
+.overview-block-head a{font-size:13px;color:var(--navy);font-weight:700}
+.project-chips{display:flex;flex-wrap:wrap;gap:8px}
+.project-chips a{padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--soft);font-size:13px;color:var(--text);font-weight:700}
+.overview-shortcuts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.overview-shortcuts a{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;min-height:58px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:#fff}
+.overview-shortcuts span{padding:5px 8px;border-radius:7px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
+.overview-shortcuts strong{font-size:15px;color:var(--text-strong);font-weight:700}
+.overview-shortcuts b{font-size:22px;color:var(--text-muted);font-weight:700}
 
-.section-card{
-  background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px;
-  box-shadow:0 4px 12px rgba(12,34,58,.03);
-}
-.service-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
-.service{
-  border:1px solid var(--line); background:#fff; border-radius:16px; padding:16px;
-}
-.service .label{font-size:10px; font-weight:950; color:var(--blue)}
-.service h3{font-size:15px; color:var(--navy); margin:5px 0 7px}
-.service p{font-size:11px; color:#6f7c8c; margin:0}
+.section{margin-top:30px;scroll-margin-top:96px}
+.service-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.service{position:relative;padding:18px;border:1px solid var(--line-strong);border-radius:20px;background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);box-shadow:0 8px 18px rgba(16,36,62,.05)}
+.service .label,.service-badge{display:inline-flex;align-items:center;min-height:30px;padding:5px 10px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
+.service h3{margin:0;font-size:19px;line-height:1.4;color:var(--text-strong)}
+.service p{margin:8px 0 0;font-size:15px;color:var(--text);line-height:1.7}
 
-.news-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
 
-.news-section-status{
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:6px;
-  font-size:10px; color:#7c8797;
-}
-.live-dot{
-  width:7px; height:7px; border-radius:50%; background:#1f7a5c; display:inline-block;
-}
-.news-refresh{
-  border:1px solid #d3dbe5; background:#fff; color:var(--navy); border-radius:9px;
-  min-height:32px; padding:0 10px; font-size:10px; font-weight:900; cursor:pointer;
-}
-.news-refresh:hover{background:#eef3f8}
-.news-refresh:disabled{opacity:.55; cursor:default}
-.news-empty{
-  grid-column:1 / -1; background:#fff; border:1px dashed #cfd8e3; border-radius:14px;
-  padding:20px; color:#748092; font-size:11px; text-align:center;
-}
-.news-auto-note{
-  margin-top:10px; padding:10px 12px; border-radius:11px; background:#eef4f8;
-  color:#607083; font-size:10px;
-}
 
-.news{
-  background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px;
-  display:flex; flex-direction:column; min-height:202px;
-}
-.news-top{display:flex; flex-wrap:wrap; align-items:center; gap:6px}
-.news-outlet{font-size:10px; font-weight:950; padding:4px 7px; border-radius:7px; background:#eef3f8; color:var(--navy)}
-.news-topic{font-size:10px; font-weight:900; padding:4px 7px; border-radius:7px; background:#f6f8fb; color:#5a6778}
-.news-date{font-size:10px; color:#8a95a4; margin-left:auto}
-.news h3{font-size:14px; line-height:1.42; margin:10px 0 7px; color:#25364a; letter-spacing:-.02em}
-.news p{font-size:11px; color:#6b7687; margin:0 0 14px}
-.news a{
-  margin-top:auto; display:inline-flex; align-items:center; justify-content:center;
-  min-height:36px; border-radius:10px; border:1px solid #cfd8e3; background:#fff;
-  color:var(--navy); font-size:11px; font-weight:900;
-}
-.news a:hover{background:#eef3f8}
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.news{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 4px 14px rgba(16,36,62,.035)}
+.news-link{display:block;padding:17px}
+.news-top{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.news-outlet,.news-topic{padding:5px 8px;border-radius:7px;background:var(--navy-soft);color:var(--text-muted);font-size:12px;font-weight:800}
+.news-date{margin-left:auto;font-size:12px;color:var(--text-muted);font-weight:700}
+.news h3{margin-top:10px;font-size:17px;line-height:1.5}
+.news p{margin:8px 0 0;font-size:15px;color:var(--text);line-height:1.65}
+.news-arrow{margin-top:12px;font-size:13px;color:var(--navy);font-weight:800}
+.news-status{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:var(--text-muted)}
+.news-status .pill{padding:5px 8px;border-radius:7px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
+.news-empty{padding:20px;border:1px dashed var(--line-strong);border-radius:16px;background:#fff;color:var(--text-muted);font-size:15px;text-align:center}
 
-.footer{
-  margin-top:28px; padding-top:18px; border-top:1px solid #dfe4eb;
-  color:#8a94a3; font-size:10px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
-}
+.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--text-muted);line-height:1.6}
 
-@media(max-width:1160px){
-  .nav{display:none}
-  .kpis{grid-template-columns:repeat(3,1fr)}
-  .domain-overview{grid-template-columns:repeat(2,1fr)}
-  .tab-buttons{grid-template-columns:repeat(2,1fr)}
-  .detail-grid,.service-grid,.news-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:900px){
-  .hero-grid,.panel-top{grid-template-columns:1fr}
-}
+.bottom-nav{position:fixed;left:50%;bottom:0;z-index:250;width:min(100%,1080px);transform:translateX(-50%);display:none;grid-template-columns:repeat(4,1fr);padding:7px 10px calc(7px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.98);box-shadow:0 -6px 20px rgba(16,36,62,.07);backdrop-filter:blur(10px)}
+.bottom-nav a{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center}
+.bottom-nav a.active{color:var(--navy);background:var(--navy-soft)}
+.bottom-icon{font-size:18px}
+
+.back-to-top{position:fixed;right:18px;bottom:22px;z-index:260;width:46px;height:46px;border:1px solid var(--line-strong);border-radius:50%;background:#fff;color:var(--navy);box-shadow:var(--shadow);font-size:20px;font-weight:800;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s ease}
+.back-to-top.show{opacity:1;visibility:visible;transform:none}
+
+.domain-toggle{position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-9999px}
+.sheet-backdrop{position:fixed;inset:0;z-index:9998;background:rgba(15,23,42,.52);opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s step-end;cursor:pointer}
+.domain-sheet{position:fixed;left:50%;top:50%;z-index:9999;width:min(900px,calc(100% - 40px));max-height:82vh;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow-sheet);opacity:0;visibility:hidden;transform:translate(-50%,calc(-50% + 18px));transition:opacity .18s ease,transform .18s ease,visibility .18s step-end}
+#domain-toggle-1:checked ~ #sheet-backdrop-1,#domain-toggle-2:checked ~ #sheet-backdrop-2,#domain-toggle-3:checked ~ #sheet-backdrop-3,#domain-toggle-4:checked ~ #sheet-backdrop-4,#domain-toggle-5:checked ~ #sheet-backdrop-5,#domain-toggle-6:checked ~ #sheet-backdrop-6{opacity:1;visibility:visible;transition:opacity .18s ease,visibility 0s}
+#domain-toggle-1:checked ~ #domain-sheet-1,#domain-toggle-2:checked ~ #domain-sheet-2,#domain-toggle-3:checked ~ #domain-sheet-3,#domain-toggle-4:checked ~ #domain-sheet-4,#domain-toggle-5:checked ~ #domain-sheet-5,#domain-toggle-6:checked ~ #domain-sheet-6{opacity:1;visibility:visible;transform:translate(-50%,-50%);transition:opacity .18s ease,transform .18s ease,visibility 0s}
+.domain-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px;border-bottom:1px solid var(--line)}
+.domain-sheet-eyebrow{font-size:13px;color:var(--navy);font-weight:800}
+.domain-sheet-head h2{margin-top:3px;font-size:22px;line-height:1.35}
+.domain-sheet-close{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:50%;background:var(--soft);color:var(--text-strong);font-size:24px;font-weight:700;cursor:pointer}
+.domain-sheet-body{min-height:0;overflow:auto;padding:18px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.domain-sheet-body .tab-panel{display:block;border:0;padding:0}
+.domain-sheet-body .panel-top{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.domain-sheet-body .panel-summary,.domain-sheet-body .panel-status,.domain-sheet-body .detail-card{padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.domain-sheet-body .panel-summary,.domain-sheet-body .panel-status{background:var(--soft)}
+.domain-sheet-body .panel-summary h3,.domain-sheet-body .panel-status h3{font-size:18px;line-height:1.4}
+.domain-sheet-body .panel-summary p,.domain-sheet-body .status-list li,.domain-sheet-body .detail-card p,.domain-sheet-body .detail-card li{font-size:15px;color:var(--text);line-height:1.65}
+.domain-sheet-body .status-pill{display:inline-flex;margin-bottom:9px;padding:5px 9px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
+.domain-sheet-body .status-list,.domain-sheet-body .detail-card ul{margin:0;padding-left:20px}
+.domain-sheet-body .detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.domain-sheet-body .detail-card .label{font-size:12px;color:var(--navy);font-weight:800}
+.domain-sheet-body .detail-card h4{margin-top:5px;font-size:16px;line-height:1.45}
+.domain-sheet-body .detail-card p{margin:7px 0 0}
+.domain-sheet-bottom-close{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:14px;border:1px solid var(--line-strong);border-radius:12px;background:var(--soft);color:var(--navy);font-size:15px;font-weight:800;cursor:pointer}
+
 @media(max-width:760px){
-  .main{padding:16px 14px 42px}
-  .header-in{padding:0 14px}
-  .hero{padding:14px; border-radius:18px}
-  .hero-main{padding:18px}
-  .hero h1{font-size:25px}
-  .jump-grid{grid-template-columns:repeat(2,1fr)}
-  .kpis,.domain-overview,.tab-buttons,.detail-grid,.service-grid,.news-grid{grid-template-columns:1fr}
-  .section-title{font-size:19px}
+  .topbar-inner{min-height:72px;padding:10px 14px}
+  .brand-mark{width:44px;height:44px;flex-basis:44px;font-size:12px}
+  .brand-title{font-size:18px}
+  .brand-sub{font-size:12px;white-space:normal}
+  .main{padding:14px 12px 92px}
+  .overview-home{padding:17px 14px;border-radius:20px}
+  .overview-head{display:block}
+  .overview-head h1{font-size:26px;line-height:1.3}
+  
+  
+  
+  
+  .domain-section{margin-top:20px}
+  .section-title{font-size:20px}
+  .section-sub{font-size:13px}
+  .domain-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .domain-card{position:relative;min-width:0;min-height:214px;padding:16px 16px 15px 19px;display:flex;flex-direction:column;border:1px solid var(--line);border-left:5px solid var(--domain-accent);border-radius:18px;background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(16,36,62,.04);transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease}
+  .domain-number,.domain-state{font-size:12px}
+  .domain-card h3{font-size:16px}
+  .domain-description{margin:8px 0 0;font-size:13px;color:var(--text-muted);line-height:1.65}
+  .domain-current{font-size:13px}
+  .domain-affordance{font-size:13px}
+  .overview-projects{margin-top:18px}
+  .project-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .project-chips::-webkit-scrollbar{display:none}
+  .project-chips a{flex:0 0 auto;font-size:13px}
+  .overview-shortcuts{grid-template-columns:1fr;gap:8px}
+  .overview-shortcuts strong{font-size:15px}
+  .section{margin-top:26px}
+  .service-list,.perspective-grid,.news-grid{grid-template-columns:1fr}
+  .service .label,.service-badge{display:inline-flex;align-items:center;min-height:30px;padding:5px 10px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
+  .service h3,.perspective-card h3,.news h3{font-size:16px}
+  .service p,.perspective-placeholder,.news p{font-size:15px}
+  .news-outlet,.news-topic,.news-date,.news-status,.news-status .pill{font-size:12px}
+  .footer{font-size:12px}
+  .bottom-nav{display:grid}
+  .bottom-nav a{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center}
+  .back-to-top{right:14px;bottom:76px}
+  .domain-sheet{left:0;right:0;top:auto;bottom:0;width:100%;max-height:86vh;border-radius:22px 22px 0 0;transform:translateY(105%);opacity:1}
+  #domain-toggle-1:checked ~ #domain-sheet-1,#domain-toggle-2:checked ~ #domain-sheet-2,#domain-toggle-3:checked ~ #domain-sheet-3,#domain-toggle-4:checked ~ #domain-sheet-4,#domain-toggle-5:checked ~ #domain-sheet-5,#domain-toggle-6:checked ~ #domain-sheet-6{transform:translateY(0)}
+  .domain-sheet-head{padding:15px 14px}
+  .domain-sheet-eyebrow{font-size:12px}
+  .domain-sheet-head h2{font-size:20px}
+  .domain-sheet-body{padding:14px 13px calc(18px + env(safe-area-inset-bottom))}
+  .domain-sheet-body .panel-top,.domain-sheet-body .detail-grid{grid-template-columns:1fr}
+  .domain-sheet-body .panel-summary h3,.domain-sheet-body .panel-status h3{font-size:17px}
+  .domain-sheet-body .panel-summary p,.domain-sheet-body .status-list li,.domain-sheet-body .detail-card p,.domain-sheet-body .detail-card li{font-size:15px}
+  .domain-sheet-body .detail-card h4{font-size:16px}
 }
 
-.back-to-top{
-  position:fixed;
-  right:20px;
-  bottom:22px;
-  z-index:120;
-  width:46px;
-  height:46px;
-  border:1px solid #d6dee8;
-  border-radius:50%;
-  background:#fff;
-  color:var(--navy);
-  box-shadow:0 8px 20px rgba(12,34,58,.12);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  font-weight:950;
-  cursor:pointer;
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(8px);
-  transition:opacity .18s ease, transform .18s ease, visibility .18s ease, background .18s ease;
-}
-.back-to-top:hover{
-  background:#eef3f8;
-}
-.back-to-top.show{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
+.domain-affordance{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:16px;color:var(--navy);font-size:13px;font-weight:800}
+.service::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:20px 0 0 20px;background:var(--navy)}
+.service-body{margin-top:12px}
+.service-1::before{background:#315A8C}
+.service-2::before{background:#4F46E5}
+.service-3::before{background:#0F766E}
+.service-4::before{background:#B45309}
+.perspective-figure{margin:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(16,36,62,.04)}
+.perspective-figure img{display:block;width:100%;height:auto}
+.bottom-label{white-space:nowrap;line-height:1.2}
 @media(max-width:760px){
-  .back-to-top{
-    right:14px;
-    bottom:16px;
-    width:42px;
-    height:42px;
-    font-size:18px;
-  }
+  .service{padding:17px 16px 17px 18px}
+  .overview-shortcuts{grid-template-columns:1fr}
+  .perspective-figure{border-radius:18px}
 }
-
-
-/* 모바일 가독성 강화 */
-@media(max-width:760px){
-  body{
-    font-size:16px;
-    line-height:1.68;
-  }
-
-  .header-in{
-    height:auto;
-    min-height:68px;
-    padding:9px 14px;
-  }
-  .brand{
-    min-width:0;
-    width:100%;
-  }
-  .logo{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-    font-size:11px;
-  }
-  .brand-name{
-    font-size:16px;
-    line-height:1.3;
-  }
-  .brand-sub{
-    font-size:12.5px;
-    line-height:1.4;
-    margin-top:2px;
-  }
-
-  .main{
-    padding:16px 14px 46px;
-  }
-  .hero{
-    padding:14px;
-    border-radius:18px;
-  }
-  .hero-main{
-    padding:20px 17px;
-  }
-  .eyebrow{
-    font-size:12px;
-    padding:6px 10px;
-  }
-  .hero h1{
-    font-size:27px;
-    line-height:1.3;
-    margin:13px 0 11px;
-  }
-  .hero p{
-    font-size:15px;
-    line-height:1.68;
-  }
-
-  .highlight{
-    grid-template-columns:32px 1fr;
-    gap:10px;
-    padding:12px;
-  }
-  .highlight .num{
-    width:32px;
-    height:32px;
-    font-size:12px;
-  }
-  .highlight strong{
-    font-size:14.5px;
-    line-height:1.5;
-  }
-  .highlight span{
-    font-size:12.5px;
-    line-height:1.5;
-    margin-top:3px;
-  }
-
-  .quick-card{
-    padding:17px;
-  }
-  .quick-card .meta{
-    font-size:11.5px;
-  }
-  .quick-card strong{
-    font-size:16px;
-    line-height:1.5;
-  }
-  .quick-card p{
-    font-size:14px;
-    line-height:1.62;
-  }
-  .quick-link{
-    font-size:13px;
-    min-height:36px;
-    align-items:center;
-  }
-
-  .jump-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:9px;
-  }
-  .jump-grid a{
-    padding:13px 9px;
-    font-size:12px;
-    line-height:1.45;
-  }
-  .jump-grid a strong{
-    font-size:14px;
-  }
-
-  .section{
-    margin-top:30px;
-    scroll-margin-top:88px;
-  }
-  .section-head{
-    align-items:flex-start;
-  }
-  .section-title{
-    font-size:22px;
-    line-height:1.35;
-  }
-  .section-sub{
-    font-size:14px;
-    line-height:1.55;
-    margin-top:4px;
-  }
-
-  .kpi,
-  .overview-card,
-  .section-card,
-  .service,
-  .news,
-  .panel-summary,
-  .panel-status,
-  .detail-card{
-    padding:17px;
-  }
-  .kpi-label{
-    font-size:13px;
-  }
-  .kpi-num{
-    font-size:32px;
-  }
-  .kpi-note{
-    font-size:13px;
-  }
-
-  .overview-card strong{
-    font-size:15.5px;
-    line-height:1.45;
-  }
-  .overview-card p{
-    font-size:14px;
-    line-height:1.62;
-  }
-
-  .tabs-wrap{
-    padding:14px;
-  }
-  .tab-btn{
-    padding:17px 16px;
-    min-height:108px;
-  }
-  .tab-btn .kicker{
-    font-size:11.5px;
-  }
-  .tab-btn strong{
-    font-size:17px;
-    line-height:1.4;
-    margin-top:5px;
-  }
-  .tab-btn span{
-    font-size:13.5px;
-    line-height:1.55;
-    margin-top:5px;
-  }
-
-  .tab-panel{
-    scroll-margin-top:92px;
-  }
-  .panel-summary h3,
-  .panel-status h3{
-    font-size:18px;
-    line-height:1.45;
-  }
-  .panel-summary p{
-    font-size:14px;
-    line-height:1.68;
-  }
-  .status-pill{
-    font-size:12px;
-    padding:6px 10px;
-  }
-  .status-list{
-    padding-left:19px;
-  }
-  .status-list li{
-    font-size:14px;
-    line-height:1.65;
-    margin:7px 0;
-  }
-
-  .detail-card .label{
-    font-size:11.5px;
-  }
-  .detail-card h4{
-    font-size:16px;
-    line-height:1.5;
-    margin:6px 0 8px;
-  }
-  .detail-card p,
-  .detail-card li{
-    font-size:14px;
-    line-height:1.65;
-  }
-  .detail-card ul{
-    padding-left:19px;
-  }
-
-  .service .label{
-    font-size:11.5px;
-  }
-  .service h3{
-    font-size:17px;
-    line-height:1.45;
-  }
-  .service p{
-    font-size:14px;
-    line-height:1.65;
-  }
-
-  .news-section-status{
-    font-size:12.5px;
-    line-height:1.5;
-  }
-  .news-refresh{
-    min-height:40px;
-    padding:0 13px;
-    font-size:12.5px;
-  }
-  .news-auto-note,
-  .news-empty{
-    font-size:13px;
-    line-height:1.6;
-  }
-  .news{
-    min-height:0;
-  }
-  .news-outlet,
-  .news-topic,
-  .news-date{
-    font-size:11.5px;
-  }
-  .news h3{
-    font-size:16.5px;
-    line-height:1.52;
-    margin:11px 0 8px;
-  }
-  .news p{
-    font-size:14px;
-    line-height:1.65;
-    margin-bottom:16px;
-  }
-  .news a{
-    min-height:44px;
-    font-size:13.5px;
-  }
-
-  .footer{
-    font-size:12px;
-    line-height:1.6;
-  }
-
-  .back-to-top{
-    right:14px;
-    bottom:16px;
-    width:48px;
-    height:48px;
-    font-size:21px;
-  }
-}
-
-
-/* 모바일 큰 글씨 모드 - 위원회 카카오톡 공유용 */
-@media(max-width:760px){
-  html{
-    -webkit-text-size-adjust:100%;
-    text-size-adjust:100%;
-  }
-
-  body{
-    font-size:18px !important;
-    line-height:1.72 !important;
-  }
-
-  .header-in{
-    min-height:76px !important;
-    padding:12px 14px !important;
-  }
-  .logo{
-    width:44px !important;
-    height:44px !important;
-    flex:0 0 44px !important;
-    font-size:12px !important;
-  }
-  .brand-name{
-    font-size:19px !important;
-    line-height:1.3 !important;
-  }
-  .brand-sub{
-    font-size:14.5px !important;
-    line-height:1.45 !important;
-  }
-
-  .main{
-    padding:16px 12px 54px !important;
-  }
-  .hero{
-    padding:12px !important;
-  }
-  .hero-main{
-    padding:22px 18px !important;
-  }
-  .eyebrow{
-    font-size:14px !important;
-    padding:7px 11px !important;
-  }
-  .hero h1{
-    font-size:32px !important;
-    line-height:1.3 !important;
-    letter-spacing:-0.03em !important;
-    margin:15px 0 13px !important;
-  }
-  .hero p{
-    font-size:17.5px !important;
-    line-height:1.72 !important;
-  }
-
-  .highlight{
-    grid-template-columns:38px 1fr !important;
-    gap:12px !important;
-    padding:14px !important;
-  }
-  .highlight .num{
-    width:38px !important;
-    height:38px !important;
-    font-size:13px !important;
-  }
-  .highlight strong{
-    font-size:17px !important;
-    line-height:1.48 !important;
-  }
-  .highlight span{
-    font-size:15.5px !important;
-    line-height:1.58 !important;
-  }
-
-  .quick-card{
-    padding:20px !important;
-  }
-  .quick-card .meta{
-    font-size:13.5px !important;
-  }
-  .quick-card strong{
-    font-size:19px !important;
-    line-height:1.45 !important;
-  }
-  .quick-card p{
-    font-size:16.5px !important;
-    line-height:1.68 !important;
-  }
-  .quick-link{
-    font-size:15.5px !important;
-    min-height:42px !important;
-  }
-
-  .jump-grid{
-    grid-template-columns:1fr 1fr !important;
-    gap:10px !important;
-  }
-  .jump-grid a{
-    padding:15px 10px !important;
-    font-size:14.5px !important;
-    line-height:1.48 !important;
-  }
-  .jump-grid a strong{
-    font-size:16.5px !important;
-  }
-
-  .section{
-    margin-top:34px !important;
-    scroll-margin-top:96px !important;
-  }
-  .section-title{
-    font-size:26px !important;
-    line-height:1.36 !important;
-    letter-spacing:-0.02em !important;
-  }
-  .section-sub{
-    font-size:16px !important;
-    line-height:1.62 !important;
-  }
-
-  .kpi,
-  .overview-card,
-  .section-card,
-  .service,
-  .news,
-  .panel-summary,
-  .panel-status,
-  .detail-card{
-    padding:19px !important;
-  }
-  .kpi-label{
-    font-size:14.5px !important;
-  }
-  .kpi-num{
-    font-size:36px !important;
-  }
-  .kpi-note{
-    font-size:14.5px !important;
-  }
-
-  .overview-card strong{
-    font-size:18px !important;
-    line-height:1.48 !important;
-  }
-  .overview-card p{
-    font-size:16.5px !important;
-    line-height:1.68 !important;
-  }
-
-  .tabs-wrap{
-    padding:12px !important;
-  }
-  .tab-btn{
-    min-height:126px !important;
-    padding:20px 18px !important;
-  }
-  .tab-btn .kicker{
-    font-size:13.5px !important;
-  }
-  .tab-btn strong{
-    font-size:20px !important;
-    line-height:1.42 !important;
-    margin-top:6px !important;
-  }
-  .tab-btn span{
-    font-size:16px !important;
-    line-height:1.62 !important;
-    margin-top:7px !important;
-  }
-
-  .tab-panel{
-    scroll-margin-top:98px !important;
-  }
-  .panel-summary h3,
-  .panel-status h3{
-    font-size:21px !important;
-    line-height:1.45 !important;
-  }
-  .panel-summary p{
-    font-size:16.5px !important;
-    line-height:1.72 !important;
-  }
-  .status-pill{
-    font-size:13.5px !important;
-    padding:7px 11px !important;
-  }
-  .status-list{
-    padding-left:21px !important;
-  }
-  .status-list li{
-    font-size:16.5px !important;
-    line-height:1.7 !important;
-    margin:8px 0 !important;
-  }
-
-  .detail-card .label{
-    font-size:13.5px !important;
-  }
-  .detail-card h4{
-    font-size:19px !important;
-    line-height:1.48 !important;
-  }
-  .detail-card p,
-  .detail-card li{
-    font-size:16.5px !important;
-    line-height:1.7 !important;
-  }
-  .detail-card ul{
-    padding-left:21px !important;
-  }
-
-  .service .label{
-    font-size:13.5px !important;
-  }
-  .service h3{
-    font-size:20px !important;
-    line-height:1.48 !important;
-  }
-  .service p{
-    font-size:16.5px !important;
-    line-height:1.7 !important;
-  }
-
-  .news-section-status{
-    font-size:14.5px !important;
-    line-height:1.55 !important;
-  }
-  .news-refresh{
-    min-height:44px !important;
-    padding:0 15px !important;
-    font-size:14px !important;
-  }
-  .news-auto-note,
-  .news-empty{
-    font-size:15px !important;
-    line-height:1.65 !important;
-  }
-  .news-outlet,
-  .news-topic,
-  .news-date{
-    font-size:13.5px !important;
-  }
-  .news h3{
-    font-size:19px !important;
-    line-height:1.52 !important;
-    margin:12px 0 9px !important;
-  }
-  .news p{
-    font-size:16.5px !important;
-    line-height:1.7 !important;
-    margin-bottom:17px !important;
-  }
-  .news a{
-    min-height:48px !important;
-    font-size:15px !important;
-  }
-
-  .footer{
-    font-size:14px !important;
-    line-height:1.65 !important;
-  }
-
-  .back-to-top{
-    width:52px !important;
-    height:52px !important;
-    font-size:23px !important;
-  }
-}
-
-
-/* 직접 등록형 언론보도 */
-#news .news-section-status{
-  gap:8px;
-  flex-wrap:wrap;
-}
-#news .news-auto-note strong{
-  color:var(--navy);
-}
-
 </style>
 </head>
 <body>
-<header class="header">
-  <div class="header-in">
-    <a class="brand" href="#top">
-      <div class="logo">KNPA</div>
-      <div>
-        <div class="brand-name">치안 AI 업무 추진현황 브리핑</div>
-        <div class="brand-sub">경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널</div>
-      </div>
-    </a>
-    <nav class="nav">
-      <a href="#domains">6대 영역</a>
-      <a href="#services">주요 사업</a>
-      <a href="#news">언론 보도</a>
-    </nav>
-  </div>
+<header class="topbar">
+<div class="topbar-inner">
+<a aria-label="맨 위로" class="brand-mark" href="#home">KNPA</a>
+<div class="brand-copy">
+<div class="brand-title">치안 AI 추진현황</div>
+<div class="brand-sub">경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널</div>
+</div>
+</div>
 </header>
+<input aria-hidden="true" class="domain-toggle" data-domain="tab1" id="domain-toggle-1" type="checkbox"/>
+<input aria-hidden="true" class="domain-toggle" data-domain="tab2" id="domain-toggle-2" type="checkbox"/>
+<input aria-hidden="true" class="domain-toggle" data-domain="tab3" id="domain-toggle-3" type="checkbox"/>
+<input aria-hidden="true" class="domain-toggle" data-domain="tab4" id="domain-toggle-4" type="checkbox"/>
+<input aria-hidden="true" class="domain-toggle" data-domain="tab5" id="domain-toggle-5" type="checkbox"/>
+<input aria-hidden="true" class="domain-toggle" data-domain="tab6" id="domain-toggle-6" type="checkbox"/>
+<main class="main" id="home">
+<section aria-labelledby="overviewTitle" class="overview-home">
+<div class="overview-head">
+<div>
+<div class="overview-eyebrow">한눈에 보는 치안 AI</div>
+<h1 id="overviewTitle">치안 AI 업무 추진현황</h1>
 
-<main class="main" id="top">
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-main">
-        <div class="eyebrow">위원회용 한눈에 보는 치안 AI 추진현황</div>
-        <h1>치안 AI, 지금 어떤 영역에서<br>무엇을 추진하고 있나</h1>
-        <p>위원들이 경찰청에서 현재 추진 중인 치안 AI 업무를 쉽고 직관적으로 확인할 수 있도록, 6대 영역별 현황과 주요 사업·서비스를 중심으로 구성했습니다.</p>
-        <div class="top-highlights">
-          <div class="highlight">
-            <div class="num">01</div>
-            <div>
-              <strong>6대 영역별 추진현황을 한눈에</strong>
-              <span>관심 있는 영역을 선택하면 현재 추진 중인 정책·사업·연구·교육 내용을 바로 확인할 수 있습니다.</span>
-            </div>
-          </div>
-          <div class="highlight">
-            <div class="num">02</div>
-            <div>
-              <strong>주요 치안 AI 사업·서비스를 별도로 정리</strong>
-              <span>모두의 경찰관, AI 통합 플랫폼, 수사지원 AI 등 핵심사업을 중심으로 요약했습니다.</span>
-            </div>
-          </div>
-          <div class="highlight">
-            <div class="num">03</div>
-            <div>
-              <strong>위원회 관점에 맞춘 뉴스레터형 구성</strong>
-              <span>위원회 공유 목적에 맞게 업무 추진현황과 관련 보도를 중심으로 보여줍니다.</span>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
 
-      <aside class="hero-side">
-        <div class="quick-card">
-          <div class="meta">6대 영역</div>
-          <strong>AI 정책·거버넌스부터 AI 역량 강화까지</strong>
-          <p>정책·사업관리·윤리·신뢰성·고영향 AI·영향평가·교육·확산을 영역별로 나누어 볼 수 있습니다.</p>
-          <a class="quick-link" href="#domains">영역별 현황 보기 →</a>
-        </div>
-        <div class="quick-card">
-          <div class="meta">주요 사업</div>
-          <strong>치안 AI 핵심사업과 서비스 현황</strong>
-          <p>대국민 서비스, 공통기반, 수사 지원, 조직 확산 등 주요 사업의 위치와 역할을 정리했습니다.</p>
-          <a class="quick-link" href="#services">주요 사업 보기 →</a>
-        </div>
-        <div class="quick-card">
-          <div class="meta">언론 보도</div>
-          <strong>관련 뉴스 기사 모아보기</strong>
-          <p>치안 AI, 모두의 경찰관, 수사지원 AI 관련 주요 언론 기사를 함께 볼 수 있습니다.</p>
-          <a class="quick-link" href="#news">관련 기사 보기 →</a>
-        </div>
-      </aside>
-    </div>
-    <div class="jump-grid">
-      <a href="#domains"><strong>6대 영역</strong>추진현황 보기</a>
-      <a href="#services"><strong>주요 사업</strong>서비스 현황</a>
-      <a href="#news"><strong>언론 보도</strong>관련기사</a>
-      <a href="#committee"><strong>위원회 관점</strong>보기 포인트</a>
-    </div>
-  </section>
+</div>
+<section aria-labelledby="domainsTitle" class="domain-section" id="domains">
+<div class="section-heading-row">
+<div>
+<h2 class="section-title" id="domainsTitle">6대 영역</h2>
+<div class="section-sub">영역 선택 시 상세 추진현황 표시</div>
+</div>
+</div>
+<div class="domain-grid">
+<label aria-controls="domain-sheet-1" aria-expanded="false" class="domain-card domain-1" for="domain-toggle-1" role="button" style="--domain-accent:#315A8C" tabindex="0">
+<div class="domain-card-top">
+<span class="domain-number">AREA 01</span>
+<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
+<span class="domain-state" data-status="진행중">진행중</span>
+</div>
+<h3>AI 정책·거버넌스</h3>
+<p class="domain-description">정책 총괄, 위원회, 국가 AI 연계, 담당관 운영</p>
 
-  
+<span class="domain-affordance">상세 보기 ›</span>
+</label>
+<label aria-controls="domain-sheet-2" aria-expanded="false" class="domain-card domain-2" for="domain-toggle-2" role="button" style="--domain-accent:#2B6F84" tabindex="0">
+<div class="domain-card-top">
+<span class="domain-number">AREA 02</span>
+<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
+<span class="domain-state" data-status="진행중">진행중</span>
+</div>
+<h3>AI 사업·예산 관리</h3>
+<p class="domain-description">사업관리, 예산 검토, 공통기반·서비스 추진</p>
 
-  <section class="section" id="committee">
-    <div class="section-head">
-      <div>
-        <div class="section-title">위원회에서 함께 볼 관점</div>
-        <div class="section-sub">단순한 사업 나열보다, 아래 세 관점에서 보면 추진현황이 더 잘 읽힙니다.</div>
-      </div>
-    </div>
-    <div class="domain-overview">
-      <div class="overview-card">
-        <strong>① 국민·현장 체감성</strong>
-        <p>AI가 국민 민원, 수사, 행정업무에서 실제로 어떤 문제를 줄이고 어떤 편익을 만드는지 확인합니다.</p>
-      </div>
-      <div class="overview-card">
-        <strong>② 안전성·신뢰성</strong>
-        <p>고영향 AI, 영향평가, 윤리·보안, 위험관리 등 신뢰 확보 체계가 서비스와 함께 구축되고 있는지 봅니다.</p>
-      </div>
-      <div class="overview-card">
-        <strong>③ 전주기 관리·확산</strong>
-        <p>기획–개발–운영–사후관리와 교육·지역확산까지 연결되는 지속가능한 AI 생태계인지 확인합니다.</p>
-      </div>
-    </div>
-  </section>
+<span class="domain-affordance">상세 보기 ›</span>
+</label>
+<label aria-controls="domain-sheet-3" aria-expanded="false" class="domain-card domain-3" for="domain-toggle-3" role="button" style="--domain-accent:#5E5B9A" tabindex="0">
+<div class="domain-card-top">
+<span class="domain-number">AREA 03</span>
+<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
+<span class="domain-state" data-status="진행중">진행중</span>
+</div>
+<h3>AI 윤리·투명성·신뢰성</h3>
+<p class="domain-description">윤리준칙, 보안·윤리교육, 신뢰성 확보기준</p>
 
-  <section class="section" id="domains">
-    <div class="section-head">
-      <div>
-        <div class="section-title">6대 영역별 치안 AI 추진현황</div>
-        <div class="section-sub">영역을 선택하면 해당 분야의 추진현황을 구체적으로 볼 수 있습니다.</div>
-      </div>
-    </div>
+<span class="domain-affordance">상세 보기 ›</span>
+</label>
+<label aria-controls="domain-sheet-4" aria-expanded="false" class="domain-card domain-4" for="domain-toggle-4" role="button" style="--domain-accent:#8A5A74" tabindex="0">
+<div class="domain-card-top">
+<span class="domain-number">AREA 04</span>
+<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
+<span class="domain-state" data-status="진행중">진행중</span>
+</div>
+<h3>고영향 AI 관리</h3>
+<p class="domain-description">고영향 AI 식별, 조치, 관리체계 마련</p>
 
-    <div class="tabs-wrap">
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="tab1">
-          <div class="kicker">AREA 01</div>
-          <strong>AI 정책·거버넌스</strong>
-          <span>정책 총괄, 위원회, 국가 AI 연계, 담당관 운영</span>
-        </button>
-        <button class="tab-btn" data-tab="tab2">
-          <div class="kicker">AREA 02</div>
-          <strong>AI 사업·예산 관리</strong>
-          <span>사업관리, 예산 검토, 공통기반·서비스 추진</span>
-        </button>
-        <button class="tab-btn" data-tab="tab3">
-          <div class="kicker">AREA 03</div>
-          <strong>AI 윤리·투명성·신뢰성</strong>
-          <span>윤리준칙, 보안·윤리교육, 신뢰성 확보기준</span>
-        </button>
-        <button class="tab-btn" data-tab="tab4">
-          <div class="kicker">AREA 04</div>
-          <strong>고영향 AI 관리</strong>
-          <span>고영향 AI 식별, 조치, 관리체계 마련</span>
-        </button>
-        <button class="tab-btn" data-tab="tab5">
-          <div class="kicker">AREA 05</div>
-          <strong>AI 영향평가</strong>
-          <span>공공분야 영향평가, 결과 검토·공표 준비</span>
-        </button>
-        <button class="tab-btn" data-tab="tab6">
-          <div class="kicker">AREA 06</div>
-          <strong>AI 역량 강화</strong>
-          <span>교육, 리터러시, 지역확산, 성과확산</span>
-        </button>
-      </div>
+<span class="domain-affordance">상세 보기 ›</span>
+</label>
+<label aria-controls="domain-sheet-5" aria-expanded="false" class="domain-card domain-5" for="domain-toggle-5" role="button" style="--domain-accent:#7A6738" tabindex="0">
+<div class="domain-card-top">
+<span class="domain-number">AREA 05</span>
+<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
+<span class="domain-state" data-status="진행중">진행중</span>
+</div>
+<h3>AI 영향평가</h3>
+<p class="domain-description">공공분야 영향평가, 결과 검토·공표 준비</p>
 
-      <div class="tab-panels">
-        <div class="tab-panel active" id="tab1">
-          <div class="panel-top">
-            <div class="panel-summary">
-              <h3>AI 정책·거버넌스</h3>
-              <p>치안인공지능정책과를 중심으로 AI 정책과 훈령, 위원회, 국가 AI 전략과의 연계, 범정부 협의체 참여, 소속기관 AI 담당관 운영 등 경찰청 AI 거버넌스 전반을 추진하고 있습니다.</p>
-            </div>
-            <div class="panel-status">
-              <div class="status-pill">주요 추진 상태</div>
-              <ul class="status-list">
-                <li>인공지능데이터기반행정위원회 확대·개편 추진</li>
-                <li>국가AI전략위원회·AI 국정과제·행동계획 과제 관리</li>
-                <li>범정부 AI 대응 협의체 참여 및 대외 연계 지속</li>
-              </ul>
-            </div>
-          </div>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <div class="label">거버넌스</div>
-              <h4>AI 책임관·총괄부서 중심 체계 운영</h4>
-              <p>경찰청 차장이 AI책임관을 맡고, 치안인공지능정책과가 총괄부서 역할을 수행하는 구조입니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">위원회</div>
-              <h4>위원회 기반 정책 조정</h4>
-              <p>AI와 데이터 기반 행정을 함께 논의하는 위원회 구조를 통해 정책 방향과 주요 추진과제를 공유합니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">조직 확산</div>
-              <h4>시도청 AI 담당관 운영</h4>
-              <p>중앙의 정책 방향이 현장으로 전달되도록 시도청 AI 담당관 지정·관리와 지역거점 구축을 추진합니다.</p>
-            </div>
-          </div>
-        </div>
+<span class="domain-affordance">상세 보기 ›</span>
+</label>
+<label aria-controls="domain-sheet-6" aria-expanded="false" class="domain-card domain-6" for="domain-toggle-6" role="button" style="--domain-accent:#3F7562" tabindex="0">
+<div class="domain-card-top">
+<span class="domain-number">AREA 06</span>
+<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
+<span class="domain-state" data-status="진행중">진행중</span>
+</div>
+<h3>AI 역량 강화</h3>
+<p class="domain-description">교육, 리터러시, 지역확산, 성과확산</p>
 
-        <div class="tab-panel" id="tab2">
-          <div class="panel-top">
-            <div class="panel-summary">
-              <h3>AI 사업·예산 관리</h3>
-              <p>치안 AI 관련 사업을 전수조사하고, 정보화기반과 협업을 통해 사업·예산을 검토하며, 대국민 서비스와 공통기반 서비스가 체계적으로 추진되도록 관리하고 있습니다.</p>
-            </div>
-            <div class="panel-status">
-              <div class="status-pill">주요 추진 상태</div>
-              <ul class="status-list">
-                <li>AI 사업 전수조사 및 사업관리 지속</li>
-                <li>사업·예산 검토 및 사전협의 체계 활용</li>
-                <li>AI 통합 플랫폼 ISP 마무리 단계</li>
-              </ul>
-            </div>
-          </div>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <div class="label">대국민 서비스</div>
-              <h4>「모두의 경찰관」 개발 추진</h4>
-              <p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감할 수 있는 대표 치안 AI 사업입니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">공통기반</div>
-              <h4>AI 통합 플랫폼·ON AI·치안 AI 어시스턴트</h4>
-              <p>경찰 조직 전반이 활용할 수 있는 공통 기반을 구축하고, 행정지원 AI 도입을 함께 추진합니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">기능사업 연계</div>
-              <h4>KICS AI·차세대 112 연계 지원</h4>
-              <p>각 기능 부서가 주관하는 AI 사업을 정책·데이터·기술 측면에서 연계하고 지원합니다.</p>
-            </div>
-          </div>
-        </div>
+<span class="domain-affordance">상세 보기 ›</span>
+</label>
+</div>
+</section>
+<div class="overview-projects">
+<div class="overview-block-head"><strong>주요 사업</strong><a href="#services">전체 보기 →</a></div>
+<div class="project-chips"><a href="#services">모두의 경찰관</a>
+<a href="#services">AI 통합 플랫폼</a>
+<a href="#services">수사지원 AI</a>
+<a href="#services">교육·지역확산</a></div>
+</div>
+<div class="overview-shortcuts"><a href="#perspectives"><span>관점</span><strong>위원회에서 볼 관점</strong><b aria-hidden="true">›</b></a>
+<a href="#news"><span>보도</span><strong>관련 언론보도</strong><b aria-hidden="true">›</b></a></div>
+</section>
+<section class="section" id="services">
+<div class="section-heading-row">
+<div><h2 class="section-title">주요 치안 AI 사업</h2><div class="section-sub">핵심 사업을 간결한 카드 형태로 정리했습니다.</div></div>
+</div>
+<div class="service-list"><div class="service service-1">
+<div class="label service-badge">대국민 AI 서비스</div>
 
-        <div class="tab-panel" id="tab3">
-          <div class="panel-top">
-            <div class="panel-summary">
-              <h3>AI 윤리·투명성·신뢰성</h3>
-              <p>치안 AI 서비스가 국민 신뢰를 얻을 수 있도록 윤리준칙, 보안·윤리교육, 활용기준, 안전성·신뢰성 확보방안을 함께 마련하고 있습니다.</p>
-            </div>
-            <div class="panel-status">
-              <div class="status-pill">주요 추진 상태</div>
-              <ul class="status-list">
-                <li>경찰청 AI 윤리준칙 제정</li>
-                <li>AI 윤리교육·보안교육 실시</li>
-                <li>고영향 AI 안전성·신뢰성 확보방안 마련 추진</li>
-              </ul>
-            </div>
-          </div>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <div class="label">윤리기준</div>
-              <h4>치안 AI 윤리준칙 운영</h4>
-              <p>기본권 보호, 공정성, 개인정보 보호, 안전성 등 공공 AI 서비스에 필요한 기준을 반영합니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">실무기준</div>
-              <h4>활용안내서·평가체계 연구</h4>
-              <p>현장에서 AI를 활용할 때 참고할 수 있는 실무기준과 평가체계를 연구용역으로 구체화하고 있습니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">서비스 신뢰</div>
-              <h4>대국민 서비스 신뢰 확보</h4>
-              <p>특히 「모두의 경찰관」과 같은 대국민 AI 서비스에는 안전성·신뢰성과 활용기준을 사업 단계에 반영하고 있습니다.</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="tab-panel" id="tab4">
-          <div class="panel-top">
-            <div class="panel-summary">
-              <h3>고영향 AI 관리</h3>
-              <p>국민 권익과 안전에 미치는 영향이 큰 고영향 AI에 대해서는 해당 여부를 식별하고, 필요한 후속조치와 관리체계가 마련되도록 추진하고 있습니다.</p>
-            </div>
-            <div class="panel-status">
-              <div class="status-pill">주요 추진 상태</div>
-              <ul class="status-list">
-                <li>3D 얼굴인식시스템을 고영향 AI로 식별</li>
-                <li>사업부서 후속조치 진행</li>
-                <li>고영향 AI 관리기반을 연구용역과 연계해 마련 중</li>
-              </ul>
-            </div>
-          </div>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <div class="label">식별</div>
-              <h4>고영향 AI 여부 판단</h4>
-              <p>신규·기존 AI 서비스 중 영향도가 큰 사례를 선별해 관리 대상으로 식별하고 있습니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">후속조치</div>
-              <h4>안전조치와 문서화 기반 마련</h4>
-              <p>고영향 AI 서비스의 후속조치가 일관되게 이뤄지도록 관리절차와 실무체계를 보완하고 있습니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">위원회 관심 포인트</div>
-              <h4>국민 영향이 큰 서비스의 신뢰성</h4>
-              <p>위원회에서는 고영향 AI가 실제로 어떤 분야에 적용되고 어떤 통제장치를 갖추는지 살펴볼 수 있습니다.</p>
-            </div>
-          </div>
-        </div>
+<div class="service-body"><h3>「모두의 경찰관」</h3><p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감하는 대표 치안 AI 사업입니다.</p></div></div>
+<div class="service service-2">
+<div class="label service-badge">공통기반</div>
 
-        <div class="tab-panel" id="tab5">
-          <div class="panel-top">
-            <div class="panel-summary">
-              <h3>AI 영향평가</h3>
-              <p>공공분야 AI 영향평가 제도에 맞추어 치안 AI 서비스의 영향도를 점검하고, 결과 검토 및 공표와 연계되는 기반을 단계적으로 마련하고 있습니다.</p>
-            </div>
-            <div class="panel-status">
-              <div class="status-pill">주요 추진 상태</div>
-              <ul class="status-list">
-                <li>AI 영향평가·위험관리 연구용역 수행 중</li>
-                <li>공공분야 영향평가 실시 및 결과 검토 준비</li>
-                <li>평가체계·평가 데이터셋 구축 발주</li>
-              </ul>
-            </div>
-          </div>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <div class="label">영향평가</div>
-              <h4>치안 AI 영향도 점검</h4>
-              <p>AI 서비스가 국민, 수사, 행정에 미치는 영향을 점검하여 위험과 편익을 함께 검토합니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">연구 기반</div>
-              <h4>위험관리 연구와 연계 추진</h4>
-              <p>영향평가가 단발성 검토에 그치지 않도록 위험관리 정책연구와 함께 추진되고 있습니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">확산성</div>
-              <h4>평가결과 활용 기반 마련</h4>
-              <p>평가체계와 데이터셋을 갖추어 향후 다양한 치안 AI 서비스로 적용 범위를 확장할 수 있도록 준비합니다.</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="tab-panel" id="tab6">
-          <div class="panel-top">
-            <div class="panel-summary">
-              <h3>AI 역량 강화</h3>
-              <p>전문인력 양성, 리터러시 교육, AI 담당관 운영, 지역거점 구축, 성과확산 활동을 통해 경찰 조직 전반의 AI 역량을 높이고 있습니다.</p>
-            </div>
-            <div class="panel-status">
-              <div class="status-pill">주요 추진 상태</div>
-              <ul class="status-list">
-                <li>동국대 CAIO 과정, 국민대 AI 교육, 연세대 계약학과 운영</li>
-                <li>시도청 순회 AI 리터러시 교육 추진</li>
-                <li>AI 담당관·제주 지역거점·세미나·해커톤 준비</li>
-              </ul>
-            </div>
-          </div>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <div class="label">교육</div>
-              <h4>전문교육과 리터러시 확산</h4>
-              <p>전문인력 양성과 함께 조직 전체의 AI 활용역량을 높이는 순회교육을 병행하고 있습니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">현장 확산</div>
-              <h4>시도청 담당관·지역거점 운영</h4>
-              <p>현장 접점에서 AI 과제를 발굴하고 성과를 확산할 수 있도록 지역 기반을 마련하고 있습니다.</p>
-            </div>
-            <div class="detail-card">
-              <div class="label">문화 조성</div>
-              <h4>세미나·해커톤·성공사례 확산</h4>
-              <p>내부 AI 활용문화를 확산하기 위해 행사와 사례공유 중심의 확산 활동을 준비하고 있습니다.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="service-body"><h3>AI 통합 플랫폼 · ON AI</h3><p>조직 전반의 AI 활용을 위한 공통기반 구축과 행정지원 AI 도입을 함께 추진합니다.</p></div></div>
+<div class="service service-3">
+<div class="label service-badge">수사 지원</div>
 
-  <section class="section" id="services">
-    <div class="section-head">
-      <div>
-        <div class="section-title">주요 치안 AI 사업·서비스 현황</div>
-        <div class="section-sub">6대 영역과 별도로, 위원들이 주요 치안 AI 사업의 추진 방향을 빠르게 파악할 수 있도록 핵심 사업을 묶어 정리했습니다.</div>
-      </div>
-    </div>
-    <div class="service-grid">
-      <div class="service">
-        <div class="label">대국민 AI 서비스</div>
-        <h3>「모두의 경찰관」</h3>
-        <p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감하는 대표 치안 AI 사업입니다.</p>
-      </div>
-      <div class="service">
-        <div class="label">공통기반</div>
-        <h3>AI 통합 플랫폼 · ON AI</h3>
-        <p>조직 전반의 AI 활용을 위한 공통기반 구축과 행정지원 AI 도입을 함께 추진합니다.</p>
-      </div>
-      <div class="service">
-        <div class="label">수사 지원</div>
-        <h3>KICS AI · 수사지원 AI</h3>
-        <p>OCR, 음성인식, 조서 작성 보조, 분석지원 등 수사업무 고도화를 위한 기능을 추진합니다.</p>
-      </div>
-      <div class="service">
-        <div class="label">조직 확산</div>
-        <h3>교육 · 담당관 · 지역거점</h3>
-        <p>AI 담당관 운영, 지역거점 구축, 교육과 리터러시 확산으로 조직의 체질 전환을 지원합니다.</p>
-      </div>
-    </div>
-  </section>
 
-  
-  <section class="section" id="news">
-    <div class="section-head">
-      <div>
-        <div class="section-title">언론 보도 · 관련 뉴스</div>
-        <div class="section-sub">치안 AI 관련 주요 언론 보도를 한눈에 확인할 수 있습니다.</div>
-        <div class="news-section-status">
-          <span class="news-topic">언론 보도</span>
-          <span id="newsUpdated">등록 자료 불러오는 중</span>
-        </div>
-      </div>
-    </div>
-    <div class="news-grid" id="newsGrid" aria-live="polite">
-      <div class="news-empty">등록된 언론 보도를 불러오는 중입니다.</div>
-    </div>
-    <div class="news-auto-note">
-      치안 AI 관련 언론 보도 자료를 모아 제공합니다.
-    </div>
-  </section>
+<div class="service-body"><h3>KICS AI · 수사지원 AI</h3><p>OCR, 음성인식, 조서 작성 보조, 분석지원 등 수사업무 고도화를 위한 기능을 추진합니다.</p></div></div>
+<div class="service service-4">
+<div class="label service-badge">조직 확산</div>
 
-<footer class="footer">
-    <span>경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널용</span>
-    <span>치안 AI 업무 추진현황을 쉽게 확인할 수 있도록 6대 영역 중심으로 재구성한 브리핑 페이지입니다.</span>
-  </footer>
+
+<div class="service-body"><h3>교육 · 담당관 · 지역거점</h3><p>AI 담당관 운영, 지역거점 구축, 교육과 리터러시 확산으로 조직의 체질 전환을 지원합니다.</p></div></div></div>
+</section>
+<section class="section" id="perspectives"><div class="section-heading-row"><div><h2 class="section-title">위원회에서 볼 관점</h2><div class="section-sub">치안 AI 추진현황을 볼 때 함께 살펴볼 핵심 관점입니다.</div></div></div><figure class="perspective-figure"><img alt="위원회에서 볼 관점 인포그래픽: 국민·현장 체감성, 안전성·신뢰성, 전주기 관리·확산의 세 가지 핵심 관점을 삼각형 구도로 정리한 이미지" src="POLICE-AI_위원회관점_인포그래픽.png"/></figure></section>
+<section class="section" id="news">
+<div class="section-heading-row">
+<div>
+<h2 class="section-title">언론 보도</h2>
+<div class="section-sub">치안 AI 관련 주요 언론 보도를 모아 제공합니다.</div>
+<div class="news-status"><span class="pill">언론 보도</span><span>주요 보도 6건</span></div>
+</div>
+</div>
+<div class="news-grid" id="newsGrid"><article class="news">
+<a class="news-link" href="https://zdnet.co.kr/view/?no=20260825142846" rel="noopener noreferrer" target="_blank">
+<div class="news-top">
+<span class="news-outlet">ZDNet Korea</span>
+<span class="news-topic">교육·확산</span>
+<span class="news-date">2026. 8. 25.</span>
+</div>
+<h3>포티투마루, 경찰 행정 '에이전틱 AI' 접목 방안 제시</h3>
+<p>경남경찰청 직원 대상 특강에서 에이전틱 AI를 활용한 경찰 행정 혁신과 'AI 네이티브 경찰청' 전환 방향을 제시한 보도입니다.</p>
+<div class="news-arrow">기사 보기 →</div>
+</a>
+</article>
+<article class="news">
+<a class="news-link" href="https://www.straightnews.co.kr/news/articleView.html?idxno=306846" rel="noopener noreferrer" target="_blank">
+<div class="news-top">
+<span class="news-outlet">스트레이트뉴스</span>
+<span class="news-topic">고영향·위험관리</span>
+<span class="news-date">2026. 7. 9.</span>
+</div>
+<h3>경찰청-씽크포비엘, 치안 AI 신뢰성 기준 수립 공동 협력</h3>
+<p>경찰청의 AI 영향평가 및 위험관리방안 수립 정책연구와 치안 분야 AI 신뢰성 확보를 위한 협력 착수를 다룬 보도입니다.</p>
+<div class="news-arrow">기사 보기 →</div>
+</a>
+</article>
+<article class="news">
+<a class="news-link" href="https://www.newsfreezone.co.kr/news/articleView.html?idxno=698147" rel="noopener noreferrer" target="_blank">
+<div class="news-top">
+<span class="news-outlet">뉴스프리존</span>
+<span class="news-topic">교육·확산</span>
+<span class="news-date">2026. 7. 7.</span>
+</div>
+<h3>국민대-경찰청, ‘치안 AI·데이터 분석 전문가 양성 과정’ 입과식</h3>
+<p>경찰청과 국민대가 공동 운영하는 치안 AI·데이터 분석 전문가 양성 과정의 운영 내용과 현장 문제 해결형 교육 방향을 소개한 보도입니다.</p>
+<div class="news-arrow">기사 보기 →</div>
+</a>
+</article>
+<article class="news">
+<a class="news-link" href="https://www.newsis.com/view/NISX20260703_0003695216" rel="noopener noreferrer" target="_blank">
+<div class="news-top">
+<span class="news-outlet">뉴시스</span>
+<span class="news-topic">AI 정책·거버넌스</span>
+<span class="news-date">2026. 7. 5.</span>
+</div>
+<h3>산재한 경찰 AI사업 한곳서 관리한다…첫 운영훈령 시행</h3>
+<p>「경찰청 인공지능의 개발 및 활용에 관한 규칙」 시행을 계기로 AI 사업의 기획·예산·개발·운영·사후관리와 영향평가·위험관리 체계를 통합 관리하는 내용을 다룬 보도입니다.</p>
+<div class="news-arrow">기사 보기 →</div>
+</a>
+</article>
+<article class="news">
+<a class="news-link" href="https://www.news1.kr/society/incident-accident/6154382" rel="noopener noreferrer" target="_blank">
+<div class="news-top">
+<span class="news-outlet">뉴스1</span>
+<span class="news-topic">AI 정책·거버넌스</span>
+<span class="news-date">2026. 5. 2.</span>
+</div>
+<h3>AI가 신종 마약 잡고 조서 작성까지 돕는다…경찰, AI로 치안 혁신</h3>
+<p>치안 AI 혁신 종합계획을 중심으로 수사지원 AI, 신종 마약 탐지, AI 통합 플랫폼 등 경찰청의 주요 AI 추진사업을 종합적으로 소개한 보도입니다.</p>
+<div class="news-arrow">기사 보기 →</div>
+</a>
+</article>
+<article class="news">
+<a class="news-link" href="https://www.khan.co.kr/article/202604121135001" rel="noopener noreferrer" target="_blank">
+<div class="news-top">
+<span class="news-outlet">경향신문</span>
+<span class="news-topic">수사지원 AI</span>
+<span class="news-date">2026. 4. 12.</span>
+</div>
+<h3>한 해 300만건 이상 사건 몰리는 경찰···46억 투입해 수사지원 AI 고도화</h3>
+<p>KICS 연계 수사지원 AI에 수사결과통지서 초안, 조사 질문 추천, 비정형 자료 인식·요약, 신종 범죄 탐지 등을 추가하는 고도화 사업을 다룬 보도입니다.</p>
+<div class="news-arrow">기사 보기 →</div>
+</a>
+</article></div>
+</section>
+<footer class="footer">경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널용 브리핑 페이지</footer>
 </main>
-
-
-<button id="backToTop" class="back-to-top" type="button"
-        aria-label="페이지 맨 위로 이동" title="맨 위로">
-  ↑
-</button>
-
+<label aria-label="AI 정책·거버넌스 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-1" id="sheet-backdrop-1"></label><label aria-label="AI 사업·예산 관리 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-2" id="sheet-backdrop-2"></label><label aria-label="AI 윤리·투명성·신뢰성 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-3" id="sheet-backdrop-3"></label><label aria-label="고영향 AI 관리 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-4" id="sheet-backdrop-4"></label><label aria-label="AI 영향평가 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-5" id="sheet-backdrop-5"></label><label aria-label="AI 역량 강화 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-6" id="sheet-backdrop-6"></label>
+<section aria-hidden="true" aria-label="AI 정책·거버넌스 상세 추진현황" class="domain-sheet" id="domain-sheet-1">
+<div class="domain-sheet-head">
+<div>
+<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
+<h2>AI 정책·거버넌스</h2>
+</div>
+<label aria-label="AI 정책·거버넌스 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-1" role="button" tabindex="0">×</label>
+</div>
+<div class="domain-sheet-body">
+<div class="tab-panel">
+<div class="panel-top">
+<div class="panel-summary">
+<h3>AI 정책·거버넌스</h3>
+<p>치안인공지능정책과를 중심으로 AI 정책과 훈령, 위원회, 국가 AI 전략과의 연계, 범정부 협의체 참여, 소속기관 AI 담당관 운영 등 경찰청 AI 거버넌스 전반을 추진하고 있습니다.</p>
+</div>
+<div class="panel-status">
+<div class="status-pill">주요 추진 상태</div>
+<ul class="status-list">
+<li>인공지능데이터기반행정위원회 확대·개편 추진</li>
+<li>국가AI전략위원회·AI 국정과제·행동계획 과제 관리</li>
+<li>범정부 AI 대응 협의체 참여 및 대외 연계 지속</li>
+</ul>
+</div>
+</div>
+<div class="detail-grid">
+<div class="detail-card">
+<div class="label">거버넌스</div>
+<h4>AI 책임관·총괄부서 중심 체계 운영</h4>
+<p>경찰청 차장이 AI책임관을 맡고, 치안인공지능정책과가 총괄부서 역할을 수행하는 구조입니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">위원회</div>
+<h4>위원회 기반 정책 조정</h4>
+<p>AI와 데이터 기반 행정을 함께 논의하는 위원회 구조를 통해 정책 방향과 주요 추진과제를 공유합니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">조직 확산</div>
+<h4>시도청 AI 담당관 운영</h4>
+<p>중앙의 정책 방향이 현장으로 전달되도록 시도청 AI 담당관 지정·관리와 지역거점 구축을 추진합니다.</p>
+</div>
+</div>
+</div>
+<label class="domain-sheet-bottom-close" for="domain-toggle-1" role="button" tabindex="0">닫기</label>
+</div>
+</section>
+<section aria-hidden="true" aria-label="AI 사업·예산 관리 상세 추진현황" class="domain-sheet" id="domain-sheet-2">
+<div class="domain-sheet-head">
+<div>
+<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
+<h2>AI 사업·예산 관리</h2>
+</div>
+<label aria-label="AI 사업·예산 관리 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-2" role="button" tabindex="0">×</label>
+</div>
+<div class="domain-sheet-body">
+<div class="tab-panel">
+<div class="panel-top">
+<div class="panel-summary">
+<h3>AI 사업·예산 관리</h3>
+<p>치안 AI 관련 사업을 전수조사하고, 정보화기반과 협업을 통해 사업·예산을 검토하며, 대국민 서비스와 공통기반 서비스가 체계적으로 추진되도록 관리하고 있습니다.</p>
+</div>
+<div class="panel-status">
+<div class="status-pill">주요 추진 상태</div>
+<ul class="status-list">
+<li>AI 사업 전수조사 및 사업관리 지속</li>
+<li>사업·예산 검토 및 사전협의 체계 활용</li>
+<li>AI 통합 플랫폼 ISP 마무리 단계</li>
+</ul>
+</div>
+</div>
+<div class="detail-grid">
+<div class="detail-card">
+<div class="label">대국민 서비스</div>
+<h4>「모두의 경찰관」 개발 추진</h4>
+<p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감할 수 있는 대표 치안 AI 사업입니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">공통기반</div>
+<h4>AI 통합 플랫폼·ON AI·치안 AI 어시스턴트</h4>
+<p>경찰 조직 전반이 활용할 수 있는 공통 기반을 구축하고, 행정지원 AI 도입을 함께 추진합니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">기능사업 연계</div>
+<h4>KICS AI·차세대 112 연계 지원</h4>
+<p>각 기능 부서가 주관하는 AI 사업을 정책·데이터·기술 측면에서 연계하고 지원합니다.</p>
+</div>
+</div>
+</div>
+<label class="domain-sheet-bottom-close" for="domain-toggle-2" role="button" tabindex="0">닫기</label>
+</div>
+</section>
+<section aria-hidden="true" aria-label="AI 윤리·투명성·신뢰성 상세 추진현황" class="domain-sheet" id="domain-sheet-3">
+<div class="domain-sheet-head">
+<div>
+<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
+<h2>AI 윤리·투명성·신뢰성</h2>
+</div>
+<label aria-label="AI 윤리·투명성·신뢰성 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-3" role="button" tabindex="0">×</label>
+</div>
+<div class="domain-sheet-body">
+<div class="tab-panel">
+<div class="panel-top">
+<div class="panel-summary">
+<h3>AI 윤리·투명성·신뢰성</h3>
+<p>치안 AI 서비스가 국민 신뢰를 얻을 수 있도록 윤리준칙, 보안·윤리교육, 활용기준, 안전성·신뢰성 확보방안을 함께 마련하고 있습니다.</p>
+</div>
+<div class="panel-status">
+<div class="status-pill">주요 추진 상태</div>
+<ul class="status-list">
+<li>경찰청 AI 윤리준칙 제정</li>
+<li>AI 윤리교육·보안교육 실시</li>
+<li>고영향 AI 안전성·신뢰성 확보방안 마련 추진</li>
+</ul>
+</div>
+</div>
+<div class="detail-grid">
+<div class="detail-card">
+<div class="label">윤리기준</div>
+<h4>치안 AI 윤리준칙 운영</h4>
+<p>기본권 보호, 공정성, 개인정보 보호, 안전성 등 공공 AI 서비스에 필요한 기준을 반영합니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">실무기준</div>
+<h4>활용안내서·평가체계 연구</h4>
+<p>현장에서 AI를 활용할 때 참고할 수 있는 실무기준과 평가체계를 연구용역으로 구체화하고 있습니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">서비스 신뢰</div>
+<h4>대국민 서비스 신뢰 확보</h4>
+<p>특히 「모두의 경찰관」과 같은 대국민 AI 서비스에는 안전성·신뢰성과 활용기준을 사업 단계에 반영하고 있습니다.</p>
+</div>
+</div>
+</div>
+<label class="domain-sheet-bottom-close" for="domain-toggle-3" role="button" tabindex="0">닫기</label>
+</div>
+</section>
+<section aria-hidden="true" aria-label="고영향 AI 관리 상세 추진현황" class="domain-sheet" id="domain-sheet-4">
+<div class="domain-sheet-head">
+<div>
+<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
+<h2>고영향 AI 관리</h2>
+</div>
+<label aria-label="고영향 AI 관리 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-4" role="button" tabindex="0">×</label>
+</div>
+<div class="domain-sheet-body">
+<div class="tab-panel">
+<div class="panel-top">
+<div class="panel-summary">
+<h3>고영향 AI 관리</h3>
+<p>국민 권익과 안전에 미치는 영향이 큰 고영향 AI에 대해서는 해당 여부를 식별하고, 필요한 후속조치와 관리체계가 마련되도록 추진하고 있습니다.</p>
+</div>
+<div class="panel-status">
+<div class="status-pill">주요 추진 상태</div>
+<ul class="status-list">
+<li>3D 얼굴인식시스템을 고영향 AI로 식별</li>
+<li>사업부서 후속조치 진행</li>
+<li>고영향 AI 관리기반을 연구용역과 연계해 마련 중</li>
+</ul>
+</div>
+</div>
+<div class="detail-grid">
+<div class="detail-card">
+<div class="label">식별</div>
+<h4>고영향 AI 여부 판단</h4>
+<p>신규·기존 AI 서비스 중 영향도가 큰 사례를 선별해 관리 대상으로 식별하고 있습니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">후속조치</div>
+<h4>안전조치와 문서화 기반 마련</h4>
+<p>고영향 AI 서비스의 후속조치가 일관되게 이뤄지도록 관리절차와 실무체계를 보완하고 있습니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">위원회 관심 포인트</div>
+<h4>국민 영향이 큰 서비스의 신뢰성</h4>
+<p>위원회에서는 고영향 AI가 실제로 어떤 분야에 적용되고 어떤 통제장치를 갖추는지 살펴볼 수 있습니다.</p>
+</div>
+</div>
+</div>
+<label class="domain-sheet-bottom-close" for="domain-toggle-4" role="button" tabindex="0">닫기</label>
+</div>
+</section>
+<section aria-hidden="true" aria-label="AI 영향평가 상세 추진현황" class="domain-sheet" id="domain-sheet-5">
+<div class="domain-sheet-head">
+<div>
+<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
+<h2>AI 영향평가</h2>
+</div>
+<label aria-label="AI 영향평가 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-5" role="button" tabindex="0">×</label>
+</div>
+<div class="domain-sheet-body">
+<div class="tab-panel">
+<div class="panel-top">
+<div class="panel-summary">
+<h3>AI 영향평가</h3>
+<p>공공분야 AI 영향평가 제도에 맞추어 치안 AI 서비스의 영향도를 점검하고, 결과 검토 및 공표와 연계되는 기반을 단계적으로 마련하고 있습니다.</p>
+</div>
+<div class="panel-status">
+<div class="status-pill">주요 추진 상태</div>
+<ul class="status-list">
+<li>AI 영향평가·위험관리 연구용역 수행 중</li>
+<li>공공분야 영향평가 실시 및 결과 검토 준비</li>
+<li>평가체계·평가 데이터셋 구축 발주</li>
+</ul>
+</div>
+</div>
+<div class="detail-grid">
+<div class="detail-card">
+<div class="label">영향평가</div>
+<h4>치안 AI 영향도 점검</h4>
+<p>AI 서비스가 국민, 수사, 행정에 미치는 영향을 점검하여 위험과 편익을 함께 검토합니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">연구 기반</div>
+<h4>위험관리 연구와 연계 추진</h4>
+<p>영향평가가 단발성 검토에 그치지 않도록 위험관리 정책연구와 함께 추진되고 있습니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">확산성</div>
+<h4>평가결과 활용 기반 마련</h4>
+<p>평가체계와 데이터셋을 갖추어 향후 다양한 치안 AI 서비스로 적용 범위를 확장할 수 있도록 준비합니다.</p>
+</div>
+</div>
+</div>
+<label class="domain-sheet-bottom-close" for="domain-toggle-5" role="button" tabindex="0">닫기</label>
+</div>
+</section>
+<section aria-hidden="true" aria-label="AI 역량 강화 상세 추진현황" class="domain-sheet" id="domain-sheet-6">
+<div class="domain-sheet-head">
+<div>
+<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
+<h2>AI 역량 강화</h2>
+</div>
+<label aria-label="AI 역량 강화 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-6" role="button" tabindex="0">×</label>
+</div>
+<div class="domain-sheet-body">
+<div class="tab-panel">
+<div class="panel-top">
+<div class="panel-summary">
+<h3>AI 역량 강화</h3>
+<p>전문인력 양성, 리터러시 교육, AI 담당관 운영, 지역거점 구축, 성과확산 활동을 통해 경찰 조직 전반의 AI 역량을 높이고 있습니다.</p>
+</div>
+<div class="panel-status">
+<div class="status-pill">주요 추진 상태</div>
+<ul class="status-list">
+<li>동국대 CAIO 과정, 국민대 AI 교육, 연세대 계약학과 운영</li>
+<li>시도청 순회 AI 리터러시 교육 추진</li>
+<li>AI 담당관·제주 지역거점·세미나·해커톤 준비</li>
+</ul>
+</div>
+</div>
+<div class="detail-grid">
+<div class="detail-card">
+<div class="label">교육</div>
+<h4>전문교육과 리터러시 확산</h4>
+<p>전문인력 양성과 함께 조직 전체의 AI 활용역량을 높이는 순회교육을 병행하고 있습니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">현장 확산</div>
+<h4>시도청 담당관·지역거점 운영</h4>
+<p>현장 접점에서 AI 과제를 발굴하고 성과를 확산할 수 있도록 지역 기반을 마련하고 있습니다.</p>
+</div>
+<div class="detail-card">
+<div class="label">문화 조성</div>
+<h4>세미나·해커톤·성공사례 확산</h4>
+<p>내부 AI 활용문화를 확산하기 위해 행사와 사례공유 중심의 확산 활동을 준비하고 있습니다.</p>
+</div>
+</div>
+</div>
+<label class="domain-sheet-bottom-close" for="domain-toggle-6" role="button" tabindex="0">닫기</label>
+</div>
+</section>
+<nav aria-label="주요 메뉴" class="bottom-nav">
+<a class="active" data-nav="home" href="#home"><span class="bottom-icon">⌂</span><span class="bottom-label">홈</span></a>
+<a data-nav="domains" href="#domains"><span class="bottom-icon">▦</span><span class="bottom-label">6대 영역</span></a>
+<a data-nav="services" href="#services"><span class="bottom-icon">◇</span><span class="bottom-label">주요 사업</span></a>
+<a data-nav="news" href="#news"><span class="bottom-icon">≡</span><span class="bottom-label">언론보도</span></a>
+</nav>
+<button aria-label="페이지 맨 위로 이동" class="back-to-top" id="backToTop" type="button">↑</button>
 <script>
 (function(){
-  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
-  const panels = Array.from(document.querySelectorAll('.tab-panel'));
+  const toggles = Array.from(document.querySelectorAll('.domain-toggle'));
+  const domainCards = Array.from(document.querySelectorAll('.domain-card'));
+  const sheets = Array.from(document.querySelectorAll('.domain-sheet'));
 
-  function activateTab(id, shouldScroll = true){
-    const targetPanel = panels.find(panel => panel.id === id);
+  function syncSheetState(){
+    const anyOpen = toggles.some(t => t.checked);
+    document.body.classList.toggle('sheet-open', anyOpen);
 
-    buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === id));
-    panels.forEach(panel => panel.classList.toggle('active', panel.id === id));
-
-    if(targetPanel && shouldScroll){
-      // 패널이 표시된 다음 실제 위치를 계산해 부드럽게 이동
-      requestAnimationFrame(() => {
-        targetPanel.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-
-        // 선택한 영역을 URL에도 남겨 새로고침/공유 시 상태 유지
-        if(history.replaceState){
-          history.replaceState(null, '', `#${id}`);
-        }
-      });
-    }
+    toggles.forEach((toggle, idx) => {
+      const open = toggle.checked;
+      const card = domainCards.find(c => c.getAttribute('for') === toggle.id);
+      const sheet = sheets[idx];
+      if(card) card.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(sheet) sheet.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => activateTab(btn.dataset.tab, true));
+  toggles.forEach(toggle => {
+    toggle.addEventListener('change', () => {
+      if(toggle.checked){
+        toggles.forEach(other => { if(other !== toggle) other.checked = false; });
+      }
+      syncSheetState();
+    });
   });
 
-  // URL에 #tab1 ~ #tab6이 있으면 해당 영역을 처음부터 열어줌
-  const initialTab = location.hash.replace('#', '');
-  if(panels.some(panel => panel.id === initialTab)){
-    activateTab(initialTab, false);
-  }
-
-  const newsGrid = document.getElementById('newsGrid');
-  const newsUpdated = document.getElementById('newsUpdated');
-
-  function formatDate(value){
-    if(!value) return '';
-    const parts = String(value).slice(0,10).split('-');
-    if(parts.length !== 3) return value;
-    return `${Number(parts[0])}. ${Number(parts[1])}. ${Number(parts[2])}.`;
-  }
-
-  function makeNewsCard(item){
-    const article = document.createElement('article');
-    article.className = 'news';
-
-    const top = document.createElement('div');
-    top.className = 'news-top';
-
-    const outlet = document.createElement('span');
-    outlet.className = 'news-outlet';
-    outlet.textContent = item.source || '언론';
-
-    const topic = document.createElement('span');
-    topic.className = 'news-topic';
-    topic.textContent = item.topic || '치안 AI';
-
-    const date = document.createElement('span');
-    date.className = 'news-date';
-    date.textContent = formatDate(item.published);
-
-    top.append(outlet, topic, date);
-
-    const title = document.createElement('h3');
-    title.textContent = item.title || '제목 없음';
-
-    const summary = document.createElement('p');
-    summary.textContent = item.summary || '';
-
-    const link = document.createElement('a');
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.href = item.link || '#';
-    link.textContent = '기사 보기 ↗';
-
-    article.append(top, title);
-    if(item.summary) article.append(summary);
-    article.append(link);
-    return article;
-  }
-
-  async function loadNews(){
-    if(!newsGrid) return;
-
-    try{
-      const response = await fetch(`data/news.json?t=${Date.now()}`, {cache:'no-store'});
-      if(!response.ok) throw new Error(`HTTP ${response.status}`);
-
-      const data = await response.json();
-      const items = Array.isArray(data.items) ? data.items : [];
-
-      if(items.length){
-        newsGrid.replaceChildren(...items.map(makeNewsCard));
-      }else{
-        const empty = document.createElement('div');
-        empty.className = 'news-empty';
-        empty.textContent = '등록된 언론 보도가 없습니다.';
-        newsGrid.replaceChildren(empty);
-      }
-
-      if(newsUpdated){
-        newsUpdated.textContent = data.updated_at
-          ? `최근 등록·수정 ${formatDate(data.updated_at)}`
-          : `등록 기사 ${items.length}건`;
-      }
-    }catch(err){
-      if(newsUpdated) newsUpdated.textContent = '등록 자료 확인 필요';
-      const empty = document.createElement('div');
-      empty.className = 'news-empty';
-      empty.textContent = '언론 보도 자료를 불러오지 못했습니다.';
-      newsGrid.replaceChildren(empty);
-      console.warn('직접 등록 뉴스 데이터를 불러오지 못했습니다.', err);
+  document.addEventListener('keydown', event => {
+    if(event.key === 'Escape' && toggles.some(t => t.checked)){
+      toggles.forEach(t => { t.checked = false; });
+      syncSheetState();
     }
-  }
+  });
 
-  loadNews();
-
-  const backToTop = document.getElementById('backToTop');
-
-  function toggleBackToTop(){
-    if(!backToTop) return;
-    backToTop.classList.toggle('show', window.scrollY > 250);
-  }
-
-  if(backToTop){
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-
-      if(history.replaceState){
-        history.replaceState(null, '', location.pathname + location.search);
+  document.querySelectorAll('label.domain-card,label.domain-sheet-close,label.domain-sheet-bottom-close').forEach(label => {
+    label.addEventListener('keydown', event => {
+      if(event.key === 'Enter' || event.key === ' '){
+        event.preventDefault();
+        label.click();
       }
     });
+  });
 
+  const backToTop = document.getElementById('backToTop');
+  if(backToTop){
+    function toggleBackToTop(){backToTop.classList.toggle('show', window.scrollY > 350);}
+    backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
     window.addEventListener('scroll', toggleBackToTop, {passive:true});
     toggleBackToTop();
   }
+
+  const navLinks = Array.from(document.querySelectorAll('.bottom-nav a'));
+  const navSections = ['home','domains','services','news'].map(id => document.getElementById(id)).filter(Boolean);
+  function updateBottomNav(){
+    let current='home';
+    const y=window.scrollY+150;
+    navSections.forEach(section => { if(section.offsetTop <= y) current=section.id; });
+    navLinks.forEach(link => link.classList.toggle('active', link.dataset.nav === current));
+  }
+  window.addEventListener('scroll', updateBottomNav, {passive:true});
+  updateBottomNav();
+  syncSheetState();
 })();
 </script>
 </body>
