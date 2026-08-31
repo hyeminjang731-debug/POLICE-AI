@@ -7,7 +7,8 @@
 <title>치안 AI 업무 추진현황 브리핑</title>
 <meta content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다." name="description"/>
 <link href="https://hyeminjang731-debug.github.io/POLICE-AI/" rel="canonical"/>
-<link crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet"/>
 <meta content="website" property="og:type"/>
 <meta content="경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널" property="og:site_name"/>
 <meta content="치안 AI 업무 추진현황 브리핑" property="og:title"/>
@@ -16,900 +17,1655 @@
 <meta content="https://hyeminjang731-debug.github.io/POLICE-AI/preview-v2.png" property="og:image"/>
 <meta content="https://hyeminjang731-debug.github.io/POLICE-AI/preview-v2.png" property="og:image:secure_url"/>
 <meta content="image/png" property="og:image:type"/>
-<meta content="치안 AI 업무 추진현황 브리핑 대표 이미지" property="og:image:alt"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="치안 AI 업무 추진현황 브리핑" name="twitter:title"/>
-<meta content="6대 영역별 추진현황과 주요 치안 AI 사업·언론 보도를 한눈에 확인할 수 있습니다." name="twitter:description"/>
-<meta content="https://hyeminjang731-debug.github.io/POLICE-AI/preview-v2.png" name="twitter:image"/>
+<meta content="#0C223D" name="theme-color"/>
 <style>
-:root{
-  --navy:#163b68;
-  --navy-dark:#112d4f;
-  --text-strong:#101828;
-  --text:#344054;
-  --text-muted:#475467;
-  --line:#dfe4ea;
-  --line-strong:#c8d0da;
-  --bg:#f4f6f8;
-  --card:#ffffff;
-  --soft:#f8fafc;
-  --navy-soft:#edf3f9;
-  --success:#176b4d;
-  --success-bg:#eaf6f0;
-  --shadow:0 8px 24px rgba(16,36,62,.07);
-  --shadow-sheet:0 24px 70px rgba(15,23,42,.22);
+/* ===== 모바일 인앱브라우저 호환: CSS checkbox 팝업 ===== */
+.modal-toggle{
+  position:fixed;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  opacity:0;
+  pointer-events:none;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
+.modal{display:none}
+#domains-toggle:checked ~ #domainsModal,
+#services-toggle:checked ~ #servicesModal,
+#news-toggle:checked ~ #newsModal,
+#intro-toggle:checked ~ #introModal{
+  display:block;
+}
+#domains-toggle:checked ~ #domainsModal,
+#services-toggle:checked ~ #servicesModal,
+#news-toggle:checked ~ #newsModal,
+#intro-toggle:checked ~ #introModal{
+  visibility:visible;
+}
+
+
+    :root{
+      --navy:#0E2744;
+      --navy-2:#173A61;
+      --blue:#3C7FF0;
+      --text:#243548;
+      --text-strong:#0F2135;
+      --muted:#66788C;
+      --line:#DFE6EE;
+      --soft:#F5F8FB;
+      --safe-top:env(safe-area-inset-top,0px);
+      --safe-bottom:env(safe-area-inset-bottom,0px);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all;line-break:strict}
+    body{background:#081827;color:#fff;-webkit-text-size-adjust:100%;overflow-x:hidden}
+    body.modal-open{overflow:hidden}
+    button,a{font:inherit;-webkit-tap-highlight-color:transparent}
+    button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid rgba(89,151,255,.32);outline-offset:3px}
+
+    .landing{
+      position:relative;min-height:100svh;overflow:hidden;
+      display:flex;flex-direction:column;
+      background:
+        linear-gradient(180deg,rgba(6,19,35,.26) 0%,rgba(6,19,35,.50) 42%,rgba(5,18,32,.88) 100%),
+        radial-gradient(circle at 72% 30%,rgba(61,117,183,.28),transparent 27%),
+        linear-gradient(135deg,#17395C 0%,#0A1E34 58%,#071725 100%);
+    }
+    .city-bg{position:absolute;inset:88px 0 0;width:100%;height:calc(100% - 88px);opacity:.46;z-index:0}
+    .landing::after{
+      content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px);
+      background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent 18%,#000 55%,#000 100%);
+    }
+
+    .topbar{position:relative;z-index:3;padding:calc(18px + var(--safe-top)) 22px 16px;display:flex;align-items:center;gap:12px;background:rgba(7,24,42,.76);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+    .brand-line{min-width:0;flex:1;font-size:18px;font-weight:700;line-height:1.3;letter-spacing:-.02em}
+    .brand-line strong{color:#fff}
+    .brand-line span{color:#B7C4D3;font-weight:500}
+    .brand-line .bracket{color:#79AFFF}
+    .hamburger{width:48px;height:48px;border:0;background:transparent;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+
+    .hero{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:52px 22px calc(26px + var(--safe-bottom))}
+    .hero-copy{max-width:760px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#AFC8E8;font-size:13px;font-weight:700}
+    .hero-eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:#68A4FF;box-shadow:0 0 0 5px rgba(104,164,255,.12)}
+    .hero h1{margin:16px 0 14px;font-size:42px;line-height:1.16;font-weight:800;letter-spacing:-.035em;text-shadow:0 3px 16px rgba(0,0,0,.22)}
+    .hero h1 em{font-style:normal;color:#78B4FF}
+    .hero p{margin:0;max-width:680px;color:#C0CBD7;font-size:16px;line-height:1.72;font-weight:500}
+    .cta-stack{display:grid;gap:12px;margin-top:32px}
+    .cta{width:100%;min-height:78px;border-radius:20px;border:1px solid rgba(255,255,255,.26);background:rgba(10,30,52,.38);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;gap:13px;padding:17px 20px;text-align:left;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
+    .cta.primary{background:#3E7FEF;border-color:#3E7FEF;box-shadow:0 12px 26px rgba(42,107,225,.28)}
+    .cta-icon{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:19px;flex:0 0 auto}
+    .cta-copy{min-width:0;flex:1}
+    .cta-copy strong{display:block;font-size:18px;font-weight:800;line-height:1.35}
+    .cta-copy span{display:block;margin-top:3px;color:#C9D4DF;font-size:12px;line-height:1.4}
+    .cta.primary .cta-copy span{color:#E8F0FF}
+    .cta-arrow{font-size:28px;color:#fff;opacity:.9}
+
+    .menu-panel{position:fixed;inset:0;z-index:70;display:grid;align-items:start;justify-items:end;background:rgba(4,16,29,.48);backdrop-filter:blur(6px)}
+    .menu-panel[hidden]{display:none}
+    .menu-box{margin:calc(18px + var(--safe-top)) 14px 0;width:min(320px,calc(100% - 28px));padding:14px;border-radius:20px;background:#fff;color:var(--text);box-shadow:0 24px 50px rgba(0,0,0,.28)}
+    .menu-head{display:flex;align-items:center;justify-content:space-between;padding:4px 4px 10px}
+    .menu-head strong{color:var(--text-strong);font-size:16px}
+    .menu-close{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:var(--soft);font-size:20px}
+    .menu-list{display:grid;gap:6px}
+    .menu-item{border:0;border-radius:13px;background:#F6F8FB;color:var(--text-strong);min-height:52px;text-align:left;padding:12px 14px;font-weight:700;cursor:pointer}
+
+    .modal{position:fixed;inset:0;z-index:80}
+    
+    .modal-dim{position:absolute;inset:0;border:0;background:rgba(4,15,27,.62);backdrop-filter:blur(3px)}
+    .modal-panel{position:absolute;left:0;right:0;bottom:0;max-height:91svh;overflow:hidden;border-radius:24px 24px 0 0;background:#fff;color:var(--text);box-shadow:0 -24px 56px rgba(0,0,0,.24)}
+    .grab{width:52px;height:5px;border-radius:999px;background:#D5DCE4;margin:10px auto 0}
+    .modal-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 16px 13px;border-bottom:1px solid var(--line)}
+    .modal-title small{display:block;color:var(--blue);font-size:12px;font-weight:800;margin-bottom:3px}
+    .modal-title h2{margin:0;color:var(--text-strong);font-size:22px;line-height:1.35;font-weight:800}
+    .close-btn{width:42px;height:42px;flex:0 0 42px;display:flex;align-items:center;justify-content:center;padding:0;border:1px solid var(--line);border-radius:50%;background:#F6F8FA;color:var(--text-strong);font-size:22px;line-height:1;cursor:pointer;box-sizing:border-box}
+    .modal-scroll{max-height:calc(91svh - 74px);overflow:auto;padding:14px 14px calc(22px + var(--safe-bottom));overscroll-behavior:contain}
+
+    .domain-accordion{border:1px solid var(--line);border-radius:17px;background:#fff;overflow:hidden;margin-bottom:10px}
+    .domain-accordion summary{list-style:none;display:grid;grid-template-columns:42px minmax(0,1fr) 24px;gap:11px;align-items:center;padding:14px;cursor:pointer;background:linear-gradient(135deg,#fff,var(--soft));}
+    .domain-accordion summary::-webkit-details-marker{display:none}
+    .domain-no{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:13px;font-weight:800}
+    .domain-summary-copy strong{display:block;color:var(--text-strong);font-size:16px;font-weight:800;line-height:1.35}
+    .domain-summary-copy span{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.45}
+    .chev{color:var(--accent);font-size:20px;transition:transform .18s ease}
+    .domain-accordion[open] .chev{transform:rotate(180deg)}
+    .accordion-body{padding:0 13px 14px}
+    .overview-card{padding:14px;border-radius:14px;background:var(--soft)}
+    .mini-label{display:inline-flex;padding:5px 8px;border-radius:999px;background:#fff;color:var(--accent);font-size:11px;font-weight:800}
+    .overview-card p{margin:9px 0 0;color:var(--text);font-size:14px;line-height:1.62}
+    .modal-section{margin-top:15px}
+    .modal-section h3{margin:0 0 8px;color:var(--text-strong);font-size:15px;font-weight:800}
+    .status-list{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+    .status-list li{position:relative;padding:11px 12px 11px 26px;border:1px solid var(--line);border-radius:13px;background:#FAFBFD;font-size:13px;line-height:1.52;font-weight:600}
+    .status-list li::before{content:"";position:absolute;left:11px;top:17px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .detail-grid{display:grid;gap:7px}
+    .detail-card{padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}
+    .detail-label{display:inline-flex;padding:4px 7px;border-radius:999px;background:var(--soft);color:var(--accent);font-size:10px;font-weight:800}
+    .detail-card h4{margin:6px 0 3px;color:var(--text-strong);font-size:14px;line-height:1.4}
+    .detail-card p{margin:0;font-size:13px;line-height:1.52}
+
+    .service-grid{display:grid;gap:10px}
+    .service-card{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff}
+    .service-mark{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:12px;font-weight:800}
+    .service-label{color:var(--accent);font-size:11px;font-weight:800}
+    .service-card h3{margin:3px 0 4px;color:var(--text-strong);font-size:16px;line-height:1.4}
+    .service-card p{margin:0;font-size:13px;line-height:1.55}
+
+    .news-grid{display:grid;gap:10px}
+    .news-card{display:block;padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff;color:inherit;text-decoration:none}
+    .news-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+    .news-outlet{color:var(--text-strong);font-size:12px;font-weight:800}
+    .news-date{color:var(--muted);font-size:11px}
+    .news-topic{display:inline-flex;margin-top:8px;padding:5px 8px;border-radius:999px;background:#EDF3FA;color:#275B93;font-size:10px;font-weight:800}
+    .news-card h3{margin:9px 0 5px;color:var(--text-strong);font-size:15px;line-height:1.45}
+    .news-card p{margin:0;color:var(--text);font-size:12px;line-height:1.55}
+    .news-go{display:inline-flex;gap:5px;margin-top:9px;color:var(--blue);font-size:11px;font-weight:800}
+
+    .intro-body p{margin:0 0 10px;font-size:14px;line-height:1.62}
+    .intro-list{margin:12px 0;padding:13px 13px 13px 29px;border-radius:13px;background:#F6F8FB;border:1px solid var(--line)}
+    .intro-list li{margin:4px 0;font-size:13px}
+    .intro-guide{padding:11px;border-radius:12px;background:#EDF3FA;color:#173A61;font-size:12px;font-weight:700}
+
+    @media(min-width:760px){
+      .hero{padding:68px 60px 50px}
+      .hero h1{font-size:52px}
+      .cta-stack{max-width:640px}
+      .modal-panel{left:50%;right:auto;top:50%;bottom:auto;width:min(760px,calc(100% - 40px));max-height:84vh;transform:translate(-50%,-50%);border-radius:22px}
+      .modal-scroll{max-height:calc(84vh - 74px)}
+      .service-grid,.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{transition:none!important;animation:none!important}
+    }
+  
+label.cta,
+label.menu-item,
+label.modal-dim,
+label.close-btn{
+  cursor:pointer;
+  user-select:none;
+}
+
+
+/* User requested simplification */
+.hero{padding-top:56px;}
+.hero-copy{gap:14px;}
+.hero-copy h1{margin-bottom:0;}
+@media (max-width: 760px){
+  .hero{padding-top:44px;}
+}
+
+
+/* ===== 2026-08-28 refined hero landing ===== */
+body{background:#071522;}
+.landing{
+  min-height:100svh;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(111,182,255,.18), transparent 26%),
+    radial-gradient(circle at 82% 16%, rgba(52,140,255,.16), transparent 24%),
+    radial-gradient(circle at 50% 82%, rgba(63,129,255,.10), transparent 38%),
+    linear-gradient(160deg,#071a2e 0%,#092443 40%,#0c2846 62%,#071826 100%);
+}
+.city-bg{
+  inset:0;
+  height:100%;
+  opacity:.62;
+  filter:saturate(1.08);
+}
+.city-bg rect[fill="url(#sky)"]{opacity:0}
+.city-bg > g:first-of-type rect{fill:#0d2a47;opacity:.32}
+.city-bg > g:nth-of-type(2) rect{fill:#75aee8;opacity:.14}
+.topbar{display:none !important;}
+.hero{
+  min-height:100svh;
+  justify-content:space-between;
+  padding:calc(18px + var(--safe-top)) 22px calc(18px + var(--safe-bottom));
+  gap:12px;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(7,23,38,.12) 0%, rgba(7,23,38,.02) 16%, rgba(7,23,38,.18) 70%, rgba(6,19,35,.3) 100%),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size:auto, 26px 26px, 26px 26px;
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.92));
+  pointer-events:none;
+}
+.hero > *{position:relative; z-index:1;}
+.hero-utility{display:flex; justify-content:flex-end; align-items:center; min-height:48px;}
+.hero-menu{
+  width:54px; height:54px; border-radius:18px; border:1px solid rgba(255,255,255,.18);
+  background:rgba(10,25,44,.35); backdrop-filter:blur(12px); color:#fff; padding:0;
+  box-shadow:0 10px 26px rgba(0,0,0,.16), inset 0 0 0 1px rgba(255,255,255,.03);
+}
+.menu-svg{width:26px;height:26px;display:block;margin:auto}
+.hero-copy{
+  margin-top:auto;
+  padding:0 2px;
+  display:grid;
+  gap:14px;
+}
+.hero-eyebrow{
+  font-size:14px;
+  color:#c9daf0;
+}
+.hero h1{
   margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  font-size:15px;
-  line-height:1.6;
-  -webkit-text-size-adjust:100%;
-  word-break:keep-all;
-  line-break:strict;
+  font-size:clamp(42px, 10vw, 62px);
+  line-height:1.08;
+  letter-spacing:-.04em;
+  max-width:8.5em;
 }
-body.sheet-open{overflow:hidden;overscroll-behavior:none}
-a{color:inherit;text-decoration:none}
-button,label{font:inherit}
-a,button,label{-webkit-tap-highlight-color:transparent}
-a:focus-visible,button:focus-visible,label[tabindex]:focus-visible{outline:3px solid rgba(22,59,104,.2);outline-offset:3px}
-h1,h2,h3,h4{margin:0;color:var(--text-strong);font-weight:800;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:normal;line-break:strict;text-wrap:balance}
-p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:pretty}
-
-.topbar{
-  position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,.98);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(10px);
+.hero h1 em{display:block; color:#77b6ff;}
+.cta-stack{
+  gap:12px;
+  margin-top:0;
+  padding-bottom:6px;
 }
-.topbar-inner{
-  max-width:1080px;margin:0 auto;min-height:78px;padding:12px 20px;
-  display:flex;align-items:center;gap:14px;
+.cta{
+  min-height:74px;
+  padding:16px 18px;
+  gap:14px;
+  border-radius:24px;
+  background:rgba(10,29,51,.42);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 14px 30px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.02);
 }
-.brand-mark{
-  width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;
-  border-radius:14px;background:var(--navy);color:#fff;font-size:12px;font-weight:800;
+.cta.primary{
+  background:linear-gradient(135deg,#3d83f5 0%, #4a90ff 100%);
+  border-color:rgba(121,174,255,.68);
 }
-.brand-copy{min-width:0}
-.brand-title{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--text-strong);line-height:1.3}
-.brand-sub{margin-top:3px;font-size:13px;color:var(--text-muted);line-height:1.4}
-
-.main{max-width:1080px;margin:0 auto;padding:22px 20px 72px}
-.overview-home{
-  padding:24px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:var(--shadow);
+.cta-icon{
+  width:44px;height:44px;flex:0 0 44px;border-radius:14px;
+  background:rgba(255,255,255,.14);
 }
-.overview-head{display:block}
-.overview-eyebrow{font-size:13px;font-weight:800;color:var(--navy)}
-.overview-head h1{margin-top:5px;font-size:30px;line-height:1.28}
-
-
-
-
-
-
-.domain-section{margin-top:22px;scroll-margin-top:96px}
-.section-heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px}
-.section-title{font-size:22px;line-height:1.35;font-weight:800}
-.section-sub{margin-top:4px;font-size:13px;color:var(--text-muted);line-height:1.55}
-.domain-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.domain-card{position:relative;min-width:0;min-height:214px;padding:16px 16px 15px 19px;display:flex;flex-direction:column;border:1px solid var(--line);border-left:5px solid var(--domain-accent);border-radius:18px;background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(16,36,62,.04);transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease}
-.domain-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.domain-number{display:inline-flex;align-items:center;min-height:30px;padding:5px 9px;border-radius:9px;background:var(--soft);color:var(--domain-accent);font-size:12px;font-weight:800}
-.domain-state{display:inline-flex;align-items:center;min-height:28px;padding:4px 9px;border-radius:999px;background:var(--success-bg);color:var(--success);font-size:12px;font-weight:800}
-.domain-card h3{margin-top:12px;font-size:17px;line-height:1.4}
-.domain-description{margin:8px 0 0;font-size:13px;color:var(--text-muted);line-height:1.65}
-.domain-current{margin:13px 0 0;padding-top:11px;border-top:1px solid var(--line);font-size:13px;color:var(--text);line-height:1.55}
-.domain-current span{display:block;margin-bottom:3px;color:var(--text-muted);font-size:12px;font-weight:800}
-.domain-affordance{margin-top:auto;padding-top:13px;color:var(--navy);font-size:13px;font-weight:800}
-.domain-card:hover{border-color:var(--line-strong);border-left-color:var(--domain-accent);box-shadow:0 8px 20px rgba(16,36,62,.08);transform:translateY(-1px)}
-#domain-toggle-1:checked ~ .main label[for="domain-toggle-1"],
-#domain-toggle-2:checked ~ .main label[for="domain-toggle-2"],
-#domain-toggle-3:checked ~ .main label[for="domain-toggle-3"],
-#domain-toggle-4:checked ~ .main label[for="domain-toggle-4"],
-#domain-toggle-5:checked ~ .main label[for="domain-toggle-5"],
-#domain-toggle-6:checked ~ .main label[for="domain-toggle-6"]{box-shadow:0 0 0 3px rgba(22,59,104,.12),0 8px 20px rgba(16,36,62,.08)}
-
-.overview-projects{margin-top:20px}
-.overview-block-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
-.overview-block-head strong{font-size:16px;color:var(--text-strong);font-weight:800}
-.overview-block-head a{font-size:13px;color:var(--navy);font-weight:700}
-.project-chips{display:flex;flex-wrap:wrap;gap:8px}
-.project-chips a{padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--soft);font-size:13px;color:var(--text);font-weight:700}
-.overview-shortcuts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.overview-shortcuts a{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;min-height:58px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:#fff}
-.overview-shortcuts span{padding:5px 8px;border-radius:7px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
-.overview-shortcuts strong{font-size:15px;color:var(--text-strong);font-weight:700}
-.overview-shortcuts b{font-size:22px;color:var(--text-muted);font-weight:700}
-
-.section{margin-top:30px;scroll-margin-top:96px}
-.service-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.service{position:relative;padding:18px;border:2px solid var(--service-accent,var(--line-strong));border-radius:18px;background:#fff;box-shadow:0 6px 16px rgba(16,36,62,.045)}
-.service .label,.service-badge{display:inline-flex;align-items:center;min-height:30px;padding:5px 10px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
-.service h3{margin:0;font-size:19px;line-height:1.4;color:var(--text-strong)}
-.service p{margin:8px 0 0;font-size:15px;color:var(--text);line-height:1.7}
-.service{transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
-.service:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(16,36,62,.08);filter:saturate(1.04)}
-
-
-
-.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.news{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 4px 14px rgba(16,36,62,.035)}
-.news-link{display:block;padding:17px}
-.news-top{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
-.news-outlet,.news-topic{padding:5px 8px;border-radius:7px;background:var(--navy-soft);color:var(--text-muted);font-size:12px;font-weight:800}
-.news-date{margin-left:auto;font-size:12px;color:var(--text-muted);font-weight:700}
-.news h3{margin-top:10px;font-size:17px;line-height:1.5}
-.news p{margin:8px 0 0;font-size:15px;color:var(--text);line-height:1.65}
-.news-arrow{margin-top:12px;font-size:13px;color:var(--navy);font-weight:800}
-.news-status{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:var(--text-muted)}
-.news-status .pill{padding:5px 8px;border-radius:7px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
-.news-empty{padding:20px;border:1px dashed var(--line-strong);border-radius:16px;background:#fff;color:var(--text-muted);font-size:15px;text-align:center}
-
-.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--text-muted);line-height:1.6}
-
-.bottom-nav{position:fixed;left:50%;bottom:0;z-index:250;width:min(100%,1080px);transform:translateX(-50%);display:none;grid-template-columns:repeat(4,1fr);padding:7px 10px calc(7px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.98);box-shadow:0 -6px 20px rgba(16,36,62,.07);backdrop-filter:blur(10px)}
-.bottom-nav a,.bottom-nav .home-nav-button{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .14s ease,color .14s ease,transform .10s ease}
-.bottom-nav a.active,.bottom-nav .home-nav-button.active{color:var(--navy);background:var(--navy-soft)}
-.bottom-nav a:active,.bottom-nav .home-nav-button:active{color:var(--navy);background:#e1ebf6;transform:scale(.96)}
-.bottom-icon{font-size:18px}
-
-.back-to-top{position:fixed;right:18px;bottom:22px;z-index:260;width:46px;height:46px;border:1px solid var(--line-strong);border-radius:50%;background:#fff;color:var(--navy);box-shadow:var(--shadow);font-size:20px;font-weight:800;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s ease}
-.back-to-top.show{opacity:1;visibility:visible;transform:none}
-
-.domain-toggle{position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-9999px}
-.sheet-backdrop{position:fixed;inset:0;z-index:9998;background:rgba(15,23,42,.52);opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s step-end;cursor:pointer}
-.domain-sheet{position:fixed;left:50%;top:50%;z-index:9999;width:min(900px,calc(100% - 40px));max-height:82vh;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow-sheet);opacity:0;visibility:hidden;transform:translate(-50%,calc(-50% + 18px));transition:opacity .18s ease,transform .18s ease,visibility .18s step-end}
-#domain-toggle-1:checked ~ #sheet-backdrop-1,#domain-toggle-2:checked ~ #sheet-backdrop-2,#domain-toggle-3:checked ~ #sheet-backdrop-3,#domain-toggle-4:checked ~ #sheet-backdrop-4,#domain-toggle-5:checked ~ #sheet-backdrop-5,#domain-toggle-6:checked ~ #sheet-backdrop-6{opacity:1;visibility:visible;transition:opacity .18s ease,visibility 0s}
-#domain-toggle-1:checked ~ #domain-sheet-1,#domain-toggle-2:checked ~ #domain-sheet-2,#domain-toggle-3:checked ~ #domain-sheet-3,#domain-toggle-4:checked ~ #domain-sheet-4,#domain-toggle-5:checked ~ #domain-sheet-5,#domain-toggle-6:checked ~ #domain-sheet-6{opacity:1;visibility:visible;transform:translate(-50%,-50%);transition:opacity .18s ease,transform .18s ease,visibility 0s}
-.domain-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px;border-bottom:1px solid var(--line)}
-.domain-sheet-eyebrow{font-size:13px;color:var(--navy);font-weight:800}
-.domain-sheet-head h2{margin-top:3px;font-size:22px;line-height:1.35}
-.domain-sheet-close{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border:1px solid var(--line-strong);border-radius:50%;background:var(--soft);color:var(--text-strong);font-size:24px;font-weight:700;cursor:pointer}
-.domain-sheet-body{min-height:0;overflow:auto;padding:18px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.domain-sheet-body .tab-panel{display:block;border:0;padding:0}
-.domain-sheet-body .panel-top{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.domain-sheet-body .panel-summary,.domain-sheet-body .panel-status,.domain-sheet-body .detail-card{padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff}
-.domain-sheet-body .panel-summary,.domain-sheet-body .panel-status{background:var(--soft)}
-.domain-sheet-body .panel-summary h3,.domain-sheet-body .panel-status h3{font-size:18px;line-height:1.4}
-.domain-sheet-body .panel-summary p,.domain-sheet-body .status-list li,.domain-sheet-body .detail-card p,.domain-sheet-body .detail-card li{font-size:15px;color:var(--text);line-height:1.65}
-.domain-sheet-body .status-pill{display:inline-flex;margin-bottom:9px;padding:5px 9px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
-.domain-sheet-body .status-list,.domain-sheet-body .detail-card ul{margin:0;padding-left:20px}
-.domain-sheet-body .detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
-.domain-sheet-body .detail-card .label{font-size:12px;color:var(--navy);font-weight:800}
-.domain-sheet-body .detail-card h4{margin-top:5px;font-size:16px;line-height:1.45}
-.domain-sheet-body .detail-card p{margin:7px 0 0}
-.domain-sheet-bottom-close{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:14px;border:1px solid var(--line-strong);border-radius:12px;background:var(--soft);color:var(--navy);font-size:15px;font-weight:800;cursor:pointer}
-
-
-
-/* 홈 소개 팝업: CSS checkbox 기반 — 인앱 브라우저에서도 JS 없이 열림 */
-.home-intro-toggle{
-  position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-9999px;
+.icon-svg{width:24px;height:24px;color:#fff;display:block}
+.cta-copy strong{font-size:18px;line-height:1.25;}
+.cta-copy span{margin-top:4px; font-size:13px; color:#d4dfec; line-height:1.45;}
+.cta.primary .cta-copy span{color:#eef5ff;}
+.cta-arrow{font-size:27px; opacity:.94; margin-left:2px;}
+.menu-box{border-radius:22px;}
+.menu-list{gap:8px}
+.menu-item{
+  display:flex; align-items:center; gap:12px;
+  min-height:56px; padding:12px 14px;
 }
-#home-intro-toggle:checked ~ .intro-backdrop{
-  opacity:1;visibility:visible;transition:opacity .18s ease,visibility 0s;
+.menu-item-icon{
+  width:34px; height:34px; border-radius:11px; flex:0 0 34px;
+  display:grid; place-items:center;
+  background:#EAF2FE; color:#2f6fd7;
 }
-#home-intro-toggle:checked ~ .intro-dialog{
-  opacity:1;visibility:visible;transform:translate(-50%,-50%);
-  transition:opacity .18s ease,transform .18s ease,visibility 0s;
+.menu-item-icon .icon-svg{width:18px;height:18px;color:currentColor}
+.menu-item-text{display:block}
+
+@media (max-width:760px){
+  .landing{min-height:100svh;}
+  .hero{
+    min-height:100svh;
+    padding:calc(14px + var(--safe-top)) 18px calc(14px + var(--safe-bottom));
+    gap:10px;
+  }
+  .hero-copy{gap:12px}
+  .hero-eyebrow{font-size:13px}
+  .hero h1{font-size:clamp(31px, 9.2vw, 48px); max-width:8.6em;}
+  .cta-stack{gap:10px;}
+  .cta{min-height:68px; padding:14px 16px; border-radius:22px;}
+  .cta-icon{width:40px;height:40px;flex-basis:40px; border-radius:12px;}
+  .cta-copy strong{font-size:17px;}
+  .cta-copy span{font-size:12px;}
+  .cta-arrow{font-size:24px;}
 }
-#home-intro-toggle:checked ~ .bottom-nav .home-nav-button{
-  color:var(--navy);background:var(--navy-soft);
+@media (max-height:780px){
+  .hero h1{font-size:clamp(28px, 8.2vw, 42px);}
+  .hero-copy{gap:10px}
+  .cta{min-height:62px; padding:12px 15px;}
+  .cta-copy strong{font-size:16px;}
+  .cta-copy span{font-size:11.5px; line-height:1.35;}
+  .cta-icon{width:36px;height:36px;flex-basis:36px;}
+  .hero-eyebrow{font-size:12px}
+}
+@media (max-height:700px){
+  .hero{padding-top:calc(12px + var(--safe-top)); padding-bottom:calc(12px + var(--safe-bottom));}
+  .hero-copy{gap:8px}
+  .cta-stack{gap:8px}
+  .cta{min-height:58px; padding:11px 14px;}
+  .cta-copy span{display:none;}
 }
 
-/* 홈 버튼: 페이지 소개 팝업 */
-.intro-backdrop{
-  position:fixed;inset:0;z-index:10020;background:rgba(15,23,42,.54);
-  opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s step-end;
-}
-.intro-dialog{
-  position:fixed;left:50%;top:50%;z-index:10021;width:min(620px,calc(100% - 40px));
-  max-height:82vh;display:flex;flex-direction:column;overflow:hidden;
-  border:1px solid var(--line);border-radius:22px;background:#fff;
-  box-shadow:var(--shadow-sheet);opacity:0;visibility:hidden;
-  transform:translate(-50%,calc(-50% + 16px));
-  transition:opacity .18s ease,transform .18s ease,visibility .18s step-end;
+
+/* ===== 최종 메인 화면: 참수리 디자인 모티프 + 3색 CTA ===== */
+
+/* 우측 메뉴는 완전히 제거 */
+.hero-utility,
+.hero-menu,
+.topbar{display:none!important}
+
+/* 첫 화면은 스크롤 없이 1 viewport 안에 */
+html,body{height:100%;overflow:hidden}
+.landing{
+  height:100svh!important;
+  min-height:100svh!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(39,111,203,.22),transparent 28%),
+    radial-gradient(circle at 84% 34%,rgba(38,101,181,.16),transparent 24%),
+    radial-gradient(circle at 45% 76%,rgba(27,79,145,.16),transparent 38%),
+    linear-gradient(160deg,#061425 0%,#082440 42%,#08223B 67%,#050F1D 100%)!important;
 }
 
-.intro-dialog-head{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
-  padding:18px 18px 15px;border-bottom:1px solid var(--line);
+/* 기존 도시 표현은 미세한 깊이감만 남김 */
+.city-bg{
+  inset:0!important;
+  height:100%!important;
+  opacity:.15!important;
+  filter:saturate(.75) brightness(.8)!important;
 }
-.intro-eyebrow{font-size:13px;font-weight:800;color:var(--navy)}
-.intro-dialog-head h2{margin:4px 0 0;font-size:22px;line-height:1.35;color:var(--text-strong)}
-.intro-close-icon{
-  width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;
-  border:1px solid var(--line-strong);border-radius:50%;background:var(--soft);
-  color:var(--text-strong);font-size:24px;font-weight:700;cursor:pointer;
+
+/* 경찰청 참수리 로고를 직접 붙여넣지 않고,
+   날개·독수리·저울·태극 문양을 미래형 배경 그래픽으로 재구성 */
+.emblem-art{
+  position:absolute;
+  z-index:0;
+  top:2.2vh;
+  left:50%;
+  width:min(138vw,860px);
+  transform:translateX(-50%);
+  pointer-events:none;
+  opacity:.98;
 }
-.intro-dialog-body{
-  min-height:0;overflow:auto;padding:18px;-webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain;
+.emblem-art svg{display:block;width:100%;height:auto}
+
+/* 기술 그리드 */
+.landing::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 32%,rgba(108,174,255,.06),transparent 27%),
+    linear-gradient(90deg,rgba(88,153,229,.032) 1px,transparent 1px),
+    linear-gradient(rgba(88,153,229,.028) 1px,transparent 1px);
+  background-size:auto,28px 28px,28px 28px;
+  mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.76) 58%,rgba(0,0,0,.30) 100%);
 }
-.intro-dialog-body p{margin:0 0 14px;font-size:15px;line-height:1.75;color:var(--text)}
-.intro-dialog-body strong{color:var(--text-strong);font-weight:800}
-.intro-contents{
-  margin:18px 0;padding:16px;border:1px solid var(--line);
-  border-radius:16px;background:var(--soft);
+
+.hero{
+  position:relative!important;
+  z-index:2!important;
+  height:100svh!important;
+  min-height:100svh!important;
+  padding:calc(18px + var(--safe-top)) 18px calc(16px + var(--safe-bottom))!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
 }
-.intro-contents h3{margin:0 0 10px;font-size:17px;line-height:1.4;color:var(--text-strong)}
-.intro-contents ul{
-  margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px 20px;
+
+/* 내용이 너무 아래로 몰리지 않게 중상단으로 이동 */
+.hero-copy{
+  margin-top:clamp(200px,29vh,300px)!important;
+  padding:0 2px!important;
+  display:grid!important;
+  gap:13px!important;
 }
-.intro-contents li{font-size:15px;line-height:1.55;color:var(--text)}
-.intro-guide{
-  margin-top:4px!important;padding:12px 14px;border-radius:12px;
-  background:var(--navy-soft);color:var(--navy)!important;
+.hero-eyebrow{
+  font-size:13px!important;
+  line-height:1.4!important;
+  color:#D4E2F3!important;
 }
-.intro-confirm{
-  width:100%;min-height:50px;margin-top:4px;border:0;border-radius:13px;
-  background:var(--navy);color:#fff;font-size:16px;font-weight:800;cursor:pointer;
+.hero-eyebrow::before{
+  background:#5EA8FF!important;
+  box-shadow:0 0 0 6px rgba(94,168,255,.13),0 0 18px rgba(94,168,255,.55)!important;
+}
+.hero h1{
+  margin:0!important;
+  font-size:clamp(34px,9.4vw,51px)!important;
+  line-height:1.075!important;
+  letter-spacing:-.04em!important;
+  max-width:7.8em!important;
+  text-shadow:0 4px 20px rgba(0,0,0,.20)!important;
+}
+.hero h1 em{
+  display:block!important;
+  color:#61A9FF!important;
+  text-shadow:0 4px 22px rgba(55,127,220,.18)!important;
+}
+
+/* 제목과 첫 버튼 사이 호흡을 명확히 */
+.cta-stack{
+  margin-top:32px!important;
+  gap:11px!important;
+  padding-bottom:0!important;
+}
+
+/* 공통 버튼 */
+.cta{
+  min-height:67px!important;
+  padding:12px 16px!important;
+  gap:13px!important;
+  border-radius:21px!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  box-shadow:
+    0 12px 26px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.12)!important;
+  backdrop-filter:blur(10px)!important;
+}
+.cta-icon{
+  width:42px!important;
+  height:42px!important;
+  flex:0 0 42px!important;
+  border-radius:13px!important;
+  background:rgba(7,24,47,.18)!important;
+  border:1px solid rgba(255,255,255,.15)!important;
+}
+.cta-icon .icon-svg{width:23px!important;height:23px!important}
+.cta-copy strong{
+  font-size:17px!important;
+  line-height:1.28!important;
+}
+.cta-copy span{
+  margin-top:3px!important;
+  font-size:11.5px!important;
+  line-height:1.35!important;
+  color:rgba(255,255,255,.82)!important;
+}
+.cta-arrow{font-size:25px!important}
+
+/* 1. 6대 영역: Police Blue */
+.cta-stack .cta:nth-child(1){
+  background:
+    radial-gradient(circle at 18% 0%,rgba(135,199,255,.32),transparent 34%),
+    linear-gradient(135deg,#338CFF 0%,#1766E6 55%,#0B4FC9 100%)!important;
+  border-color:rgba(140,205,255,.72)!important;
+  box-shadow:
+    0 12px 28px rgba(20,95,224,.32),
+    0 0 22px rgba(58,139,255,.10),
+    inset 0 1px 0 rgba(255,255,255,.18)!important;
+}
+
+/* 2. 주요 사업: Teal / Cyan */
+.cta-stack .cta:nth-child(2){
+  background:
+    radial-gradient(circle at 20% 0%,rgba(104,228,241,.18),transparent 34%),
+    linear-gradient(135deg,#0E7E9A 0%,#08637F 56%,#074B69 100%)!important;
+  border-color:rgba(83,196,218,.56)!important;
+  box-shadow:
+    0 12px 28px rgba(6,75,104,.28),
+    inset 0 1px 0 rgba(255,255,255,.13)!important;
+}
+
+/* 3. 언론 보도: Indigo / Violet */
+.cta-stack .cta:nth-child(3){
+  background:
+    radial-gradient(circle at 20% 0%,rgba(181,154,255,.17),transparent 34%),
+    linear-gradient(135deg,#5B55CF 0%,#413CA6 56%,#2B2A79 100%)!important;
+  border-color:rgba(151,140,235,.58)!important;
+  box-shadow:
+    0 12px 28px rgba(45,41,128,.30),
+    inset 0 1px 0 rgba(255,255,255,.13)!important;
 }
 
 @media(max-width:760px){
-  .topbar-inner{min-height:72px;padding:10px 14px}
-  .brand-mark{width:44px;height:44px;flex-basis:44px;font-size:12px}
-  .brand-title{font-size:18px}
-  .brand-sub{font-size:12px;white-space:normal}
-  .main{padding:14px 12px 92px}
-  .overview-home{padding:17px 14px;border-radius:20px}
-  .overview-head{display:block}
-  .overview-head h1{font-size:26px;line-height:1.3}
-  
-  
-  
-  
-  .domain-section{margin-top:20px}
-  .section-title{font-size:20px}
-  .section-sub{font-size:13px}
-  .domain-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .domain-card{position:relative;min-width:0;min-height:214px;padding:16px 16px 15px 19px;display:flex;flex-direction:column;border:1px solid var(--line);border-left:5px solid var(--domain-accent);border-radius:18px;background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(16,36,62,.04);transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease}
-  .domain-number,.domain-state{font-size:12px}
-  .domain-card h3{font-size:16px}
-  .domain-description{margin:8px 0 0;font-size:13px;color:var(--text-muted);line-height:1.65}
-  .domain-current{font-size:13px}
-  .domain-affordance{font-size:13px}
-  .overview-projects{margin-top:18px}
-  .project-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
-  .project-chips::-webkit-scrollbar{display:none}
-  .project-chips a{flex:0 0 auto;font-size:13px}
-  .overview-shortcuts{grid-template-columns:1fr;gap:8px}
-  .overview-shortcuts strong{font-size:15px}
-  .section{margin-top:26px}
-  .service-list,.perspective-grid,.news-grid{grid-template-columns:1fr}
-  .service .label,.service-badge{display:inline-flex;align-items:center;min-height:30px;padding:5px 10px;border-radius:999px;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800}
-  .service h3,.perspective-card h3,.news h3{font-size:16px}
-  .service p,.perspective-placeholder,.news p{font-size:15px}
-  .news-outlet,.news-topic,.news-date,.news-status,.news-status .pill{font-size:12px}
-  .footer{font-size:12px}
-  .bottom-nav{display:grid}
-  .bottom-nav a,.bottom-nav .home-nav-button{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:12px;color:var(--text-muted);font-size:12px;font-weight:700;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .14s ease,color .14s ease,transform .10s ease}
-  .back-to-top{right:14px;bottom:76px}
-  .domain-sheet{left:0;right:0;top:auto;bottom:0;width:100%;max-height:86vh;border-radius:22px 22px 0 0;transform:translateY(105%);opacity:1}
-  #domain-toggle-1:checked ~ #domain-sheet-1,#domain-toggle-2:checked ~ #domain-sheet-2,#domain-toggle-3:checked ~ #domain-sheet-3,#domain-toggle-4:checked ~ #domain-sheet-4,#domain-toggle-5:checked ~ #domain-sheet-5,#domain-toggle-6:checked ~ #domain-sheet-6{transform:translateY(0)}
-  .domain-sheet-head{padding:15px 14px}
-  .domain-sheet-eyebrow{font-size:12px}
-  .domain-sheet-head h2{font-size:20px}
-  .domain-sheet-body{padding:14px 13px calc(18px + env(safe-area-inset-bottom))}
-  .domain-sheet-body .panel-top,.domain-sheet-body .detail-grid{grid-template-columns:1fr}
-  .domain-sheet-body .panel-summary h3,.domain-sheet-body .panel-status h3{font-size:17px}
-  .domain-sheet-body .panel-summary p,.domain-sheet-body .status-list li,.domain-sheet-body .detail-card p,.domain-sheet-body .detail-card li{font-size:15px}
-  .domain-sheet-body .detail-card h4{font-size:16px}
-
-  .service{padding:17px 16px 17px 18px}
-  .intro-dialog{
-    left:0;right:0;top:auto;bottom:0;width:100%;max-height:88vh;
-    border-radius:22px 22px 0 0;transform:translateY(105%);opacity:1;
+  .hero-copy{
+    margin-top:clamp(165px,24vh,225px)!important;
   }
-  .intro-dialog-head{padding:16px 14px 14px}
-  .intro-dialog-head h2{font-size:20px}
-  .intro-dialog-body{padding:16px 14px calc(18px + env(safe-area-inset-bottom))}
-  .intro-dialog-body p{font-size:15px;line-height:1.75}
-  .intro-contents{padding:14px}
-  .intro-contents ul{grid-template-columns:1fr;gap:7px}
-  .intro-confirm{min-height:52px;font-size:16px}
-
-  #home-intro-toggle:checked ~ .intro-dialog{transform:translateY(0)}
-  .bottom-nav a,.bottom-nav .home-nav-button{min-width:0}
-  .bottom-label{white-space:nowrap}
+  .emblem-art{
+    top:4vh;
+    width:min(148vw,720px);
+  }
 }
 
-.domain-affordance{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:16px;color:var(--navy);font-size:13px;font-weight:800}
-.service-body{margin-top:12px}
-.service-1{--service-accent:#315A8C}
-.service-2{--service-accent:#4F46E5}
-.service-3{--service-accent:#0F766E}
-.service-4{--service-accent:#B45309}
+@media(max-height:800px){
+  .hero-copy{margin-top:clamp(128px,18vh,165px)!important}
+  .cta-stack{margin-top:24px!important;gap:9px!important}
+  .cta{min-height:61px!important;padding:10px 14px!important}
+  .cta-icon{width:38px!important;height:38px!important;flex-basis:38px!important}
+  .cta-copy strong{font-size:16px!important}
+  .cta-copy span{font-size:11px!important}
+  .hero h1{font-size:clamp(31px,8.6vw,43px)!important}
+  .emblem-art{top:2.5vh;width:min(126vw,620px)}
+}
 
-.bottom-label{white-space:nowrap;line-height:1.2}
+@media(max-height:700px){
+  .hero-copy{margin-top:96px!important;gap:10px!important}
+  .cta-stack{margin-top:18px!important;gap:8px!important}
+  .cta{min-height:56px!important}
+  .cta-copy span{display:none!important}
+  .hero h1{font-size:clamp(28px,8vw,39px)!important}
+}
 
 
-/* 위원회 관점 섹션 삭제 후 바로가기 단일 카드 정리 */
-.overview-shortcuts{grid-template-columns:1fr}
+/* ===== 2026-08-30: 참수리 배경 재디자인 강화 ===== */
+.landing{
+  background:
+    radial-gradient(circle at 50% 28%, rgba(108,177,255,.18) 0%, rgba(108,177,255,0) 24%),
+    radial-gradient(circle at 50% 42%, rgba(246,198,88,.11) 0%, rgba(246,198,88,0) 21%),
+    radial-gradient(circle at 18% 20%, rgba(69,130,214,.25) 0%, rgba(69,130,214,0) 24%),
+    linear-gradient(180deg, rgba(5,20,39,.20) 0%, rgba(4,16,31,.60) 42%, rgba(4,13,25,.92) 100%),
+    linear-gradient(145deg, #143B67 0%, #0A2646 38%, #071B31 68%, #061321 100%)!important;
+}
+.landing::before{
+  content:"";
+  position:absolute;
+  inset:88px 0 0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,229,142,.16), transparent 14%),
+    radial-gradient(circle at 50% 26%, rgba(119,183,255,.10), transparent 22%),
+    linear-gradient(135deg, transparent 0 39%, rgba(255,215,120,.07) 50%, transparent 61%);
+  mix-blend-mode:screen;
+}
+.city-bg{
+  inset:0!important;
+  height:100%!important;
+  opacity:.08!important;
+  filter:saturate(.55) brightness(.78) blur(.2px)!important;
+}
+.emblem-art{
+  position:absolute!important;
+  z-index:0!important;
+  top:5.5vh!important;
+  left:50%!important;
+  width:min(172vw,1040px)!important;
+  transform:translateX(-50%)!important;
+  pointer-events:none!important;
+  opacity:1!important;
+}
+.emblem-art svg{display:block;width:100%;height:auto;overflow:visible}
+.hero-copy{
+  margin-top:clamp(180px,25vh,250px)!important;
+}
+.hero h1{
+  text-shadow:0 8px 28px rgba(2,10,18,.42)!important;
+}
+.hero h1 em{
+  text-shadow:0 6px 22px rgba(51,118,225,.28)!important;
+}
+.cta-stack{margin-top:38px!important}
+@media(max-width:760px){
+  .emblem-art{top:6vh!important;width:min(186vw,900px)!important}
+  .hero-copy{margin-top:clamp(170px,22vh,220px)!important}
+}
+@media(max-height:800px){
+  .emblem-art{top:4vh!important;width:min(165vw,860px)!important}
+  .hero-copy{margin-top:clamp(142px,18vh,178px)!important}
+}
+@media(max-height:700px){
+  .emblem-art{top:2vh!important;width:min(150vw,760px)!important}
+  .hero-copy{margin-top:110px!important}
+}
+
+
+
+/* ===== 배경 디자인 완전 삭제 ===== */
+body{
+  background:#081B31 !important;
+}
+
+.landing{
+  background:#081B31 !important;
+  background-image:none !important;
+}
+
+/* 기존 배경용 가상요소 제거 */
+.landing::before,
+.landing::after,
+.hero::before,
+.hero::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+}
+
+/* 혹시 남아 있을 수 있는 배경 그래픽 요소 숨김 */
+.city-bg,
+.emblem-art{
+  display:none !important;
+}
+
+/* 본문/버튼은 기존 레이아웃 그대로 유지 */
+.hero{
+  background:none !important;
+}
+
+
+/* ===== 배경 재디자인: 밋밋하지 않도록 세련된 추상 배경 적용 ===== */
+body{
+  background:#071626 !important;
+}
+
+.landing{
+  background:
+    radial-gradient(circle at 18% 14%, rgba(116,177,255,.20) 0%, rgba(116,177,255,.10) 14%, rgba(116,177,255,0) 34%),
+    radial-gradient(circle at 82% 18%, rgba(88,135,255,.16) 0%, rgba(88,135,255,0) 30%),
+    radial-gradient(circle at 54% 72%, rgba(34,128,209,.12) 0%, rgba(34,128,209,0) 34%),
+    linear-gradient(145deg,#102A49 0%, #0C213A 46%, #081726 100%) !important;
+}
+
+.landing::before{
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 74% 23%, rgba(255,255,255,.08) 0 1px, transparent 2px),
+    radial-gradient(circle at 79% 29%, rgba(255,255,255,.05) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 34%, rgba(255,255,255,.04) 0 1px, transparent 2px),
+    linear-gradient(120deg, transparent 0%, transparent 62%, rgba(134,180,255,.12) 76%, transparent 100%);
+  opacity:.8;
+}
+
+.landing::after{
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
+    radial-gradient(circle at 68% 28%, rgba(126,180,255,.14) 0%, rgba(126,180,255,0) 23%);
+  background-size: 28px 28px, 28px 28px, auto;
+  opacity:.42;
+}
+
+.hero{
+  position:relative;
+}
+
+.hero-copy{
+  position:relative;
+  z-index:1;
+}
+
+.hero-copy::before{
+  content:"";
+  position:absolute;
+  left:-14px;
+  right:10px;
+  top:-18px;
+  bottom:-18px;
+  z-index:-1;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(7,25,43,.24), rgba(7,25,43,.06));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter: blur(2px);
+}
+
+.hero h1{
+  text-shadow:0 8px 24px rgba(0,0,0,.28) !important;
+}
+
+.hero h1 em{
+  text-shadow:0 6px 18px rgba(60,127,240,.18);
+}
+
+.cta-stack{
+  position:relative;
+  z-index:1;
+}
+
+.cta{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 10px 24px rgba(3,12,24,.20) !important;
+}
+
+
+
+/* ===== 복원본 기준: 경찰에 어울리는 배경 재디자인 ===== */
+.landing{
+  background:
+    radial-gradient(circle at 50% 22%, rgba(129,184,255,.22) 0%, rgba(129,184,255,0) 21%),
+    radial-gradient(circle at 18% 14%, rgba(70,126,203,.20) 0%, rgba(70,126,203,0) 26%),
+    radial-gradient(circle at 84% 18%, rgba(70,126,203,.16) 0%, rgba(70,126,203,0) 22%),
+    linear-gradient(180deg, rgba(6,20,35,.18) 0%, rgba(6,19,35,.48) 42%, rgba(5,18,32,.88) 100%),
+    linear-gradient(145deg, #173B62 0%, #0D2945 46%, #081E34 76%, #06131F 100%) !important;
+}
+.police-bg-art{
+  position:absolute;
+  inset:86px 0 0;
+  z-index:0;
+  pointer-events:none;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  overflow:hidden;
+}
+.police-bg-art svg{
+  width:min(120vw,880px);
+  height:auto;
+  opacity:.92;
+  transform:translateY(10px);
+}
+.landing::before{
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(118deg, transparent 0%, transparent 49%, rgba(255,255,255,.06) 55%, transparent 64%),
+    radial-gradient(circle at 72% 22%, rgba(255,255,255,.06) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 75% 27%, rgba(255,255,255,.04) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 69% 30%, rgba(255,255,255,.035) 0 1px, transparent 2px);
+  opacity:.9;
+}
+.landing::after{
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.024) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    radial-gradient(circle at 50% 30%, rgba(154,208,255,.08), transparent 26%);
+  background-size:30px 30px, 30px 30px, auto;
+  mask-image:linear-gradient(to bottom, transparent 14%, #000 48%, #000 100%);
+  opacity:.72;
+}
+.hero{
+  z-index:2 !important;
+}
+.hero-copy{
+  position:relative;
+  max-width:760px;
+}
+.hero-copy::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-18px;
+  right:48px;
+  top:-18px;
+  bottom:-18px;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(7,26,46,.22), rgba(7,26,46,.03));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+.hero h1{
+  text-shadow:0 10px 28px rgba(0,0,0,.28) !important;
+}
+.cta{
+  background:rgba(10,30,52,.46) !important;
+  border-color:rgba(255,255,255,.18) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 12px 30px rgba(4,13,24,.18) !important;
+}
+.cta.primary{
+  background:#3E7FEF !important;
+  border-color:#4A8AF4 !important;
+}
+@media (max-width:760px){
+  .police-bg-art{
+    inset:72px 0 0;
+  }
+  .police-bg-art svg{
+    width:min(154vw,760px);
+    transform:translateY(22px);
+    opacity:.86;
+  }
+  .hero-copy::before{
+    left:-10px;
+    right:-4px;
+    top:-12px;
+    bottom:-14px;
+    border-radius:24px;
+  }
+}
+@media (max-height:760px){
+  .police-bg-art svg{
+    width:min(108vw,700px);
+    transform:translateY(-8px);
+    opacity:.80;
+  }
+}
+
+
+/* ===== Screenshot-style hero refresh ===== */
+:root{
+  --gold-line: rgba(235, 198, 118, .72);
+}
+body{
+  background:#060f1a;
+}
+.landing{
+  min-height:100svh;
+  background:
+    linear-gradient(180deg, rgba(4,10,18,.12) 0%, rgba(4,12,22,.34) 14%, rgba(4,11,21,.62) 50%, rgba(3,9,18,.92) 100%),
+    radial-gradient(circle at 52% 28%, rgba(74,129,209,.24) 0%, rgba(74,129,209,0) 22%),
+    radial-gradient(circle at 84% 50%, rgba(57,101,167,.18) 0%, rgba(57,101,167,0) 24%),
+    linear-gradient(180deg, #0C2542 0%, #091D35 32%, #07192B 65%, #061320 100%) !important;
+}
+.landing::after{
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,.02) 0 1px, transparent 1.5px) !important;
+  background-size: 28px 28px, 28px 28px, 120px 120px !important;
+  mask-image:none !important;
+  opacity:.78;
+}
+.topbar{
+  padding:calc(16px + var(--safe-top)) 18px 16px;
+  gap:14px;
+  background:rgba(21,11,6,.86);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  backdrop-filter:blur(10px);
+}
+.topbar .back-btn{
+  width:44px;height:44px;border:0;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;
+}
+.topbar .back-btn svg{width:25px;height:25px;stroke-width:2.6}
+.brand-line{
+  font-size:17px;
+  font-weight:700;
+  line-height:1.35;
+  color:#fff;
+}
+.brand-line span,.brand-line .bracket{display:none !important;}
+.police-bg-art{
+  position:absolute;
+  inset:84px 0 0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.police-bg-art svg{
+  width:100%;
+  min-width:860px;
+  height:100%;
+  object-fit:cover;
+  opacity:.98;
+}
+.hero{
+  justify-content:flex-start;
+  padding:290px 34px calc(34px + var(--safe-bottom));
+}
+.hero-copy{
+  max-width: 520px;
+}
+.hero-eyebrow{
+  color:#D6E0EB;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:2px;
+}
+.hero-eyebrow::before{
+  width:9px;height:9px;
+  background:#60A5FF;
+  box-shadow:0 0 0 7px rgba(96,165,255,.14);
+}
+.hero h1{
+  margin:18px 0 0;
+  font-size:71px;
+  line-height:1.02;
+  font-weight:800;
+  letter-spacing:-.05em;
+  text-shadow:0 8px 28px rgba(0,0,0,.24);
+}
+.hero h1 em{
+  display:block;
+  color:#69AAFF;
+}
+.cta-stack{
+  margin-top:42px;
+  gap:16px;
+  max-width:760px;
+}
+.cta{
+  min-height:112px;
+  padding:22px 22px;
+  border-radius:29px;
+  border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(180deg, rgba(20,46,72,.96) 0%, rgba(7,39,62,.96) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 0 -1px 0 rgba(255,255,255,.05),
+    0 12px 28px rgba(4,12,24,.22);
+}
+.cta.primary{
+  background:linear-gradient(180deg, #4D97FF 0%, #226BEB 100%);
+  border-color:rgba(171,211,255,.58);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 16px 28px rgba(22,83,196,.28);
+}
+.cta[for="services-toggle"]{
+  background:linear-gradient(180deg, #12809E 0%, #096E8A 100%);
+  border-color:rgba(141,226,239,.35);
+}
+.cta[for="news-toggle"]{
+  background:linear-gradient(180deg, #6D5AE3 0%, #4D3DB8 100%);
+  border-color:rgba(201,195,255,.35);
+}
+.cta-icon{
+  width:64px;
+  height:64px;
+  border-radius:18px;
+  background:rgba(0,0,0,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.cta-icon .icon-svg{width:30px;height:30px}
+.cta-copy strong{
+  font-size:25px;
+  line-height:1.2;
+  letter-spacing:-.03em;
+}
+.cta-copy span{
+  margin-top:4px;
+  color:rgba(241,246,255,.82);
+  font-size:13px;
+  line-height:1.45;
+}
+.cta-arrow{
+  font-size:40px;
+  font-weight:300;
+}
+.modal-panel{
+  border-radius:30px 30px 0 0;
+}
+@media (max-width:760px){
+  .topbar{padding:calc(14px + var(--safe-top)) 16px 14px;}
+  .brand-line{font-size:16px;}
+  .police-bg-art{inset:74px 0 0;}
+  .police-bg-art svg{min-width:690px;}
+  .hero{
+    padding:255px 16px calc(24px + var(--safe-bottom));
+  }
+  .hero h1{
+    font-size:58px;
+    line-height:1.02;
+  }
+  .hero-copy{max-width:none;}
+  .cta-stack{margin-top:36px;gap:14px;}
+  .cta{min-height:94px;padding:18px 18px;border-radius:26px;}
+  .cta-icon{width:54px;height:54px;border-radius:16px;}
+  .cta-icon .icon-svg{width:26px;height:26px;}
+  .cta-copy strong{font-size:22px;}
+  .cta-copy span{display:none;}
+  .cta-arrow{font-size:34px;}
+}
+@media (max-height:780px){
+  .hero{padding-top:222px;}
+  .hero h1{font-size:52px;}
+  .cta{min-height:88px;}
+  .cta-copy strong{font-size:21px;}
+}
+
+
+/* ===== HTML background update: remove logo graphic and use subtle POLICE typography ===== */
+.police-bg-art,
+.emblem-art,
+.city-bg{
+  display:none !important;
+}
+
+.landing{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(84,145,255,.16) 0%, rgba(84,145,255,0) 26%),
+    radial-gradient(circle at 84% 20%, rgba(71,122,214,.14) 0%, rgba(71,122,214,0) 24%),
+    radial-gradient(circle at 50% 72%, rgba(44,98,191,.12) 0%, rgba(44,98,191,0) 30%),
+    linear-gradient(180deg, rgba(3,11,21,.16) 0%, rgba(3,11,21,.42) 40%, rgba(3,10,19,.82) 100%),
+    linear-gradient(145deg, #0d2948 0%, #091f38 38%, #07192c 68%, #051220 100%) !important;
+}
+
+.landing::before{
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.020) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.016) 1px, transparent 1px),
+    radial-gradient(circle at 12% 18%, rgba(112,166,255,.12) 0 2px, transparent 2px),
+    radial-gradient(circle at 84% 30%, rgba(112,166,255,.10) 0 2px, transparent 2px),
+    radial-gradient(circle at 72% 64%, rgba(112,166,255,.08) 0 2px, transparent 2px);
+  background-size: 30px 30px, 30px 30px, auto, auto, auto;
+  opacity:.72;
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.96), rgba(0,0,0,.92));
+}
+
+.landing::after{
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(125deg, transparent 0 58%, rgba(133,178,255,.08) 68%, transparent 76%),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,.035) 0 1px, transparent 1.4px);
+  background-size:auto, 118px 118px;
+  opacity:.82;
+}
+
+.police-word-bg{
+  position:absolute;
+  inset:86px 0 0;
+  z-index:0;
+  pointer-events:none;
+  display:grid;
+  grid-template-rows:repeat(6, 1fr);
+  align-items:center;
+  justify-items:center;
+  padding:12px 0 34px;
+  overflow:hidden;
+}
+
+.police-word-bg span{
+  display:block;
+  width:120%;
+  text-align:center;
+  font-weight:800;
+  font-size:clamp(52px, 13vw, 118px);
+  line-height:1;
+  letter-spacing:.32em;
+  text-indent:.32em;
+  color:rgba(255,255,255,.042);
+  text-transform:uppercase;
+  text-shadow:0 0 14px rgba(126,176,255,.035);
+  transform:translateX(-2%) skewX(-12deg);
+  user-select:none;
+  white-space:nowrap;
+}
+
+.police-word-bg span:nth-child(odd){
+  transform:translateX(4%) skewX(-12deg);
+}
+
+.police-word-bg span:nth-child(1){opacity:.50;}
+.police-word-bg span:nth-child(2){opacity:.28;}
+.police-word-bg span:nth-child(3){opacity:.46;}
+.police-word-bg span:nth-child(4){opacity:.24;}
+.police-word-bg span:nth-child(5){opacity:.42;}
+.police-word-bg span:nth-child(6){opacity:.20;}
+
+.hero,
+.hero-copy,
+.cta-stack,
+.topbar{
+  position:relative;
+  z-index:2;
+}
+
+.hero-copy::before{
+  background:linear-gradient(180deg, rgba(7,24,42,.18), rgba(7,24,42,.04)) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+@media (max-width:760px){
+  .police-word-bg{
+    inset:74px 0 0;
+    padding:18px 0 26px;
+  }
+  .police-word-bg span{
+    width:138%;
+    font-size:clamp(44px, 15vw, 84px);
+    letter-spacing:.24em;
+    text-indent:.24em;
+  }
+}
+
 </style>
 </head>
-<body>
-<header class="topbar">
-<div class="topbar-inner">
-<a aria-label="맨 위로" class="brand-mark" href="#home">KNPA</a>
-<div class="brand-copy">
-<div class="brand-title">치안 AI 추진현황</div>
-<div class="brand-sub">경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널</div>
+<body><input aria-hidden="true" class="modal-toggle" id="domains-toggle" type="checkbox"/><input aria-hidden="true" class="modal-toggle" id="services-toggle" type="checkbox"/><input aria-hidden="true" class="modal-toggle" id="news-toggle" type="checkbox"/><input aria-hidden="true" class="modal-toggle" id="intro-toggle" type="checkbox"/>
+<section class="landing" id="home">
+<div aria-hidden="true" class="police-word-bg">
+  <span>POLICE</span>
+  <span>POLICE</span>
+  <span>POLICE</span>
+  <span>POLICE</span>
+  <span>POLICE</span>
+  <span>POLICE</span>
+</div>
+
+<div aria-hidden="true" class="police-bg-art">
+<svg fill="none" preserveaspectratio="xMidYMin slice" viewbox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="eagleGold" x1="111" x2="1085" y1="260" y2="260">
+<stop offset="0" stop-color="#DAB162" stop-opacity=".18"></stop>
+<stop offset="0.52" stop-color="#F0CC85" stop-opacity=".82"></stop>
+<stop offset="1" stop-color="#C78D38" stop-opacity=".16"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="wingGlow" x1="108" x2="1090" y1="240" y2="420">
+<stop offset="0" stop-color="#EBC982" stop-opacity=".10"></stop>
+<stop offset="0.5" stop-color="#FFD88E" stop-opacity=".72"></stop>
+<stop offset="1" stop-color="#D79D4F" stop-opacity=".12"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="lineBlue" x1="160" x2="1040" y1="620" y2="760">
+<stop offset="0" stop-color="#7AB7FF" stop-opacity=".20"></stop>
+<stop offset="0.5" stop-color="#A8D7FF" stop-opacity=".65"></stop>
+<stop offset="1" stop-color="#5C97E9" stop-opacity=".20"></stop>
+</lineargradient>
+<radialgradient cx="0" cy="0" gradienttransform="translate(600 290) rotate(90) scale(270 420)" gradientunits="userSpaceOnUse" id="goldGlow" r="1">
+<stop stop-color="#F4D28E" stop-opacity=".10"></stop>
+<stop offset="1" stop-color="#F4D28E" stop-opacity="0"></stop>
+</radialgradient>
+<radialgradient cx="0" cy="0" gradienttransform="translate(600 605) rotate(90) scale(205 205)" gradientunits="userSpaceOnUse" id="taegukGlow" r="1">
+<stop stop-color="#85B9FF" stop-opacity=".26"></stop>
+<stop offset="1" stop-color="#85B9FF" stop-opacity="0"></stop>
+</radialgradient>
+<filter height="200%" id="softBlur" width="200%" x="-50%" y="-50%">
+<fegaussianblur stddeviation="10"></fegaussianblur>
+</filter>
+</defs>
+<ellipse cx="600" cy="304" fill="url(#goldGlow)" rx="420" ry="224"></ellipse>
+<ellipse cx="600" cy="610" fill="url(#taegukGlow)" rx="260" ry="214"></ellipse>
+<g stroke="url(#eagleGold)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M95 225C175 264 240 301 318 329C404 360 479 375 541 372" stroke-width="4.2"></path>
+<path d="M104 274C177 307 250 336 328 357C399 376 462 387 523 390" stroke-width="3.3"></path>
+<path d="M133 323C199 347 258 365 324 380C387 394 444 401 499 402" stroke-width="2.8"></path>
+<path d="M177 369C232 387 282 397 337 405C390 412 435 414 474 412" opacity=".88" stroke-width="2.2"></path>
+<path d="M1105 225C1025 264 960 301 882 329C796 360 721 375 659 372" stroke-width="4.2"></path>
+<path d="M1096 274C1023 307 950 336 872 357C801 376 738 387 677 390" stroke-width="3.3"></path>
+<path d="M1067 323C1001 347 942 365 876 380C813 394 756 401 701 402" stroke-width="2.8"></path>
+<path d="M1023 369C968 387 918 397 863 405C810 412 765 414 726 412" opacity=".88" stroke-width="2.2"></path>
+<path d="M518 244H680" stroke-width="3.2"></path>
+<path d="M549 244L526 226L549 214" stroke-width="3.2"></path>
+<path d="M651 244L674 226L651 214" stroke-width="3.2"></path>
+<path d="M600 174C635 174 661 199 661 233C661 256 649 278 620 294H580C551 278 539 256 539 233C539 199 565 174 600 174Z" stroke-width="4"></path>
+<path d="M600 294V350" stroke-width="3.6"></path>
+<path d="M570 351C570 329 583 308 600 297C617 308 630 329 630 351" stroke-width="3.2"></path>
+<path d="M567 366C571 347 584 332 600 324C616 332 629 347 633 366" opacity=".92" stroke-width="2.6"></path>
+<path d="M561 382C568 361 582 346 600 338C618 346 632 361 639 382" opacity=".86" stroke-width="2.3"></path>
+<path d="M555 397C563 377 580 362 600 355C620 362 637 377 645 397" opacity=".76" stroke-width="2.1"></path>
+</g>
+<g opacity=".95" stroke="url(#wingGlow)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M223 311L351 311" stroke-width="2.6"></path>
+<path d="M849 311L977 311" stroke-width="2.6"></path>
+<path d="M319 311L281 378H357L319 311Z" stroke-width="2.8"></path>
+<path d="M881 311L843 378H919L881 311Z" stroke-width="2.8"></path>
+</g>
+<g opacity=".58" stroke="url(#lineBlue)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M758 476H892L948 436H1085" stroke-width="2.1"></path>
+<path d="M810 544H928L978 503H1098" stroke-width="1.85"></path>
+<path d="M828 614H950L1003 571H1117" stroke-width="1.75"></path>
+<path d="M802 690H902L954 742H1053" stroke-width="1.8"></path>
+<path d="M784 764H892L934 815H1036" stroke-width="1.65"></path>
+<path d="M448 748H318L268 790H137" stroke-width="1.65"></path>
+<path d="M411 667H288L240 706H116" stroke-width="1.75"></path>
+<path d="M402 572H278L232 614H111" stroke-width="1.9"></path>
+<path d="M104 614h14" stroke-width="3"></path>
+<path d="M1100 571h14" stroke-width="3"></path>
+<circle cx="1100" cy="571" fill="#7AB7FF" r="5" stroke="none"></circle>
+<circle cx="104" cy="614" fill="#7AB7FF" r="4.6" stroke="none"></circle>
+<circle cx="250" cy="482" fill="#7AB7FF" r="3.8" stroke="none"></circle>
+<circle cx="951" cy="448" fill="#A7D6FF" r="4.3" stroke="none"></circle>
+<circle cx="839" cy="796" fill="#7AB7FF" r="3.5" stroke="none"></circle>
+</g>
+<g transform="translate(600 604)">
+<circle opacity=".38" r="122" stroke="url(#wingGlow)" stroke-width="2.6"></circle>
+<circle opacity=".42" r="82" stroke="url(#wingGlow)" stroke-width="2.2"></circle>
+<path d="M0-86C47-86 86-47 86 0C86 47 47 86 0 86C-47 86-86 47-86 0C-86-47-47-86 0-86Z" opacity=".34" stroke="url(#wingGlow)" stroke-width="1.8"></path>
+<g opacity=".52" stroke="url(#wingGlow)" stroke-width="2.1">
+<path d="M-57 0C-57-31-32-56 0-56C32-56 57-31 57 0C57 32 32 57 0 57C-32 57-57 32-57 0Z"></path>
+<path d="M0-57C31-57 56-32 56 0C56 32 31 57 0 57C-32 57-57 32-57 0C-57-32-32-57 0-57Z" transform="rotate(45)"></path>
+</g>
+<circle fill="#0B2240" r="54" stroke="url(#wingGlow)" stroke-width="2.2"></circle>
+<path d="M0 0C0-29 24-53 53-53V0H0Z" fill="#D84452"></path>
+<path d="M0 0C0 29-24 53-53 53V0H0Z" fill="#2A6FCC"></path>
+<path d="M0 0C0 29 24 53 53 53V0H0Z" fill="#2A6FCC"></path>
+<path d="M0 0C0-29-24-53-53-53V0H0Z" fill="#D84452"></path>
+</g>
+<g opacity=".85">
+<circle cx="140" cy="300" fill="#fff" r="4"></circle>
+<circle cx="142" cy="300" fill="#A7D8FF" filter="url(#softBlur)" opacity=".55" r="18"></circle>
+<circle cx="940" cy="414" fill="#fff" r="4.5"></circle>
+<circle cx="940" cy="414" fill="#A7D8FF" filter="url(#softBlur)" opacity=".48" r="20"></circle>
+<circle cx="862" cy="734" fill="#fff" r="4"></circle>
+<circle cx="862" cy="734" fill="#8ABEFF" filter="url(#softBlur)" opacity=".40" r="18"></circle>
+</g>
+</svg>
+</div>
+
+
+<div class="hero">
+<div class="hero-copy">
+<span class="hero-eyebrow">경찰청 인공지능 및 데이터 기반 행정 위원회</span>
+<h1>치안 AI 업무 추진현황,<br/><em>한눈에 확인하세요.</em></h1>
+</div>
+<div aria-label="브리핑 주요 메뉴" class="cta-stack">
+<label aria-controls="domainsModal" aria-haspopup="dialog" class="cta primary" data-modal-label="domainsModal" for="domains-toggle" role="button" tabindex="0">
+<span aria-hidden="true" class="cta-icon"><svg aria-hidden="true" class="icon-svg" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect height="7" rx="2" stroke="currentColor" stroke-width="1.8" width="7" x="3" y="4"></rect>
+<rect height="7" rx="2" stroke="currentColor" stroke-width="1.8" width="7" x="14" y="4"></rect>
+<rect height="7" rx="2" stroke="currentColor" stroke-width="1.8" width="7" x="3" y="13"></rect>
+<rect height="7" rx="2" stroke="currentColor" stroke-width="1.8" width="7" x="14" y="13"></rect>
+</svg></span>
+<span class="cta-copy"><strong>6대 영역별 추진현황</strong><span>정책·사업·윤리·고영향·영향평가·역량 강화</span></span>
+<span aria-hidden="true" class="cta-arrow">›</span>
+</label>
+<label aria-controls="servicesModal" aria-haspopup="dialog" class="cta" data-modal-label="servicesModal" for="services-toggle" role="button" tabindex="0">
+<span aria-hidden="true" class="cta-icon"><svg aria-hidden="true" class="icon-svg" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<rect height="10" rx="2.6" stroke="currentColor" stroke-width="1.8" width="10" x="7" y="7"></rect>
+<path d="M10 10.4V13.7M14 10.4V13.7M9 13.7H15" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M12 3.5V6M12 18V20.5M3.5 12H6M18 12H20.5M5.3 5.3L7.1 7.1M16.9 16.9L18.7 18.7M18.7 5.3L16.9 7.1M7.1 16.9L5.3 18.7" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+</svg></span>
+<span class="cta-copy"><strong>주요 치안 AI 사업</strong><span>「모두의 경찰관」, AI 통합 플랫폼, 수사지원 AI 등</span></span>
+<span aria-hidden="true" class="cta-arrow">›</span>
+</label>
+<label aria-controls="newsModal" aria-haspopup="dialog" class="cta" data-modal-label="newsModal" for="news-toggle" role="button" tabindex="0">
+<span aria-hidden="true" class="cta-icon"><svg aria-hidden="true" class="icon-svg" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 5.2H18.6C19.37 5.2 20 5.83 20 6.6V17.2C20 18.75 18.75 20 17.2 20H7.8C6.25 20 5 18.75 5 17.2V6.2C5 5.65 5.45 5.2 6 5.2Z" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M8 9H16M8 12.3H16M8 15.6H12.8" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+<rect fill="currentColor" height="1.2" opacity=".55" rx="0.6" width="3.4" x="8" y="6.9"></rect>
+</svg></span>
+<span class="cta-copy"><strong>관련 언론보도</strong><span>최근 치안 AI 정책·사업 관련 주요 기사</span></span>
+<span aria-hidden="true" class="cta-arrow">›</span>
+</label>
 </div>
 </div>
+</section>
+<section aria-hidden="true" aria-labelledby="domainsModalTitle" aria-modal="true" class="modal" id="domainsModal" role="dialog">
+<label aria-label="6대 영역 팝업 닫기" class="modal-dim" data-modal-close-label="domainsModal" for="domains-toggle" role="button" tabindex="0"></label>
+<div class="modal-panel">
+<div aria-hidden="true" class="grab"></div>
+<header class="modal-head">
+<div class="modal-title"><small>6대 영역</small><h2 id="domainsModalTitle">영역별 추진현황</h2></div>
+<label aria-label="닫기" class="close-btn" data-modal-close-label="domainsModal" for="domains-toggle" role="button" tabindex="0">×</label>
 </header>
-<input aria-hidden="true" class="domain-toggle" data-domain="tab1" id="domain-toggle-1" type="checkbox"/>
-<input aria-hidden="true" class="domain-toggle" data-domain="tab2" id="domain-toggle-2" type="checkbox"/>
-<input aria-hidden="true" class="domain-toggle" data-domain="tab3" id="domain-toggle-3" type="checkbox"/>
-<input aria-hidden="true" class="domain-toggle" data-domain="tab4" id="domain-toggle-4" type="checkbox"/>
-<input aria-hidden="true" class="domain-toggle" data-domain="tab5" id="domain-toggle-5" type="checkbox"/>
-<input aria-hidden="true" class="domain-toggle" data-domain="tab6" id="domain-toggle-6" type="checkbox"/>
-<input aria-hidden="true" class="home-intro-toggle" id="home-intro-toggle" type="checkbox"/><main class="main" id="home">
-<section aria-labelledby="overviewTitle" class="overview-home">
-<div class="overview-head">
-<div>
-<div class="overview-eyebrow">한눈에 보는 치안 AI</div>
-<h1 id="overviewTitle">치안 AI 업무 추진현황</h1>
-</div>
-</div>
-<section aria-labelledby="domainsTitle" class="domain-section" id="domains">
-<div class="section-heading-row">
-<div>
-<h2 class="section-title" id="domainsTitle">6대 영역</h2>
-<div class="section-sub">영역 선택 시 상세 추진현황 표시</div>
-</div>
-</div>
-<div class="domain-grid">
-<label aria-controls="domain-sheet-1" aria-expanded="false" class="domain-card domain-1" for="domain-toggle-1" role="button" style="--domain-accent:#315A8C" tabindex="0">
-<div class="domain-card-top">
-<span class="domain-number">AREA 01</span>
-<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
-<span class="domain-state" data-status="진행중">진행중</span>
-</div>
-<h3>AI 정책·거버넌스</h3>
-<p class="domain-description">정책 총괄, 위원회, 국가 AI 연계, 담당관 운영</p>
-<span class="domain-affordance">상세 보기 ›</span>
-</label>
-<label aria-controls="domain-sheet-2" aria-expanded="false" class="domain-card domain-2" for="domain-toggle-2" role="button" style="--domain-accent:#2B6F84" tabindex="0">
-<div class="domain-card-top">
-<span class="domain-number">AREA 02</span>
-<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
-<span class="domain-state" data-status="진행중">진행중</span>
-</div>
-<h3>AI 사업·예산 관리</h3>
-<p class="domain-description">사업관리, 예산 검토, 공통기반·서비스 추진</p>
-<span class="domain-affordance">상세 보기 ›</span>
-</label>
-<label aria-controls="domain-sheet-3" aria-expanded="false" class="domain-card domain-3" for="domain-toggle-3" role="button" style="--domain-accent:#5E5B9A" tabindex="0">
-<div class="domain-card-top">
-<span class="domain-number">AREA 03</span>
-<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
-<span class="domain-state" data-status="진행중">진행중</span>
-</div>
-<h3>AI 윤리·투명성·신뢰성</h3>
-<p class="domain-description">윤리준칙, 보안·윤리교육, 신뢰성 확보기준</p>
-<span class="domain-affordance">상세 보기 ›</span>
-</label>
-<label aria-controls="domain-sheet-4" aria-expanded="false" class="domain-card domain-4" for="domain-toggle-4" role="button" style="--domain-accent:#8A5A74" tabindex="0">
-<div class="domain-card-top">
-<span class="domain-number">AREA 04</span>
-<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
-<span class="domain-state" data-status="진행중">진행중</span>
-</div>
-<h3>고영향 AI 관리</h3>
-<p class="domain-description">고영향 AI 식별, 조치, 관리체계 마련</p>
-<span class="domain-affordance">상세 보기 ›</span>
-</label>
-<label aria-controls="domain-sheet-5" aria-expanded="false" class="domain-card domain-5" for="domain-toggle-5" role="button" style="--domain-accent:#7A6738" tabindex="0">
-<div class="domain-card-top">
-<span class="domain-number">AREA 05</span>
-<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
-<span class="domain-state" data-status="진행중">진행중</span>
-</div>
-<h3>AI 영향평가</h3>
-<p class="domain-description">공공분야 영향평가, 결과 검토·공표 준비</p>
-<span class="domain-affordance">상세 보기 ›</span>
-</label>
-<label aria-controls="domain-sheet-6" aria-expanded="false" class="domain-card domain-6" for="domain-toggle-6" role="button" style="--domain-accent:#3F7562" tabindex="0">
-<div class="domain-card-top">
-<span class="domain-number">AREA 06</span>
-<!-- 상태 배지: data-status와 표시 텍스트를 완료 / 진행중 / 예정 중 하나로 수정 -->
-<span class="domain-state" data-status="진행중">진행중</span>
-</div>
-<h3>AI 역량 강화</h3>
-<p class="domain-description">교육, 리터러시, 지역확산, 성과확산</p>
-<span class="domain-affordance">상세 보기 ›</span>
-</label>
-</div>
-</section>
-<div class="overview-projects">
-<div class="overview-block-head"><strong>주요 사업</strong><a href="#services">전체 보기 →</a></div>
-<div class="project-chips"><a href="#services">모두의 경찰관</a>
-<a href="#services">AI 통합 플랫폼</a>
-<a href="#services">수사지원 AI</a>
-<a href="#services">교육·지역확산</a></div>
-</div>
-<div class="overview-shortcuts">
-<a href="#news"><span>보도</span><strong>관련 언론보도</strong><b aria-hidden="true">›</b></a></div>
-</section>
-<section class="section" id="services">
-<div class="section-heading-row">
-<div><h2 class="section-title">주요 치안 AI 사업</h2><div class="section-sub">핵심 사업을 간결한 카드 형태로 정리했습니다.</div></div>
-</div>
-<div class="service-list"><div class="service service-1">
-<div class="label service-badge">대국민 AI 서비스</div>
-<div class="service-body"><h3>「모두의 경찰관」</h3><p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감하는 대표 치안 AI 사업입니다.</p></div></div>
-<div class="service service-2">
-<div class="label service-badge">공통기반</div>
-<div class="service-body"><h3>AI 통합 플랫폼 · ON AI</h3><p>조직 전반의 AI 활용을 위한 공통기반 구축과 행정지원 AI 도입을 함께 추진합니다.</p></div></div>
-<div class="service service-3">
-<div class="label service-badge">수사 지원</div>
-<div class="service-body"><h3>KICS AI · 수사지원 AI</h3><p>OCR, 음성인식, 조서 작성 보조, 분석지원 등 수사업무 고도화를 위한 기능을 추진합니다.</p></div></div>
-<div class="service service-4">
-<div class="label service-badge">조직 확산</div>
-<div class="service-body"><h3>교육 · 담당관 · 지역거점</h3><p>AI 담당관 운영, 지역거점 구축, 교육과 리터러시 확산으로 조직의 체질 전환을 지원합니다.</p></div></div></div>
-</section>
-<section class="section" id="news">
-<div class="section-heading-row">
-<div>
-<h2 class="section-title">언론 보도</h2>
-<div class="section-sub">치안 AI 관련 주요 언론 보도를 모아 제공합니다.</div>
-<div class="news-status"><span class="pill">언론 보도</span><span>주요 보도 6건</span></div>
-</div>
-</div>
-<div class="news-grid" id="newsGrid"><article class="news">
-<a class="news-link" href="https://zdnet.co.kr/view/?no=20260825142846" rel="noopener noreferrer" target="_blank">
-<div class="news-top">
-<span class="news-outlet">ZDNet Korea</span>
-<span class="news-topic">교육·확산</span>
-<span class="news-date">2026. 8. 25.</span>
-</div>
-<h3>포티투마루, 경찰 행정 '에이전틱 AI' 접목 방안 제시</h3>
-<p>경남경찰청 직원 대상 특강에서 에이전틱 AI를 활용한 경찰 행정 혁신과 'AI 네이티브 경찰청' 전환 방향을 제시한 보도입니다.</p>
-<div class="news-arrow">기사 보기 →</div>
-</a>
-</article>
-<article class="news">
-<a class="news-link" href="https://www.straightnews.co.kr/news/articleView.html?idxno=306846" rel="noopener noreferrer" target="_blank">
-<div class="news-top">
-<span class="news-outlet">스트레이트뉴스</span>
-<span class="news-topic">고영향·위험관리</span>
-<span class="news-date">2026. 7. 9.</span>
-</div>
-<h3>경찰청-씽크포비엘, 치안 AI 신뢰성 기준 수립 공동 협력</h3>
-<p>경찰청의 AI 영향평가 및 위험관리방안 수립 정책연구와 치안 분야 AI 신뢰성 확보를 위한 협력 착수를 다룬 보도입니다.</p>
-<div class="news-arrow">기사 보기 →</div>
-</a>
-</article>
-<article class="news">
-<a class="news-link" href="https://www.newsfreezone.co.kr/news/articleView.html?idxno=698147" rel="noopener noreferrer" target="_blank">
-<div class="news-top">
-<span class="news-outlet">뉴스프리존</span>
-<span class="news-topic">교육·확산</span>
-<span class="news-date">2026. 7. 7.</span>
-</div>
-<h3>국민대-경찰청, ‘치안 AI·데이터 분석 전문가 양성 과정’ 입과식</h3>
-<p>경찰청과 국민대가 공동 운영하는 치안 AI·데이터 분석 전문가 양성 과정의 운영 내용과 현장 문제 해결형 교육 방향을 소개한 보도입니다.</p>
-<div class="news-arrow">기사 보기 →</div>
-</a>
-</article>
-<article class="news">
-<a class="news-link" href="https://www.newsis.com/view/NISX20260703_0003695216" rel="noopener noreferrer" target="_blank">
-<div class="news-top">
-<span class="news-outlet">뉴시스</span>
-<span class="news-topic">AI 정책·거버넌스</span>
-<span class="news-date">2026. 7. 5.</span>
-</div>
-<h3>산재한 경찰 AI사업 한곳서 관리한다…첫 운영훈령 시행</h3>
-<p>「경찰청 인공지능의 개발 및 활용에 관한 규칙」 시행을 계기로 AI 사업의 기획·예산·개발·운영·사후관리와 영향평가·위험관리 체계를 통합 관리하는 내용을 다룬 보도입니다.</p>
-<div class="news-arrow">기사 보기 →</div>
-</a>
-</article>
-<article class="news">
-<a class="news-link" href="https://www.news1.kr/society/incident-accident/6154382" rel="noopener noreferrer" target="_blank">
-<div class="news-top">
-<span class="news-outlet">뉴스1</span>
-<span class="news-topic">AI 정책·거버넌스</span>
-<span class="news-date">2026. 5. 2.</span>
-</div>
-<h3>AI가 신종 마약 잡고 조서 작성까지 돕는다…경찰, AI로 치안 혁신</h3>
-<p>치안 AI 혁신 종합계획을 중심으로 수사지원 AI, 신종 마약 탐지, AI 통합 플랫폼 등 경찰청의 주요 AI 추진사업을 종합적으로 소개한 보도입니다.</p>
-<div class="news-arrow">기사 보기 →</div>
-</a>
-</article>
-<article class="news">
-<a class="news-link" href="https://www.khan.co.kr/article/202604121135001" rel="noopener noreferrer" target="_blank">
-<div class="news-top">
-<span class="news-outlet">경향신문</span>
-<span class="news-topic">수사지원 AI</span>
-<span class="news-date">2026. 4. 12.</span>
-</div>
-<h3>한 해 300만건 이상 사건 몰리는 경찰···46억 투입해 수사지원 AI 고도화</h3>
-<p>KICS 연계 수사지원 AI에 수사결과통지서 초안, 조사 질문 추천, 비정형 자료 인식·요약, 신종 범죄 탐지 등을 추가하는 고도화 사업을 다룬 보도입니다.</p>
-<div class="news-arrow">기사 보기 →</div>
-</a>
-</article></div>
-</section>
-<footer class="footer">경찰청 인공지능 및 데이터 기반 행정 위원회 소통채널용 브리핑 페이지</footer>
-</main>
-<label aria-label="AI 정책·거버넌스 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-1" id="sheet-backdrop-1"></label><label aria-label="AI 사업·예산 관리 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-2" id="sheet-backdrop-2"></label><label aria-label="AI 윤리·투명성·신뢰성 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-3" id="sheet-backdrop-3"></label><label aria-label="고영향 AI 관리 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-4" id="sheet-backdrop-4"></label><label aria-label="AI 영향평가 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-5" id="sheet-backdrop-5"></label><label aria-label="AI 역량 강화 상세보기 닫기" class="sheet-backdrop" for="domain-toggle-6" id="sheet-backdrop-6"></label>
-<section aria-hidden="true" aria-label="AI 정책·거버넌스 상세 추진현황" class="domain-sheet" id="domain-sheet-1">
-<div class="domain-sheet-head">
-<div>
-<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
-<h2>AI 정책·거버넌스</h2>
-</div>
-<label aria-label="AI 정책·거버넌스 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-1" role="button" tabindex="0">×</label>
-</div>
-<div class="domain-sheet-body">
-<div class="tab-panel">
-<div class="panel-top">
-<div class="panel-summary">
-<h3>AI 정책·거버넌스</h3>
+<div class="modal-scroll">
+<details class="domain-accordion" style="--accent:#4D8DFF;--soft:#EEF4FF">
+<summary>
+<span class="domain-no">01</span>
+<span class="domain-summary-copy">
+<strong>AI 정책·거버넌스</strong>
+<span>정책 총괄, 위원회, 국가 AI 연계, 담당관 운영</span>
+</span>
+<span aria-hidden="true" class="chev">⌄</span>
+</summary>
+<div class="accordion-body">
+<section class="overview-card">
+<span class="mini-label">개요</span>
 <p>치안인공지능정책과를 중심으로 AI 정책과 훈령, 위원회, 국가 AI 전략과의 연계, 범정부 협의체 참여, 소속기관 AI 담당관 운영 등 경찰청 AI 거버넌스 전반을 추진하고 있습니다.</p>
-</div>
-<div class="panel-status">
-<div class="status-pill">주요 추진 상태</div>
-<ul class="status-list">
-<li>인공지능데이터기반행정위원회 확대·개편 추진</li>
-<li>국가AI전략위원회·AI 국정과제·행동계획 과제 관리</li>
-<li>범정부 AI 대응 협의체 참여 및 대외 연계 지속</li>
-</ul>
-</div>
-</div>
-<div class="detail-grid">
-<div class="detail-card">
-<div class="label">거버넌스</div>
+</section>
+<section class="modal-section">
+<h3>주요 추진 상태</h3>
+<ul class="status-list"><li>인공지능데이터기반행정위원회 확대·개편 추진</li><li>국가AI전략위원회·AI 국정과제·행동계획 과제 관리</li><li>범정부 AI 대응 협의체 참여 및 대외 연계 지속</li></ul>
+</section>
+<section class="modal-section">
+<h3>핵심 내용</h3>
+<div class="detail-grid"><article class="detail-card">
+<span class="detail-label">거버넌스</span>
 <h4>AI 책임관·총괄부서 중심 체계 운영</h4>
 <p>경찰청 차장이 AI책임관을 맡고, 치안인공지능정책과가 총괄부서 역할을 수행하는 구조입니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">위원회</div>
+</article><article class="detail-card">
+<span class="detail-label">위원회</span>
 <h4>위원회 기반 정책 조정</h4>
 <p>AI와 데이터 기반 행정을 함께 논의하는 위원회 구조를 통해 정책 방향과 주요 추진과제를 공유합니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">조직 확산</div>
+</article><article class="detail-card">
+<span class="detail-label">조직 확산</span>
 <h4>시도청 AI 담당관 운영</h4>
 <p>중앙의 정책 방향이 현장으로 전달되도록 시도청 AI 담당관 지정·관리와 지역거점 구축을 추진합니다.</p>
-</div>
-</div>
-</div>
-<label class="domain-sheet-bottom-close" for="domain-toggle-1" role="button" tabindex="0">닫기</label>
-</div>
+</article></div>
 </section>
-<section aria-hidden="true" aria-label="AI 사업·예산 관리 상세 추진현황" class="domain-sheet" id="domain-sheet-2">
-<div class="domain-sheet-head">
-<div>
-<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
-<h2>AI 사업·예산 관리</h2>
 </div>
-<label aria-label="AI 사업·예산 관리 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-2" role="button" tabindex="0">×</label>
-</div>
-<div class="domain-sheet-body">
-<div class="tab-panel">
-<div class="panel-top">
-<div class="panel-summary">
-<h3>AI 사업·예산 관리</h3>
+</details>
+<details class="domain-accordion" style="--accent:#40A8C8;--soft:#ECF9FC">
+<summary>
+<span class="domain-no">02</span>
+<span class="domain-summary-copy">
+<strong>AI 사업·예산 관리</strong>
+<span>사업관리, 예산 검토, 공통기반·서비스 추진</span>
+</span>
+<span aria-hidden="true" class="chev">⌄</span>
+</summary>
+<div class="accordion-body">
+<section class="overview-card">
+<span class="mini-label">개요</span>
 <p>치안 AI 관련 사업을 전수조사하고, 정보화기반과 협업을 통해 사업·예산을 검토하며, 대국민 서비스와 공통기반 서비스가 체계적으로 추진되도록 관리하고 있습니다.</p>
-</div>
-<div class="panel-status">
-<div class="status-pill">주요 추진 상태</div>
-<ul class="status-list">
-<li>AI 사업 전수조사 및 사업관리 지속</li>
-<li>사업·예산 검토 및 사전협의 체계 활용</li>
-<li>AI 통합 플랫폼 ISP 마무리 단계</li>
-</ul>
-</div>
-</div>
-<div class="detail-grid">
-<div class="detail-card">
-<div class="label">대국민 서비스</div>
+</section>
+<section class="modal-section">
+<h3>주요 추진 상태</h3>
+<ul class="status-list"><li>AI 사업 전수조사 및 사업관리 지속</li><li>사업·예산 검토 및 사전협의 체계 활용</li><li>AI 통합 플랫폼 ISP 마무리 단계</li></ul>
+</section>
+<section class="modal-section">
+<h3>핵심 내용</h3>
+<div class="detail-grid"><article class="detail-card">
+<span class="detail-label">대국민 서비스</span>
 <h4>「모두의 경찰관」 개발 추진</h4>
 <p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감할 수 있는 대표 치안 AI 사업입니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">공통기반</div>
+</article><article class="detail-card">
+<span class="detail-label">공통기반</span>
 <h4>AI 통합 플랫폼·ON AI·치안 AI 어시스턴트</h4>
 <p>경찰 조직 전반이 활용할 수 있는 공통 기반을 구축하고, 행정지원 AI 도입을 함께 추진합니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">기능사업 연계</div>
+</article><article class="detail-card">
+<span class="detail-label">기능사업 연계</span>
 <h4>KICS AI·차세대 112 연계 지원</h4>
 <p>각 기능 부서가 주관하는 AI 사업을 정책·데이터·기술 측면에서 연계하고 지원합니다.</p>
-</div>
-</div>
-</div>
-<label class="domain-sheet-bottom-close" for="domain-toggle-2" role="button" tabindex="0">닫기</label>
-</div>
+</article></div>
 </section>
-<section aria-hidden="true" aria-label="AI 윤리·투명성·신뢰성 상세 추진현황" class="domain-sheet" id="domain-sheet-3">
-<div class="domain-sheet-head">
-<div>
-<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
-<h2>AI 윤리·투명성·신뢰성</h2>
 </div>
-<label aria-label="AI 윤리·투명성·신뢰성 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-3" role="button" tabindex="0">×</label>
-</div>
-<div class="domain-sheet-body">
-<div class="tab-panel">
-<div class="panel-top">
-<div class="panel-summary">
-<h3>AI 윤리·투명성·신뢰성</h3>
+</details>
+<details class="domain-accordion" style="--accent:#8B72E8;--soft:#F2EFFF">
+<summary>
+<span class="domain-no">03</span>
+<span class="domain-summary-copy">
+<strong>AI 윤리·투명성·신뢰성</strong>
+<span>윤리준칙, 보안·윤리교육, 신뢰성 확보기준</span>
+</span>
+<span aria-hidden="true" class="chev">⌄</span>
+</summary>
+<div class="accordion-body">
+<section class="overview-card">
+<span class="mini-label">개요</span>
 <p>치안 AI 서비스가 국민 신뢰를 얻을 수 있도록 윤리준칙, 보안·윤리교육, 활용기준, 안전성·신뢰성 확보방안을 함께 마련하고 있습니다.</p>
-</div>
-<div class="panel-status">
-<div class="status-pill">주요 추진 상태</div>
-<ul class="status-list">
-<li>경찰청 AI 윤리준칙 제정</li>
-<li>AI 윤리교육·보안교육 실시</li>
-<li>고영향 AI 안전성·신뢰성 확보방안 마련 추진</li>
-</ul>
-</div>
-</div>
-<div class="detail-grid">
-<div class="detail-card">
-<div class="label">윤리기준</div>
+</section>
+<section class="modal-section">
+<h3>주요 추진 상태</h3>
+<ul class="status-list"><li>경찰청 AI 윤리준칙 제정</li><li>AI 윤리교육·보안교육 실시</li><li>고영향 AI 안전성·신뢰성 확보방안 마련 추진</li></ul>
+</section>
+<section class="modal-section">
+<h3>핵심 내용</h3>
+<div class="detail-grid"><article class="detail-card">
+<span class="detail-label">윤리기준</span>
 <h4>치안 AI 윤리준칙 운영</h4>
 <p>기본권 보호, 공정성, 개인정보 보호, 안전성 등 공공 AI 서비스에 필요한 기준을 반영합니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">실무기준</div>
+</article><article class="detail-card">
+<span class="detail-label">실무기준</span>
 <h4>활용안내서·평가체계 연구</h4>
 <p>현장에서 AI를 활용할 때 참고할 수 있는 실무기준과 평가체계를 연구용역으로 구체화하고 있습니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">서비스 신뢰</div>
+</article><article class="detail-card">
+<span class="detail-label">서비스 신뢰</span>
 <h4>대국민 서비스 신뢰 확보</h4>
 <p>특히 「모두의 경찰관」과 같은 대국민 AI 서비스에는 안전성·신뢰성과 활용기준을 사업 단계에 반영하고 있습니다.</p>
-</div>
-</div>
-</div>
-<label class="domain-sheet-bottom-close" for="domain-toggle-3" role="button" tabindex="0">닫기</label>
-</div>
+</article></div>
 </section>
-<section aria-hidden="true" aria-label="고영향 AI 관리 상세 추진현황" class="domain-sheet" id="domain-sheet-4">
-<div class="domain-sheet-head">
-<div>
-<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
-<h2>고영향 AI 관리</h2>
 </div>
-<label aria-label="고영향 AI 관리 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-4" role="button" tabindex="0">×</label>
-</div>
-<div class="domain-sheet-body">
-<div class="tab-panel">
-<div class="panel-top">
-<div class="panel-summary">
-<h3>고영향 AI 관리</h3>
+</details>
+<details class="domain-accordion" style="--accent:#C46B88;--soft:#FFF1F6">
+<summary>
+<span class="domain-no">04</span>
+<span class="domain-summary-copy">
+<strong>고영향 AI 관리</strong>
+<span>고영향 AI 식별, 조치, 관리체계 마련</span>
+</span>
+<span aria-hidden="true" class="chev">⌄</span>
+</summary>
+<div class="accordion-body">
+<section class="overview-card">
+<span class="mini-label">개요</span>
 <p>국민 권익과 안전에 미치는 영향이 큰 고영향 AI에 대해서는 해당 여부를 식별하고, 필요한 후속조치와 관리체계가 마련되도록 추진하고 있습니다.</p>
-</div>
-<div class="panel-status">
-<div class="status-pill">주요 추진 상태</div>
-<ul class="status-list">
-<li>3D 얼굴인식시스템을 고영향 AI로 식별</li>
-<li>사업부서 후속조치 진행</li>
-<li>고영향 AI 관리기반을 연구용역과 연계해 마련 중</li>
-</ul>
-</div>
-</div>
-<div class="detail-grid">
-<div class="detail-card">
-<div class="label">식별</div>
+</section>
+<section class="modal-section">
+<h3>주요 추진 상태</h3>
+<ul class="status-list"><li>3D 얼굴인식시스템을 고영향 AI로 식별</li><li>사업부서 후속조치 진행</li><li>고영향 AI 관리기반을 연구용역과 연계해 마련 중</li></ul>
+</section>
+<section class="modal-section">
+<h3>핵심 내용</h3>
+<div class="detail-grid"><article class="detail-card">
+<span class="detail-label">식별</span>
 <h4>고영향 AI 여부 판단</h4>
 <p>신규·기존 AI 서비스 중 영향도가 큰 사례를 선별해 관리 대상으로 식별하고 있습니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">후속조치</div>
+</article><article class="detail-card">
+<span class="detail-label">후속조치</span>
 <h4>안전조치와 문서화 기반 마련</h4>
 <p>고영향 AI 서비스의 후속조치가 일관되게 이뤄지도록 관리절차와 실무체계를 보완하고 있습니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">위원회 관심 포인트</div>
+</article><article class="detail-card">
+<span class="detail-label">위원회 관심 포인트</span>
 <h4>국민 영향이 큰 서비스의 신뢰성</h4>
 <p>위원회에서는 고영향 AI가 실제로 어떤 분야에 적용되고 어떤 통제장치를 갖추는지 살펴볼 수 있습니다.</p>
-</div>
-</div>
-</div>
-<label class="domain-sheet-bottom-close" for="domain-toggle-4" role="button" tabindex="0">닫기</label>
-</div>
+</article></div>
 </section>
-<section aria-hidden="true" aria-label="AI 영향평가 상세 추진현황" class="domain-sheet" id="domain-sheet-5">
-<div class="domain-sheet-head">
-<div>
-<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
-<h2>AI 영향평가</h2>
 </div>
-<label aria-label="AI 영향평가 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-5" role="button" tabindex="0">×</label>
-</div>
-<div class="domain-sheet-body">
-<div class="tab-panel">
-<div class="panel-top">
-<div class="panel-summary">
-<h3>AI 영향평가</h3>
+</details>
+<details class="domain-accordion" style="--accent:#C0913C;--soft:#FFF7E8">
+<summary>
+<span class="domain-no">05</span>
+<span class="domain-summary-copy">
+<strong>AI 영향평가</strong>
+<span>공공분야 영향평가, 결과 검토·공표 준비</span>
+</span>
+<span aria-hidden="true" class="chev">⌄</span>
+</summary>
+<div class="accordion-body">
+<section class="overview-card">
+<span class="mini-label">개요</span>
 <p>공공분야 AI 영향평가 제도에 맞추어 치안 AI 서비스의 영향도를 점검하고, 결과 검토 및 공표와 연계되는 기반을 단계적으로 마련하고 있습니다.</p>
-</div>
-<div class="panel-status">
-<div class="status-pill">주요 추진 상태</div>
-<ul class="status-list">
-<li>AI 영향평가·위험관리 연구용역 수행 중</li>
-<li>공공분야 영향평가 실시 및 결과 검토 준비</li>
-<li>평가체계·평가 데이터셋 구축 발주</li>
-</ul>
-</div>
-</div>
-<div class="detail-grid">
-<div class="detail-card">
-<div class="label">영향평가</div>
+</section>
+<section class="modal-section">
+<h3>주요 추진 상태</h3>
+<ul class="status-list"><li>AI 영향평가·위험관리 연구용역 수행 중</li><li>공공분야 영향평가 실시 및 결과 검토 준비</li><li>평가체계·평가 데이터셋 구축 발주</li></ul>
+</section>
+<section class="modal-section">
+<h3>핵심 내용</h3>
+<div class="detail-grid"><article class="detail-card">
+<span class="detail-label">영향평가</span>
 <h4>치안 AI 영향도 점검</h4>
 <p>AI 서비스가 국민, 수사, 행정에 미치는 영향을 점검하여 위험과 편익을 함께 검토합니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">연구 기반</div>
+</article><article class="detail-card">
+<span class="detail-label">연구 기반</span>
 <h4>위험관리 연구와 연계 추진</h4>
 <p>영향평가가 단발성 검토에 그치지 않도록 위험관리 정책연구와 함께 추진되고 있습니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">확산성</div>
+</article><article class="detail-card">
+<span class="detail-label">확산성</span>
 <h4>평가결과 활용 기반 마련</h4>
 <p>평가체계와 데이터셋을 갖추어 향후 다양한 치안 AI 서비스로 적용 범위를 확장할 수 있도록 준비합니다.</p>
-</div>
-</div>
-</div>
-<label class="domain-sheet-bottom-close" for="domain-toggle-5" role="button" tabindex="0">닫기</label>
-</div>
+</article></div>
 </section>
-<section aria-hidden="true" aria-label="AI 역량 강화 상세 추진현황" class="domain-sheet" id="domain-sheet-6">
-<div class="domain-sheet-head">
-<div>
-<div class="domain-sheet-eyebrow">치안 AI 추진현황</div>
-<h2>AI 역량 강화</h2>
 </div>
-<label aria-label="AI 역량 강화 상세보기 닫기" class="domain-sheet-close" for="domain-toggle-6" role="button" tabindex="0">×</label>
-</div>
-<div class="domain-sheet-body">
-<div class="tab-panel">
-<div class="panel-top">
-<div class="panel-summary">
-<h3>AI 역량 강화</h3>
+</details>
+<details class="domain-accordion" style="--accent:#43A185;--soft:#EDF8F4">
+<summary>
+<span class="domain-no">06</span>
+<span class="domain-summary-copy">
+<strong>AI 역량 강화</strong>
+<span>교육, 리터러시, 지역확산, 성과확산</span>
+</span>
+<span aria-hidden="true" class="chev">⌄</span>
+</summary>
+<div class="accordion-body">
+<section class="overview-card">
+<span class="mini-label">개요</span>
 <p>전문인력 양성, 리터러시 교육, AI 담당관 운영, 지역거점 구축, 성과확산 활동을 통해 경찰 조직 전반의 AI 역량을 높이고 있습니다.</p>
-</div>
-<div class="panel-status">
-<div class="status-pill">주요 추진 상태</div>
-<ul class="status-list">
-<li>동국대 CAIO 과정, 국민대 AI 교육, 연세대 계약학과 운영</li>
-<li>시도청 순회 AI 리터러시 교육 추진</li>
-<li>AI 담당관·제주 지역거점·세미나·해커톤 준비</li>
-</ul>
-</div>
-</div>
-<div class="detail-grid">
-<div class="detail-card">
-<div class="label">교육</div>
+</section>
+<section class="modal-section">
+<h3>주요 추진 상태</h3>
+<ul class="status-list"><li>동국대 CAIO 과정, 국민대 AI 교육, 연세대 계약학과 운영</li><li>시도청 순회 AI 리터러시 교육 추진</li><li>AI 담당관·제주 지역거점·세미나·해커톤 준비</li></ul>
+</section>
+<section class="modal-section">
+<h3>핵심 내용</h3>
+<div class="detail-grid"><article class="detail-card">
+<span class="detail-label">교육</span>
 <h4>전문교육과 리터러시 확산</h4>
 <p>전문인력 양성과 함께 조직 전체의 AI 활용역량을 높이는 순회교육을 병행하고 있습니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">현장 확산</div>
+</article><article class="detail-card">
+<span class="detail-label">현장 확산</span>
 <h4>시도청 담당관·지역거점 운영</h4>
 <p>현장 접점에서 AI 과제를 발굴하고 성과를 확산할 수 있도록 지역 기반을 마련하고 있습니다.</p>
-</div>
-<div class="detail-card">
-<div class="label">문화 조성</div>
+</article><article class="detail-card">
+<span class="detail-label">문화 조성</span>
 <h4>세미나·해커톤·성공사례 확산</h4>
 <p>내부 AI 활용문화를 확산하기 위해 행사와 사례공유 중심의 확산 활동을 준비하고 있습니다.</p>
+</article></div>
+</section>
 </div>
+</details>
 </div>
-</div>
-<label class="domain-sheet-bottom-close" for="domain-toggle-6" role="button" tabindex="0">닫기</label>
 </div>
 </section>
-<label aria-label="페이지 소개 닫기" class="intro-backdrop" for="home-intro-toggle" id="homeIntroBackdrop"></label>
-<section aria-hidden="true" aria-labelledby="homeIntroTitle" aria-modal="true" class="intro-dialog" id="homeIntroDialog" role="dialog">
-<div class="intro-dialog-head">
+<section aria-hidden="true" aria-labelledby="servicesModalTitle" aria-modal="true" class="modal" id="servicesModal" role="dialog">
+<label aria-label="주요 사업 팝업 닫기" class="modal-dim" data-modal-close-label="servicesModal" for="services-toggle" role="button" tabindex="0"></label>
+<div class="modal-panel">
+<div aria-hidden="true" class="grab"></div>
+<header class="modal-head">
+<div class="modal-title"><small>주요 치안 AI 사업</small><h2 id="servicesModalTitle">현재 추진 중인 주요 사업</h2></div>
+<label aria-label="닫기" class="close-btn" data-modal-close-label="servicesModal" for="services-toggle" role="button" tabindex="0">×</label>
+</header>
+<div class="modal-scroll">
+<div class="service-grid">
+<article class="service-card" style="--accent:#4D8DFF;--soft:#EEF4FF">
+<div class="service-mark">AI</div>
 <div>
-<div class="intro-eyebrow">페이지 소개</div>
-<h2 id="homeIntroTitle">치안 AI 추진현황 브리핑</h2>
+<span class="service-label">대국민 AI 서비스</span>
+<h3>「모두의 경찰관」</h3>
+<p>민원답변 생성, 법령·매뉴얼 추천 등 현장과 국민이 체감하는 대표 치안 AI 사업입니다.</p>
 </div>
-<label aria-label="페이지 소개 닫기" class="intro-close-icon" for="home-intro-toggle" id="homeIntroCloseIcon" role="button" tabindex="0">×</label>
+</article>
+<article class="service-card" style="--accent:#8B72E8;--soft:#F2EFFF">
+<div class="service-mark">PL</div>
+<div>
+<span class="service-label">공통기반</span>
+<h3>AI 통합 플랫폼 · ON AI</h3>
+<p>조직 전반의 AI 활용을 위한 공통기반 구축과 행정지원 AI 도입을 함께 추진합니다.</p>
 </div>
-<div class="intro-dialog-body">
-<p>본 페이지는 경찰청의 주요 인공지능 정책과 사업 추진현황을 경찰청 인공지능 및 데이터 기반 행정 위원회 위원들과 공유하기 위한 브리핑 페이지입니다.</p>
-<p>경찰청이 추진 중인 치안 AI 업무를 <strong>6대 영역</strong>으로 구분하여 주요 내용을 한눈에 확인할 수 있도록 정리하였으며, 각 영역을 선택하면 세부 추진내용을 확인할 수 있습니다.</p>
-<p>아울러 <strong>주요 치안 AI 사업과 관련 언론보도</strong>를 함께 제공하여 경찰청의 AI 정책 추진 흐름과 주요 현황을 종합적으로 살펴볼 수 있도록 구성했습니다.</p>
-<div class="intro-contents">
-<h3>주요 구성</h3>
-<ul>
-<li>AI 정책·거버넌스</li>
-<li>AI 사업·예산 관리</li>
-<li>AI 윤리·투명성·신뢰성</li>
-<li>고영향 AI 관리</li>
-<li>AI 영향평가</li>
-<li>AI 역량 강화</li>
-</ul>
+</article>
+<article class="service-card" style="--accent:#C46B88;--soft:#FFF1F6">
+<div class="service-mark">KICS</div>
+<div>
+<span class="service-label">수사 지원</span>
+<h3>KICS AI · 수사지원 AI</h3>
+<p>OCR, 음성인식, 조서 작성 보조, 분석지원 등 수사업무 고도화를 위한 기능을 추진합니다.</p>
 </div>
-<p class="intro-guide">각 항목의 <strong>‘상세 보기’</strong>를 누르면 세부 추진현황을 확인할 수 있습니다.</p>
-<label class="intro-confirm" for="home-intro-toggle" id="homeIntroConfirm" role="button" tabindex="0">확인</label>
+</article>
+<article class="service-card" style="--accent:#43A185;--soft:#EDF8F4">
+<div class="service-mark">EDU</div>
+<div>
+<span class="service-label">조직 확산</span>
+<h3>교육 · 담당관 · 지역거점</h3>
+<p>AI 담당관 운영, 지역거점 구축, 교육과 리터러시 확산으로 조직의 체질 전환을 지원합니다.</p>
+</div>
+</article>
+</div>
+</div>
 </div>
 </section>
-<nav aria-label="주요 메뉴" class="bottom-nav">
-<label aria-controls="homeIntroDialog" aria-expanded="false" aria-label="페이지 소개 열기" class="home-nav-button" data-nav="intro" for="home-intro-toggle" id="homeIntroButton" role="button" tabindex="0"><span class="bottom-icon">ⓘ</span><span class="bottom-label">소개</span></label>
-<a data-nav="domains" href="#domains"><span class="bottom-icon">▦</span><span class="bottom-label">6대 영역</span></a>
-<a data-nav="services" href="#services"><span class="bottom-icon">◇</span><span class="bottom-label">주요 사업</span></a>
-<a data-nav="news" href="#news"><span class="bottom-icon">≡</span><span class="bottom-label">언론보도</span></a>
-</nav>
-<button aria-label="페이지 맨 위로 이동" class="back-to-top" id="backToTop" type="button">↑</button>
+<section aria-hidden="true" aria-labelledby="newsModalTitle" aria-modal="true" class="modal" id="newsModal" role="dialog">
+<label aria-label="언론보도 팝업 닫기" class="modal-dim" data-modal-close-label="newsModal" for="news-toggle" role="button" tabindex="0"></label>
+<div class="modal-panel">
+<div aria-hidden="true" class="grab"></div>
+<header class="modal-head">
+<div class="modal-title"><small>언론 보도</small><h2 id="newsModalTitle">관련 주요 기사</h2></div>
+<label aria-label="닫기" class="close-btn" data-modal-close-label="newsModal" for="news-toggle" role="button" tabindex="0">×</label>
+</header>
+<div class="modal-scroll">
+<div class="news-grid">
+<a class="news-card" href="https://zdnet.co.kr/view/?no=20260825142846" rel="noopener noreferrer" target="_blank">
+<div class="news-meta">
+<span class="news-outlet">ZDNet Korea</span>
+<span class="news-date">2026. 8. 25.</span>
+</div>
+<span class="news-topic">교육·확산</span>
+<h3>포티투마루, 경찰 행정 '에이전틱 AI' 접목 방안 제시</h3>
+<p>경남경찰청 직원 대상 특강에서 에이전틱 AI를 활용한 경찰 행정 혁신과 'AI 네이티브 경찰청' 전환 방향을 제시한 보도입니다.</p>
+<span class="news-go">기사 보기 <b aria-hidden="true">↗</b></span>
+</a>
+<a class="news-card" href="https://www.straightnews.co.kr/news/articleView.html?idxno=306846" rel="noopener noreferrer" target="_blank">
+<div class="news-meta">
+<span class="news-outlet">스트레이트뉴스</span>
+<span class="news-date">2026. 7. 9.</span>
+</div>
+<span class="news-topic">고영향·위험관리</span>
+<h3>경찰청-씽크포비엘, 치안 AI 신뢰성 기준 수립 공동 협력</h3>
+<p>경찰청의 AI 영향평가 및 위험관리방안 수립 정책연구와 치안 분야 AI 신뢰성 확보를 위한 협력 착수를 다룬 보도입니다.</p>
+<span class="news-go">기사 보기 <b aria-hidden="true">↗</b></span>
+</a>
+<a class="news-card" href="https://www.newsfreezone.co.kr/news/articleView.html?idxno=698147" rel="noopener noreferrer" target="_blank">
+<div class="news-meta">
+<span class="news-outlet">뉴스프리존</span>
+<span class="news-date">2026. 7. 7.</span>
+</div>
+<span class="news-topic">교육·확산</span>
+<h3>국민대-경찰청, ‘치안 AI·데이터 분석 전문가 양성 과정’ 입과식</h3>
+<p>경찰청과 국민대가 공동 운영하는 치안 AI·데이터 분석 전문가 양성 과정의 운영 내용과 현장 문제 해결형 교육 방향을 소개한 보도입니다.</p>
+<span class="news-go">기사 보기 <b aria-hidden="true">↗</b></span>
+</a>
+<a class="news-card" href="https://www.newsis.com/view/NISX20260703_0003695216" rel="noopener noreferrer" target="_blank">
+<div class="news-meta">
+<span class="news-outlet">뉴시스</span>
+<span class="news-date">2026. 7. 5.</span>
+</div>
+<span class="news-topic">AI 정책·거버넌스</span>
+<h3>산재한 경찰 AI사업 한곳서 관리한다…첫 운영훈령 시행</h3>
+<p>「경찰청 인공지능의 개발 및 활용에 관한 규칙」 시행을 계기로 AI 사업의 기획·예산·개발·운영·사후관리와 영향평가·위험관리 체계를 통합 관리하는 내용을 다룬 보도입니다.</p>
+<span class="news-go">기사 보기 <b aria-hidden="true">↗</b></span>
+</a>
+<a class="news-card" href="https://www.news1.kr/society/incident-accident/6154382" rel="noopener noreferrer" target="_blank">
+<div class="news-meta">
+<span class="news-outlet">뉴스1</span>
+<span class="news-date">2026. 5. 2.</span>
+</div>
+<span class="news-topic">AI 정책·거버넌스</span>
+<h3>AI가 신종 마약 잡고 조서 작성까지 돕는다…경찰, AI로 치안 혁신</h3>
+<p>치안 AI 혁신 종합계획을 중심으로 수사지원 AI, 신종 마약 탐지, AI 통합 플랫폼 등 경찰청의 주요 AI 추진사업을 종합적으로 소개한 보도입니다.</p>
+<span class="news-go">기사 보기 <b aria-hidden="true">↗</b></span>
+</a>
+<a class="news-card" href="https://www.khan.co.kr/article/202604121135001" rel="noopener noreferrer" target="_blank">
+<div class="news-meta">
+<span class="news-outlet">경향신문</span>
+<span class="news-date">2026. 4. 12.</span>
+</div>
+<span class="news-topic">수사지원 AI</span>
+<h3>한 해 300만건 이상 사건 몰리는 경찰···46억 투입해 수사지원 AI 고도화</h3>
+<p>KICS 연계 수사지원 AI에 수사결과통지서 초안, 조사 질문 추천, 비정형 자료 인식·요약, 신종 범죄 탐지 등을 추가하는 고도화 사업을 다룬 보도입니다.</p>
+<span class="news-go">기사 보기 <b aria-hidden="true">↗</b></span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section aria-hidden="true" aria-labelledby="introModalTitle" aria-modal="true" class="modal" id="introModal" role="dialog">
+<label aria-label="페이지 소개 팝업 닫기" class="modal-dim" data-modal-close-label="introModal" for="intro-toggle" role="button" tabindex="0"></label>
+<div class="modal-panel">
+<div aria-hidden="true" class="grab"></div>
+<header class="modal-head">
+<div class="modal-title"><small>페이지 소개</small><h2 id="introModalTitle">치안 AI 추진현황 브리핑</h2></div>
+<label aria-label="닫기" class="close-btn" data-modal-close-label="introModal" for="intro-toggle" role="button" tabindex="0">×</label>
+</header>
+<div class="modal-scroll intro-body">
+<p>본 페이지는 경찰청의 주요 인공지능 정책과 사업 추진현황을 경찰청 인공지능 및 데이터 기반 행정 위원회 위원들과 공유하기 위한 브리핑 페이지입니다.</p>
+<p>경찰청이 추진 중인 치안 AI 업무를 6대 영역 으로 구분하여 주요 내용을 한눈에 확인할 수 있도록 정리하였으며, 각 영역을 선택하면 세부 추진내용을 확인할 수 있습니다.</p>
+<p>아울러 주요 치안 AI 사업과 관련 언론보도 를 함께 제공하여 경찰청의 AI 정책 추진 흐름과 주요 현황을 종합적으로 살펴볼 수 있도록 구성했습니다.</p>
+<ul class="intro-list"><li>AI 정책·거버넌스</li><li>AI 사업·예산 관리</li><li>AI 윤리·투명성·신뢰성</li><li>고영향 AI 관리</li><li>AI 영향평가</li><li>AI 역량 강화</li></ul>
+<div class="intro-guide">각 항목의 ‘상세 보기’ 를 누르면 세부 추진현황을 확인할 수 있습니다.</div>
+</div>
+</div>
+</section>
 <script>
-(function(){
-  // 외부 링크(카카오톡 등)로 처음 진입할 때 이전 스크롤 위치나 해시를 복원하지 않고
-  // 항상 메인 화면 맨 위에서 시작하도록 설정합니다.
-  if('scrollRestoration' in history){
-    history.scrollRestoration = 'manual';
-  }
+(() => {
+  const body = document.body;
+  const toggles = Array.from(document.querySelectorAll('.modal-toggle'));
+  const modalMap = {
+    'domains-toggle': 'domainsModal',
+    'services-toggle': 'servicesModal',
+    'news-toggle': 'newsModal',
+    'intro-toggle': 'introModal'
+  };
 
-  function resetInitialView(){
-    if(location.hash){
-      history.replaceState(null, document.title, location.pathname + location.search);
-    }
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }
+  function syncModalState(){
+    const opened = toggles.find(toggle => toggle.checked);
+    body.classList.toggle('modal-open', !!opened);
 
-  resetInitialView();
-  window.addEventListener('load', () => {
-    window.requestAnimationFrame(resetInitialView);
-  }, {once:true});
-  window.addEventListener('pageshow', () => {
-    window.requestAnimationFrame(resetInitialView);
-  }, {once:true});
-
-  const toggles = Array.from(document.querySelectorAll('.domain-toggle'));
-  const domainCards = Array.from(document.querySelectorAll('.domain-card'));
-  const sheets = Array.from(document.querySelectorAll('.domain-sheet'));
-
-  function syncSheetState(){
-    const anyOpen = toggles.some(t => t.checked);
-    document.body.classList.toggle('sheet-open', anyOpen);
-
-    toggles.forEach((toggle, idx) => {
-      const open = toggle.checked;
-      const card = domainCards.find(c => c.getAttribute('for') === toggle.id);
-      const sheet = sheets[idx];
-      if(card) card.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if(sheet) sheet.setAttribute('aria-hidden', open ? 'false' : 'true');
+    toggles.forEach(toggle => {
+      const modal = document.getElementById(modalMap[toggle.id]);
+      if(modal){
+        modal.setAttribute('aria-hidden', toggle.checked ? 'false' : 'true');
+      }
     });
   }
 
   toggles.forEach(toggle => {
     toggle.addEventListener('change', () => {
       if(toggle.checked){
-        toggles.forEach(other => { if(other !== toggle) other.checked = false; });
+        toggles.forEach(other => {
+          if(other !== toggle) other.checked = false;
+        });
       }
-      syncSheetState();
+      syncModalState();
     });
   });
 
-  document.addEventListener('keydown', event => {
-    if(event.key !== 'Escape') return;
-
-    if(homeIntroToggle && homeIntroToggle.checked){
-      homeIntroToggle.checked = false;
-      syncHomeIntroState();
-      return;
-    }
-
-    if(toggles.some(t => t.checked)){
-      toggles.forEach(t => { t.checked = false; });
-      syncSheetState();
-    }
-  });
-
-  document.querySelectorAll('label.domain-card,label.domain-sheet-close,label.domain-sheet-bottom-close').forEach(label => {
+  document.querySelectorAll('[data-modal-label],[data-modal-close-label]').forEach(label => {
     label.addEventListener('keydown', event => {
       if(event.key === 'Enter' || event.key === ' '){
         event.preventDefault();
@@ -918,64 +1674,25 @@ p{word-break:keep-all;overflow-wrap:break-word;line-break:strict;text-wrap:prett
     });
   });
 
-  const backToTop = document.getElementById('backToTop');
-  if(backToTop){
-    function toggleBackToTop(){backToTop.classList.toggle('show', window.scrollY > 350);}
-    backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-    window.addEventListener('scroll', toggleBackToTop, {passive:true});
-    toggleBackToTop();
-  }
-
-
-  const homeIntroToggle = document.getElementById('home-intro-toggle');
-  const homeIntroButton = document.getElementById('homeIntroButton');
-  const homeIntroDialog = document.getElementById('homeIntroDialog');
-
-  function syncHomeIntroState(){
-    const open = !!homeIntroToggle.checked;
-    document.body.classList.toggle('intro-open', open);
-    homeIntroDialog.setAttribute('aria-hidden', open ? 'false' : 'true');
-    homeIntroButton.setAttribute('aria-expanded', open ? 'true' : 'false');
-    homeIntroButton.setAttribute('aria-label', open ? '페이지 소개 닫기' : '페이지 소개 열기');
-  }
-
-  homeIntroToggle.addEventListener('change', () => {
-    if(homeIntroToggle.checked){
-      toggles.forEach(t => { t.checked = false; });
-      syncSheetState();
+  document.addEventListener('keydown', event => {
+    if(event.key !== 'Escape') return;
+    const opened = toggles.find(toggle => toggle.checked);
+    if(opened){
+      opened.checked = false;
+      syncModalState();
     }
-    syncHomeIntroState();
   });
 
-  document.querySelectorAll('#homeIntroButton,#homeIntroCloseIcon,#homeIntroConfirm').forEach(control => {
-    control.addEventListener('keydown', event => {
-      if(event.key === 'Enter' || event.key === ' '){
-        event.preventDefault();
-        control.click();
-      }
-    });
-  });
-
-  const navLinks = Array.from(document.querySelectorAll('.bottom-nav a,.bottom-nav .home-nav-button'));
-  const navClickFeedback = Array.from(document.querySelectorAll('.bottom-nav a'));
-  navClickFeedback.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.forEach(item => item.classList.remove('active'));
-      link.classList.add('active');
-    });
-  });
-
-  const navSections = ['domains','services','news'].map(id => document.getElementById(id)).filter(Boolean);
-  function updateBottomNav(){
-    let current='domains';
-    const y=window.scrollY+150;
-    navSections.forEach(section => { if(section.offsetTop <= y) current=section.id; });
-    navLinks.forEach(link => link.classList.toggle('active', link.dataset.nav === current));
+  if('scrollRestoration' in history){
+    history.scrollRestoration = 'manual';
   }
-  window.addEventListener('scroll', updateBottomNav, {passive:true});
-  updateBottomNav();
-  syncSheetState();
-  syncHomeIntroState();
+
+  window.addEventListener('load', () => {
+    requestAnimationFrame(() => window.scrollTo(0,0));
+    syncModalState();
+  }, {once:true});
+
+  syncModalState();
 })();
 </script>
 </body>
